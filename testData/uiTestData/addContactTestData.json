@@ -1,0 +1,524 @@
+[
+  {
+    "index": 1,
+    "sampleInfo": "Fake phone number",
+    "firstName": "AQAFirstName",
+    "lastName": "AQALastName",
+    "middleName": null,
+    "profilePicUrl": null,
+    "gender": "Male",
+    "birthDate": "2000-01-01",
+    "address": "12345 Test Address",
+    "zip": "12345",
+    "city": "AQA City",
+    "country": "jor",
+    "currency": "JOD",
+    "destination": [
+      {
+        "channelId": "1",
+        "channelType": "sms",
+        "description": "AQA Description for SMS",
+        "identifier": "+962796699276"
+      },
+      {
+        "channelId": "5",
+        "channelType": "viber",
+        "description": "AQA Description for Viber",
+        "identifier": "+962796699276"
+      },
+      {
+        "channelId": "7",
+        "channelType": "email",
+        "description": "AQA Description for Email",
+        "identifier": "bribri880@email-temp.com"
+      }
+    ],
+    "customField": [],
+    "phone": {
+      "countryCode": "JO",
+      "dialCode": "+962",
+      "nationalNumber": "0796699276",
+      "number": "+962796699276"
+    }
+  },
+  {
+    "index": 2,
+    "sampleInfo": "Fake phone number",
+    "firstName": "AQATestName",
+    "lastName": "AQATestSurname",
+    "middleName": null,
+    "profilePicUrl": null,
+    "gender": "Male",
+    "birthDate": "2000-01-01",
+    "address": "12345 Test Address",
+    "zip": "12345",
+    "city": "Test City",
+    "country": "grc",
+    "currency": "EUR",
+    "destination": [
+      {
+        "channelId": "1",
+        "channelType": "sms",
+        "description": "AQA Description for SMS",
+        "identifier": "+309453421785"
+      },
+      {
+        "channelId": "5",
+        "channelType": "viber",
+        "description": "AQA Description for Viber",
+        "identifier": "+309453421785"
+      },
+      {
+        "channelId": "7",
+        "channelType": "email",
+        "description": "AQA Description for Email",
+        "identifier": "aqatest@gmail.com"
+      }
+    ],
+    "customField": [],
+    "phone": {
+      "countryCode": "GR",
+      "dialCode": "+30",
+      "nationalNumber": "9453421785",
+      "number": "+309453421785"
+    }
+  },
+  {
+    "index": 3,
+    "sampleInfo": "Fake phone number",
+    "firstName": "TestNameAQA",
+    "lastName": "TestSurnameAQA",
+    "middleName": "TestMiddleNameAQA",
+    "profilePicUrl": null,
+    "gender": "Female",
+    "birthDate": "2000-02-02",
+    "address": "12345 Test Address",
+    "zip": "12345",
+    "city": "Test City",
+    "country": "grc",
+    "currency": "EUR",
+    "destination": [
+      {
+        "channelId": "1",
+        "channelType": "sms",
+        "description": "AQA Description for SMS",
+        "identifier": "+306852329750"
+      },
+      {
+        "channelId": "5",
+        "channelType": "viber",
+        "description": "AQA Description for Viber",
+        "identifier": "+306852329750"
+      },
+      {
+        "channelId": "7",
+        "channelType": "email",
+        "description": "AQA Description for Email",
+        "identifier": "aqatest@gmail.com"
+      }
+    ],
+    "customField": [],
+    "phone": {
+      "countryCode": "GR",
+      "dialCode": "+30",
+      "nationalNumber": "6852329750",
+      "number": "+306852329750"
+    }
+  },
+  {
+    "index": 4,
+    "sampleInfo": "Fake phone number",
+    "firstName": "AQANewName",
+    "lastName": "AQANewSurname",
+    "middleName": null,
+    "profilePicUrl": null,
+    "gender": "Male",
+    "birthDate": "1990-02-02",
+    "address": "12345 Test Address",
+    "zip": "12345",
+    "city": "Test City",
+    "country": "grc",
+    "currency": "EUR",
+    "destination": [
+      {
+        "channelId": "1",
+        "channelType": "sms",
+        "description": "AQA Description for SMS",
+        "identifier": "+306982454352"
+      },
+      {
+        "channelId": "5",
+        "channelType": "viber",
+        "description": "AQA Description for Viber",
+        "identifier": "+306982454352"
+      },
+      {
+        "channelId": "7",
+        "channelType": "email",
+        "description": "AQA Description for Email",
+        "identifier": "aqatest@gmail.com"
+      }
+    ],
+    "customField": [],
+    "phone": {
+      "countryCode": "GR",
+      "dialCode": "+30",
+      "nationalNumber": "6982454352",
+      "number": "+306982454352"
+    }
+  },
+  {
+    "index": 5,
+    "sampleInfo": "Fake phone number",
+    "firstName": "AQASubscriptionName",
+    "lastName": "AQASubscriptionSurname",
+    "middleName": null,
+    "profilePicUrl": null,
+    "gender": "Male",
+    "birthDate": "1990-02-02",
+    "address": "12345 Test Address",
+    "zip": "12345",
+    "city": "Test City",
+    "country": "ind",
+    "currency": "INR",
+    "destination": [
+      {
+        "channelId": "1",
+        "channelType": "sms",
+        "description": "AQA Description for SMS",
+        "identifier": "+919517408041"
+      },
+      {
+        "channelId": "5",
+        "channelType": "viber",
+        "description": "AQA Description for Viber",
+        "identifier": "+919517408041"
+      },
+      {
+        "channelId": "7",
+        "channelType": "email",
+        "description": "AQA Description for Email",
+        "identifier": "aqatest@gmail.com"
+      }
+    ],
+    "customField": [],
+    "phone": {
+      "countryCode": "IN",
+      "dialCode": "+91",
+      "nationalNumber": "09517408041",
+      "number": "+919517408041"
+    }
+  },
+  {
+    "index": 6,
+    "sampleInfo": "Contact with receiving a campaign by SMS, Viber, Email",
+    "firstName": "AQAValidFirstName",
+    "lastName": "AQAValidLastName",
+    "middleName": null,
+    "profilePicUrl": null,
+    "gender": "Male",
+    "birthDate": "02-06-1990",
+    "address": "12345 Test Address",
+    "zip": "12345",
+    "city": "AQA City",
+    "country": "jor",
+    "currency": "JOD",
+    "destination": [
+      {
+        "channelId": "1",
+        "channelType": "sms",
+        "description": "AQA Description for SMS",
+        "identifier": "+962791460101",
+        "default": true
+      },
+      {
+        "channelId": "5",
+        "channelType": "viber",
+        "description": "AQA Description for Viber",
+        "identifier": "+962791460101",
+        "default": true
+      },
+      {
+        "channelId": "7",
+        "channelType": "email",
+        "description": "AQA Description for Email",
+        "identifier": "aqatest@gmail.com",
+        "default": true
+      }
+    ],
+    "customField": [],
+    "phone": {
+      "countryCode": "JO",
+      "dialCode": "+962",
+      "nationalNumber": "0791460101",
+      "number": "+962791460101"
+    }
+  },
+  {
+    "index": 7,
+    "sampleInfo": "Contact with receiving a campaign by Email, without receiving a campaign by SMS and Viber",
+    "firstName": "AQASkipSMSAndViberName",
+    "lastName": "AQASkipSMSAndViberSurname",
+    "middleName": null,
+    "profilePicUrl": null,
+    "gender": "Male",
+    "birthDate": "02-06-1990",
+    "address": "12345 Test Address",
+    "zip": "12345",
+    "city": "AQA City",
+    "country": "grc",
+    "currency": "EUR",
+    "destination": [
+      {
+        "channelId": "1",
+        "channelType": "sms",
+        "description": "AQA Description for SMS",
+        "identifier": "+306986339700",
+        "default": true
+      },
+      {
+        "channelId": "5",
+        "channelType": "viber",
+        "description": "AQA Description for Viber",
+        "identifier": "+306988581650",
+        "default": true
+      },
+      {
+        "channelId": "7",
+        "channelType": "email",
+        "description": "AQA Description for Email",
+        "identifier": "waymoreaqa@gmail.com",
+        "default": true
+      }
+    ],
+    "customField": [],
+    "phone": {
+      "countryCode": "GR",
+      "dialCode": "+30",
+      "nationalNumber": "6986339700",
+      "number": "+306986339700"
+    }
+  },
+  {
+    "index": 8,
+    "sampleInfo": "Fake phone number",
+    "firstName": "JohnAQA",
+    "lastName": "SmithAQA",
+    "middleName": null,
+    "profilePicUrl": null,
+    "gender": "Male",
+    "birthDate": "2000-01-01",
+    "address": "12345 Test Address",
+    "zip": "12345",
+    "city": "AQA City",
+    "country": "usa",
+    "currency": "USD",
+    "destination": [
+      {
+        "channelId": "1",
+        "channelType": "sms",
+        "description": "AQA Description for SMS",
+        "identifier": "+15053291080"
+      },
+      {
+        "channelId": "5",
+        "channelType": "viber",
+        "description": "AQA Description for Viber",
+        "identifier": "+15053291080"
+      },
+      {
+        "channelId": "7",
+        "channelType": "email",
+        "description": "AQA Description for Email",
+        "identifier": "testtest@email-temp.com"
+      }
+    ],
+    "customField": [],
+    "phone": {
+      "countryCode": "US",
+      "dialCode": "+1",
+      "nationalNumber": "5053291080",
+      "number": "+15053291080"
+    }
+  },
+  {
+    "index": 9,
+    "sampleInfo": "Contact with receiving a campaign by Viber and Email, without receiving a campaign by SMS",
+    "firstName": "AQASkipSMSName",
+    "lastName": "AQASkipSMSSurname",
+    "middleName": null,
+    "profilePicUrl": null,
+    "gender": "Male",
+    "birthDate": "02-06-1990",
+    "address": "12345 Test Address",
+    "zip": "12345",
+    "city": "AQA City",
+    "country": "jor",
+    "currency": "JOD",
+    "destination": [
+      {
+        "channelId": "1",
+        "channelType": "sms",
+        "description": "AQA Description for SMS",
+        "identifier": "+306986339700",
+        "default": true
+      },
+      {
+        "channelId": "5",
+        "channelType": "viber",
+        "description": "AQA Description for Viber",
+        "identifier": "+962791460101",
+        "default": true
+      },
+      {
+        "channelId": "7",
+        "channelType": "email",
+        "description": "AQA Description for Email",
+        "identifier": "waymoreaqa@gmail.com",
+        "default": true
+      }
+    ],
+    "customField": [],
+    "phone": {
+      "countryCode": "JO",
+      "dialCode": "+962",
+      "nationalNumber": "0791460101",
+      "number": "+962791460101"
+    }
+  },
+  {
+    "index": 10,
+    "sampleInfo": "Contact with receiving a campaign by SMS and Email, without receiving a campaign by Viber",
+    "firstName": "AQASkipViberName",
+    "lastName": "AQASkipViberSurname",
+    "middleName": null,
+    "profilePicUrl": null,
+    "gender": "Male",
+    "birthDate": "02-06-1990",
+    "address": "12345 Test Address",
+    "zip": "12345",
+    "city": "AQA City",
+    "country": "jor",
+    "currency": "JOD",
+    "destination": [
+      {
+        "channelId": "1",
+        "channelType": "sms",
+        "description": "AQA Description for SMS",
+        "identifier": "+962791460101",
+        "default": true
+      },
+      {
+        "channelId": "5",
+        "channelType": "viber",
+        "description": "AQA Description for Viber",
+        "identifier": "+306988581650",
+        "default": true
+      },
+      {
+        "channelId": "7",
+        "channelType": "email",
+        "description": "AQA Description for Email",
+        "identifier": "waymoreaqa@gmail.com",
+        "default": true
+      }
+    ],
+    "customField": [],
+    "phone": {
+      "countryCode": "JO",
+      "dialCode": "+962",
+      "nationalNumber": "0791460101",
+      "number": "+962791460101"
+    }
+  },
+  {
+    "index": 11,
+    "sampleInfo": "Contact with receiving a campaign by SMS and Viber, without receiving a campaign by Email",
+    "firstName": "AQASkipEmailName",
+    "lastName": "AQASkipEmailSurname",
+    "middleName": null,
+    "profilePicUrl": null,
+    "gender": "Male",
+    "birthDate": "02-06-1990",
+    "address": "12345 Test Address",
+    "zip": "12345",
+    "city": "AQA City",
+    "country": "jor",
+    "currency": "JOD",
+    "destination": [
+      {
+        "channelId": "1",
+        "channelType": "sms",
+        "description": "AQA Description for SMS",
+        "identifier": "+962791460101",
+        "default": true
+      },
+      {
+        "channelId": "5",
+        "channelType": "viber",
+        "description": "AQA Description for Viber",
+        "identifier": "+962791460101",
+        "default": true
+      },
+      {
+        "channelId": "7",
+        "channelType": "email",
+        "description": "AQA Description for Email",
+        "identifier": "bribri880@x",
+        "default": true
+      }
+    ],
+    "customField": [],
+    "phone": {
+      "countryCode": "JO",
+      "dialCode": "+962",
+      "nationalNumber": "0791460101",
+      "number": "+962791460101"
+    }
+  },
+  {
+    "index": 12,
+    "sampleInfo": "Contact with receiving a campaign by SMS, Viber, Email; Contact that cannot be deleted, changed, updated via API or UI",
+    "firstName": "AQAPermanentFirstName",
+    "lastName": "AQAPermanentLastName",
+    "middleName": null,
+    "profilePicUrl": null,
+    "gender": "Male",
+    "birthDate": "02-06-1990",
+    "address": "12345 Test Address",
+    "zip": "12345",
+    "city": "AQA City",
+    "country": "jor",
+    "currency": "JOD",
+    "destination": [
+      {
+        "channelId": "1",
+        "channelType": "sms",
+        "description": "AQA Description for SMS",
+        "identifier": "+962791460101",
+        "default": true
+      },
+      {
+        "channelId": "5",
+        "channelType": "viber",
+        "description": "AQA Description for Viber",
+        "identifier": "+962791460101",
+        "default": true
+      },
+      {
+        "channelId": "7",
+        "channelType": "email",
+        "description": "AQA Description for Email",
+        "identifier": "aqatest@gmail.com",
+        "default": true
+      }
+    ],
+    "customField": [],
+    "phone": {
+      "countryCode": "JO",
+      "dialCode": "+962",
+      "nationalNumber": "0791460101",
+      "number": "+962791460101"
+    }
+  }
+]
