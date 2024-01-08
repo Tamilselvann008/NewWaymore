@@ -1,13 +1,14 @@
-package com.pages;
+package pages.contactInsights;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import actions.Actions;
+import actions.Action;
 import basePackage.BasePo;
 import helpers.ElementUtils;
 import helpers.Waiters;
+
 
 public class ContactInsightsPo extends BasePo {
 
@@ -90,6 +91,7 @@ public class ContactInsightsPo extends BasePo {
 				".wm-table__body .wm-table__row:nth-child(" + (index + 1) + ") .contacts__groups .contact-group-item");
 	}
 
+	
 	private By contactDropdownOptionByName(String value) {
 		return By.xpath("//ng-dropdown-panel//span[text()='" + value + " ']");
 	}
@@ -117,18 +119,18 @@ public class ContactInsightsPo extends BasePo {
 		}
 	}
 
-	public void clickOnAddNewButton() {
-		Actions.clickByLocator(addNewButton, 0);
+	public void clickOnAddNewButton() throws Exception {
+		Action.clickByLocator(addNewButton);
 	}
 
-	public String getContactsTitleText() {
+	public String getContactsTitleText() throws Exception {
 		Waiters.waitForElementToBeDisplayed(contactsTitle);
 		waitForTableLoaderIsNotDisplayed();
 		return ElementUtils.getTextByLocator(contactsTitle, 0);
 	}
 
 	public void waitForTableLoaderIsNotDisplayed() {
-		Waiters.waitForElementToBeNotVisible(tableLoader);
+		Waiters.waitForElementToBeInvisible(tableLoader);
 	}
 
 	public void waitForGroupDropdownIsNotDisplayed() {
@@ -136,7 +138,17 @@ public class ContactInsightsPo extends BasePo {
 	}
 
 	public boolean isContactElementDisplayed() {
-		return Actions.isElementDisplayedByLocator(contactSubRow, 0);
+		return Action.isElementDisplayedByLocator(contactSubRow);
 	}
+	
+	 public String getContactsFirstNameTextList() throws InterruptedException {
+	       Waiters.waitForElementToBeDisplayed(contactFirstName);
+	       return ElementUtils.getTextListWithJSByLocator(contactFirstName).get(0);
+	    }
+
+	    public String getContactsLastNameTextList() throws InterruptedException {
+	        Waiters.waitForElementToBeDisplayed(contactLastName);
+	        return ElementUtils.getTextListWithJSByLocator(contactLastName).get(0);
+	    }
 
 }

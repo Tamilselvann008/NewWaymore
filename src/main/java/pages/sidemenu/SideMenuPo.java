@@ -1,10 +1,10 @@
-package com.pages;
+package pages.sidemenu;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import actions.Actions;
+import actions.Action;
 import basePackage.BasePo;
 import helpers.Waiters;
 
@@ -39,7 +39,7 @@ public class SideMenuPo extends BasePo {
 	}
 
 	public boolean isSideMenuItemExpanded() {
-		return Actions.isElementDisplayedByLocator(sideMenuActiveItem, 0);
+		return Action.isElementDisplayedByLocator(sideMenuActiveItem);
 	}
 
 	private By sideMenuSubOptionItemByName(String subSubmenuOption, String submenuOption) {
@@ -47,19 +47,19 @@ public class SideMenuPo extends BasePo {
 				+ subSubmenuOption + "']");
 	}
 
-	public void clickOnLinkFromSidebarMenuByName(String value) {
+	public void clickOnLinkFromSidebarMenuByName(String value) throws InterruptedException {
 		By sideMenuLink = sideMenuLinkByName(value);
 
 		Waiters.waitForElementToBeDisplayed(sideMenuLink);
-		Actions.clickWithJSByLocator(sideMenuLink, 0);
+		Action.clickWithJSByLocator(sideMenuLink);
 		Waiters.waitWithSleepTimeout(2500);
 	}
 
-	public void clickOnSubmenuItemFromSideMenuByName(String subSubmenuOption, String submenuOption) {
+	public void clickOnSubmenuItemFromSideMenuByName(String subSubmenuOption, String submenuOption) throws Exception {
 		By subMenuLocator = sideMenuSubOptionItemByName(subSubmenuOption, submenuOption);
 
 		Waiters.waitForElementToBeDisplayed(subMenuLocator);
-		Actions.clickByLocator(subMenuLocator, 0);
+		Action.clickByLocator(subMenuLocator);
 	}
 
 }

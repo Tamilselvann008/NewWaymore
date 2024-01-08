@@ -28,30 +28,5 @@ public class BasePo {
 		driver.quit();
 	}
 
-	public String jsonValues(String datas) {
-
-		JSONParser parser = new JSONParser();
-		String output = "";
-		try (FileReader reader = new FileReader("testData/uiTestData/userTestData.json")) {
-
-			Object obj = parser.parse(reader);
-
-			JSONObject data = (JSONObject) obj;
-
-			output = (String) data.get(datas);
-
-		} catch (IOException e) {
-
-			e.printStackTrace();
-
-		} catch (ParseException e) {
-
-			e.printStackTrace();
-
-		}
-
-		return output;
-
-	}
 
 }

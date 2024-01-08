@@ -3,10 +3,12 @@ package com.testcase;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.pages.LoginPo;
-import com.pages.OnboardingDialogPo;
 
 import basePackage.BasePo;
+import helpers.DataProviders;
+import helpers.StepUtils;
+import pages.dashboard.OnboardingDialogPo;
+import pages.login.LoginPo;
 
 @Test(description = "Getting Started with Waymore Pages")
 public class WaymorePageLogin extends BasePo {
@@ -16,25 +18,23 @@ public class WaymorePageLogin extends BasePo {
 		browserLaunch();
 	}
 
-	public void Login() {
-
+	public void Login() throws Exception {
 		LoginPo loginPo = new LoginPo(driver);
 		OnboardingDialogPo onboardingDialogPo = new OnboardingDialogPo(driver);
-		System.out.println("The user opens the Landing Page '" + jsonValues("landingpage") + "login'");
-		loginPo.openLandingPage();
+		loginPo.openLandingPage(DataProviders.getUrlTestData());
+		StepUtils.addLog("The user opens the Landing Page...");
+		
+		loginPo.typeValueInUserEmailInputField(DataProviders.getUserTestData("username"));
+		StepUtils.addLog("The user types the user email...");
 
-		System.out.println("The user types the user email '" + jsonValues("username") + "'");
-		loginPo.typeValueInUserEmailInputField(jsonValues("username"));
+		loginPo.typeValueInPasswordInputField(DataProviders.getUserTestData("password"));
+		StepUtils.addLog("The user types the user password...");
 
-		System.out.println("The user types the user password '" + jsonValues("password") + "'");
-		loginPo.typeValueInPasswordInputField(jsonValues("password"));
-
-		System.out.println("The user clicks on the Login button");
 		loginPo.clickOnLoginButton();
+		StepUtils.addLog("The user clicks on the Login button");
 
-		System.out.println("The user waits for Onboarding loader image is not displayed");
 		onboardingDialogPo.waitForOnboardingLoaderImageIsNotDisplayed();
-
+		StepUtils.addLog("The user waits for Onboarding loader image is not displayed");
 	}
 
 }

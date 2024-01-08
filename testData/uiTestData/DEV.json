@@ -1,0 +1,16 @@
+{
+  "waymorePageUrl": "https://dev.waymore.io/",
+  "apiUrl": "https://dev2.waymore.io/api",
+  "contactPlusApiUrl": "https://contacts-api.staging.env.waymore.io",
+  "fileManagerApi": "http://dev-file-manager-api.int.amdtelecom.net",
+  "emailTemplatesApiUrl": "https://pages-stage.waymore.io/api/v2",
+  "gmailUserMessages": "https://www.googleapis.com/gmail/v1/users/me/messages",
+  "routeePageUrl": "https://go.routee.net/",
+  "forgotPasswordPageUrl": "https://go.routee.net/#/public/lost-password",
+  "numberValidatorUrl": "https://go.routee.net/#/management/number-validator-request",
+  "numberLookupUrl": "https://go.routee.net/#/management/lookup-request",
+  "emailValidatorUrl": "https://go.routee.net/#/management/email-validator/send-request",
+  "apiRoutee": "https://dev-idata.routee.net/api",
+  "apiRouteeLive": "https://connect.routee.net",
+  "apiRouteeAuthLive": "https://auth.routee.net"
+}

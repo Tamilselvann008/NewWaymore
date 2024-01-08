@@ -1,11 +1,12 @@
-package com.pages;
+package pages.login;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import actions.Actions;
+import actions.Action;
 import basePackage.BasePo;
+import helpers.Waiters;
 
 public class LoginPo extends BasePo {
 	public LoginPo(WebDriver driver) {
@@ -22,20 +23,23 @@ public class LoginPo extends BasePo {
 	private By forgotPasswordLink = By.cssSelector(".login-form__forgot-password a");
 	private By rememberMeCheckbox = By.cssSelector(".login-form__actions mat-checkbox input[type=\"checkbox\"]");
 
-	public void openLandingPage() {
-		driver.get(jsonValues("landingpage"));
-	}
+	 public void openLandingPage(String url) {
+		 driver.get(url);
+	    }
+	
 
-	public void typeValueInUserEmailInputField(String value) {
-		Actions.enterText(userEmailInput, value);
-	}
+	 public void typeValueInUserEmailInputField(String value) throws InterruptedException {
+	        Action.clearTextInLocatorAndTypeText(userEmailInput, value);
+	    }
 
-	public void typeValueInPasswordInputField(String value) {
-		Actions.enterText(passwordInput, value);
-	}
+	 public void typeValueInPasswordInputField(String value) throws InterruptedException {
+	        Action.clearTextInLocatorAndTypeText(passwordInput, value);
+	    }
 
-	public void clickOnLoginButton() {
-		Actions.buttonClick(loginButton);
-	}
 
+	 public void clickOnLoginButton() throws Exception {
+	        Action.clickByLocator(loginButton);
+	        Waiters.waitForElementToBeInvisible(loginButton);
+	        // Adjust URL waiting as per Java conventions
+	    }
 }

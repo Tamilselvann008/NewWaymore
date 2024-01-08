@@ -4,10 +4,9 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.pages.ContactInsightsPo;
-import com.pages.CreateContactDialogPo;
-import com.pages.SideMenuPo;
-
+import pages.contactInsights.ContactInsightsPo;
+import pages.contactInsights.CreateContactDialogPo;
+import pages.sidemenu.SideMenuPo;
 import basePackage.BasePo;
 import helpers.DataProviders;
 import helpers.StepUtils;
@@ -27,7 +26,7 @@ public class CreateContact extends BasePo {
 	}
 
 	@Test
-	public void createContact() {
+	public void createContact() throws Exception {
 		SideMenuPo sideMenuPo = new SideMenuPo(driver);
 		WaymorePageLogin waymorePageLogin = new WaymorePageLogin();
 		ContactInsightsPo contactInsightsPo = new ContactInsightsPo(driver);
@@ -64,7 +63,7 @@ public class CreateContact extends BasePo {
 		StepUtils.addLog("The user enters lastName in the suitable input field in the Create Contact dialog");
 
 		createContactDialogPo.typeContactDataByOptionName(email,
-				DataProviders.getContactTestData("destination", "identifier"));
+		DataProviders.getContactTestData("destination", "identifier"));
 		StepUtils.addLog("The user enters email in the suitable input field in the Create Contact dialog");
 
 		createContactDialogPo.typeMobileNumber(DataProviders.getphoneDetails("number"));
@@ -72,9 +71,17 @@ public class CreateContact extends BasePo {
 
 		createContactDialogPo.selectCheckboxByLocator(sms);
 		StepUtils.addLog("The user checks" + sms + " checkbox");
-
+ 
 		createContactDialogPo.clickOnSaveButton();
 		StepUtils.addLog("The user clicks on the Save button");
+
+		String actualFirstName = contactInsightsPo.getContactsFirstNameTextList();
+		String firstNameErrorMessage = "The contact first name '" + DataProviders.getContactTestData("firstName") + "' is not displayed";
+		Assert.assertEquals(actualFirstName, DataProviders.getContactTestData("firstName"), firstNameErrorMessage);
+
+		String actualLastName = contactInsightsPo.getContactsLastNameTextList();
+		String lastNameErrorMessage = "The contact last name '" + DataProviders.getContactTestData("lastName") + "' is not displayed";
+		Assert.assertEquals(actualLastName, DataProviders.getContactTestData("lastName"), lastNameErrorMessage);
 
 	}
 
