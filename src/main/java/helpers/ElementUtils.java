@@ -44,6 +44,10 @@ public class ElementUtils extends BasePo {
 	        WebElement element = getElementByLocator(locator, index);
 	        return element.getText();
 	    }
+	    public static String getTextByLocator(WebElement locator) {
+	        
+	        return locator.getText();
+	    }
 
 	    public static String getValueByLocator(By locator, int index) throws Exception {
 	        WebElement element = getElementByLocator(locator, index);
