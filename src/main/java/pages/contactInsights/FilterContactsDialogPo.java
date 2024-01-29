@@ -50,19 +50,17 @@ public class FilterContactsDialogPo extends BasePo {
         return By.xpath("//span[text()='" + dropdownName + "']/ancestor::div[contains(@class, 'fields')]/ng-select//span[contains(@class, 'ng-value-icon')]");
     }
 
-    // Implement methods similar to TypeScript class, using Action, Waiters, ElementUtils, and StringUtils
-    // Example:
     public boolean isFilterContactsDialogDisplayed() throws Exception {
-        return Action.isElementDisplayedByLocator(filterContactsDialog);
+        return Action.isElementDisplayedByLocator(filterContactsDialog, 0);
     }
 
     public void clickOnSearchButton() throws Exception {
-        Action.clickWithJSByLocator(searchButton);
+        Action.clickWithJSByLocator(searchButton, 0);
         Waiters.waitForElementToBeInvisible(dropdownPanelList);
     }
 
     public boolean isDropdownSelectedValueLabelDisplayed() throws Exception {
-        return Action.isElementDisplayedByLocator(dropdownSelectedValueLabel);
+        return Action.isElementDisplayedByLocator(dropdownSelectedValueLabel, 0);
     }
 
     public void waitForFilterContactsDialogIsDisplayed() throws Exception {
@@ -82,18 +80,18 @@ public class FilterContactsDialogPo extends BasePo {
     }
 
     public void clickOnBackgroundOutsideDialog() throws Exception {
-        Action.clickWithJSByLocator(backgroundOutsideDialog);
+        Action.clickWithJSByLocator(backgroundOutsideDialog, 0);
         Waiters.waitForElementToBeInvisible(filterContactsDialog);
     }
 
     public void clickOnCloseButton() throws Exception {
-        Action.clickWithJSByLocator(closeButton);
+        Action.clickWithJSByLocator(closeButton, 0);
         Waiters.waitForElementToBeInvisible(filterContactsDialog);
     }
 
 
     public void clickOnResetButton() throws Exception {
-        Action.clickWithJSByLocator(resetButton);
+        Action.clickWithJSByLocator(resetButton, 0);
     }
 
     public boolean isSubmitButtonDisabled() throws Exception {
@@ -103,11 +101,11 @@ public class FilterContactsDialogPo extends BasePo {
 
     public boolean isDropdownOptionDisabled() throws Exception {
         Waiters.waitWithSleepTimeout(2500);
-        return Action.isElementDisplayedByLocator(dropdownOptionDisabled);
+        return Action.isElementDisplayedByLocator(dropdownOptionDisabled, 0);
     }
 
     public void clickOnFilterDropdownByName(String dropdownName) throws Exception {
-        Action.clickByLocator(filterDropdownByName(dropdownName));
+        Action.clickByLocator(filterDropdownByName(dropdownName), 0);
         Waiters.waitForElementToBeInvisible(dropdownPanelSpinner);
     }
 
@@ -164,7 +162,7 @@ public class FilterContactsDialogPo extends BasePo {
     }
 
     public List<String> getSelectedOptionByDropdownNameTextList(String dropdownName) throws Exception {
-        boolean isDisplayed = Action.isElementDisplayedByLocator(selectedOptionByDropdownName(dropdownName));
+        boolean isDisplayed = Action.isElementDisplayedByLocator(selectedOptionByDropdownName(dropdownName), 0);
         List<String> optionTextList = new ArrayList<>();
         if (isDisplayed) {
             optionTextList = ElementUtils.getTextListByLocator(selectedOptionByDropdownName(dropdownName));
@@ -188,4 +186,8 @@ public class FilterContactsDialogPo extends BasePo {
         }
     }
 
+	 public void clickOnFilterContactsDialog() throws Exception {
+        Action.clickByLocator( filterContactsDialog, 0);
+        //Waiters.waitForElementToBeNotVisible( dropdownPanelList);
+    }
 }

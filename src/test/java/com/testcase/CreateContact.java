@@ -1,5 +1,7 @@
 package com.testcase;
 
+import java.util.List;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -32,7 +34,7 @@ public class CreateContact extends BasePo {
 		ContactInsightsPo contactInsightsPo = new ContactInsightsPo(driver);
 		CreateContactDialogPo createContactDialogPo = new CreateContactDialogPo(driver);
 
-		waymorePageLogin.Login();
+		waymorePageLogin.theUserIsOnTheGettingStartedWithWayMorePage(1);
 		sideMenuPo.clickOnLinkFromSidebarMenuByName(contactInsights);
 		StepUtils.addLog("The user clicks on " + contactInsights + " from the side menu items");
 
@@ -56,33 +58,44 @@ public class CreateContact extends BasePo {
 				"The '" + createContactTitle + "' title is not correct");
 		StepUtils.addLog("The Create contact title is displayed");
 
-		createContactDialogPo.typeContactDataByOptionName(firstName, DataProviders.getContactTestData("firstName"));
+		createContactDialogPo.typeContactDataByOptionName(firstName, DataProviders.getContactTestData("firstName", 1));
 		StepUtils.addLog("The user enters firstName in the suitable input field in the Create Contact dialog");
 
-		createContactDialogPo.typeContactDataByOptionName(lastName, DataProviders.getContactTestData("lastName"));
+		createContactDialogPo.typeContactDataByOptionName(lastName, DataProviders.getContactTestData("lastName", 1));
 		StepUtils.addLog("The user enters lastName in the suitable input field in the Create Contact dialog");
 
 		createContactDialogPo.typeContactDataByOptionName(email,
-		DataProviders.getContactTestData("destination", "identifier"));
+		DataProviders.getContactTestData("destination", "identifier",1));
 		StepUtils.addLog("The user enters email in the suitable input field in the Create Contact dialog");
 
-		createContactDialogPo.typeMobileNumber(DataProviders.getphoneDetails("number"));
+		createContactDialogPo.typeMobileNumber(DataProviders.getphoneDetails("number", 1));
 		StepUtils.addLog("The user enters mobile number with a code for country");
 
 		createContactDialogPo.selectCheckboxByLocator(sms);
-		StepUtils.addLog("The user checks" + sms + " checkbox");
+		StepUtils.addLog("The user checks" + sms + " checkbox"); 
  
 		createContactDialogPo.clickOnSaveButton();
 		StepUtils.addLog("The user clicks on the Save button");
 
-		String actualFirstName = contactInsightsPo.getContactsFirstNameTextList();
-		String firstNameErrorMessage = "The contact first name '" + DataProviders.getContactTestData("firstName") + "' is not displayed";
-		Assert.assertEquals(actualFirstName, DataProviders.getContactTestData("firstName"), firstNameErrorMessage);
+//		String actualFirstName = contactInsightsPo.getContactsFirstNameTextList();
+//		String firstNameErrorMessage = "The contact first name '" + DataProviders.getContactTestData("firstName") + "' is not displayed";
+//		Assert.assertEquals(actualFirstName, DataProviders.getContactTestData("firstName"), firstNameErrorMessage);
+//
+//		String actualLastName = contactInsightsPo.getContactsLastNameTextList();
+//		String lastNameErrorMessage = "The contact last name '" + DataProviders.getContactTestData("lastName") + "' is not displayed";
+//		Assert.assertEquals(actualLastName, DataProviders.getContactTestData("lastName"), lastNameErrorMessage);
+		
+		String contactFirstName = DataProviders.getContactTestData("firstName", 1);
+        String contactLastName = DataProviders.getContactTestData("lastName", 1);
+		List<String> firstNameList = contactInsightsPo.getContactsFirstNameTextList();
+        Assert.assertTrue(firstNameList.contains(contactFirstName),
+            "The contact first name '" + contactFirstName + "' is not displayed");
+        System.out.println("first name displayed");
 
-		String actualLastName = contactInsightsPo.getContactsLastNameTextList();
-		String lastNameErrorMessage = "The contact last name '" + DataProviders.getContactTestData("lastName") + "' is not displayed";
-		Assert.assertEquals(actualLastName, DataProviders.getContactTestData("lastName"), lastNameErrorMessage);
-
+        List<String> lastNameList = contactInsightsPo.getContactsLastNameTextList();
+        Assert.assertTrue(lastNameList.contains(contactLastName),
+            "The contact last name '" + contactLastName + "' is not displayed");
+        System.out.println("last name displayed");
 	}
 
 }

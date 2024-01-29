@@ -3,12 +3,21 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.testcase.WaymorePageLogin">
         <methods>
           <include name="Login"/>
           <include name="launchWebsite"/>
         </methods>
       </class> <!-- com.testcase.WaymorePageLogin -->
+=======
+      <class name="features.contactInsights.ViewContactFeature">
+        <methods>
+          <include name="theUserCanSelectAllContactsOnThePageByClickingOnTheCheckboxInTheHeader"/>
+          <include name="launchWebsite"/>
+        </methods>
+      </class> <!-- features.contactInsights.ViewContactFeature -->
+>>>>>>> f189cff2e256fdbd5925e8fbbea1ea23d5644069
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -33,11 +33,11 @@ public class ChannelPreferencesDialogPo extends BasePo {
     }
 
     public boolean isChannelPreferencesDialogDisplayed() throws Exception {
-        return Action.isElementDisplayedByLocator(channelPreferencesDialog);
+        return Action.isElementDisplayedByLocator(channelPreferencesDialog, 0);
     }
 
     public boolean isChannelPreferencesDialogWarningIconDisplayed() throws Exception {
-        return Action.isElementDisplayedByLocator(channelPreferencesDialogWarningIcon);
+        return Action.isElementDisplayedByLocator(channelPreferencesDialogWarningIcon, 0);
     }
 
     public String getChannelPreferencesDialogWarningText() throws Exception {
@@ -45,11 +45,11 @@ public class ChannelPreferencesDialogPo extends BasePo {
     }
 
     public void clickOnNoExitButton() throws Exception {
-        Action.clickByLocator(noExitButton);
+        Action.clickByLocator(noExitButton, 0);
     }
 
     public void clickOnCloseButton() throws Exception {
-        Action.clickByLocator(closeButton);
+        Action.clickByLocator(closeButton, 0);
     }
 
     public String getContactInfoGroupText() throws Exception {

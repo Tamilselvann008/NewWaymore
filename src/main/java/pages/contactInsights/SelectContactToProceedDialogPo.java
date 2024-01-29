@@ -21,7 +21,7 @@ public class SelectContactToProceedDialogPo extends BasePo {
     public void clickOnOkButton() throws Exception {
         Waiters.waitForElementToBeClickable(okButton);
         Waiters.waitForElementToBeDisplayed(okButton);
-        Action.clickByLocator(okButton);
+        Action.clickByLocator(okButton, 0);
         contactInsightsPo.waitForTableLoaderIsNotDisplayed();
     }
 

@@ -1,0 +1,32 @@
+[
+  {
+    "sampleInfo": "Group with contacts for user № 1",
+    "index": 1,
+    "name": "AQA Test Group",
+    "description": "Group has contacts for SMS, Viber, Email"
+  },
+  {
+    "sampleInfo": "New group for user № 1",
+    "index": 2,
+    "name": "AQA New Group",
+    "description": "New AQA group description"
+  },
+  {
+    "sampleInfo": "New group for user № 1",
+    "index": 3,
+    "name": "AQA Contact Insight Group",
+    "description": "AQA Contact Insight group description"
+  },
+  {
+    "sampleInfo": "New group for user № 1",
+    "index": 4,
+    "name": "AQA Contact Insight New Group",
+    "description": "AQA Contact Insight New group description"
+  },
+  {
+    "sampleInfo": "New group for user № 1",
+    "index": 5,
+    "name": "AQA Duplicate Contacts Group",
+    "description": "AQA Duplicate Contacts Group description"
+  }
+]

@@ -11,7 +11,7 @@ import actions.Action;
 import basePackage.BasePo;
 
 public class ActivityTabPo extends BasePo {
-	String MatLabelActive = "matLabelActive";
+	String MatLabelActive = "mat-tab-label-active";
 	String Class = "class";
 
 	private By activityTableHeader = By.cssSelector(".contact-activity__chart-wrap .wm-table__headline span");
@@ -30,7 +30,7 @@ public class ActivityTabPo extends BasePo {
 		}
 		return false;
 	}
-
+ 
 	public String getActivityTableHeaderText() throws Exception {
 		Waiters.waitForElementToBeVisible(activityTableHeader);
 		return ElementUtils.getTextByLocator(activityTableHeader, 0);
@@ -48,6 +48,6 @@ public class ActivityTabPo extends BasePo {
 	}
 
 	public boolean isSessionsChartBarDisplayed() throws Exception {
-		return Action.isElementDisplayedByLocator(sessionsChartBar);
+		return Action.isElementDisplayedByLocator(sessionsChartBar, 0);
 	}
 }

@@ -1,11 +1,15 @@
 package pages.login;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import actions.Action;
 import basePackage.BasePo;
+import helpers.DataProviders;
+import helpers.ElementUtils;
 import helpers.Waiters;
 
 public class LoginPo extends BasePo {
@@ -23,8 +27,8 @@ public class LoginPo extends BasePo {
 	private By forgotPasswordLink = By.cssSelector(".login-form__forgot-password a");
 	private By rememberMeCheckbox = By.cssSelector(".login-form__actions mat-checkbox input[type=\"checkbox\"]");
 
-	 public void openLandingPage(String url) {
-		 driver.get(url);
+	 public void openLandingPage() {
+		 driver.get(DataProviders.getUrlTestData("waymorePageUrl"));
 	    }
 	
 
@@ -36,10 +40,84 @@ public class LoginPo extends BasePo {
 	        Action.clearTextInLocatorAndTypeText(passwordInput, value);
 	    }
 
-
-	 public void clickOnLoginButton() throws Exception {
-	        Action.clickByLocator(loginButton);
+//
+//	 public void clickOnLoginButton() throws Exception {
+//	        Action.clickByLocator(loginButton, 0);
+//	        Waiters.waitForElementToBeInvisible(loginButton);
+//	        // Adjust URL waiting as per Java conventions
+//	    }
+	    public void clickOnLoginButton() throws Exception {
+	        Action.clickByLocator(loginButton, 0);
 	        Waiters.waitForElementToBeInvisible(loginButton);
-	        // Adjust URL waiting as per Java conventions
+	        Waiters.waitUntilURLContains(DataProviders.getUrlTestData("waymorePageUrl"));
 	    }
+
+	    public void clickOnLoginButtonWithoutWait() throws Exception {
+	        Action.clickByLocator(loginButton, 0);
+	    }
+	 
+	    public void openNewWindowLandingPage() throws Exception {
+	        JavascriptExecutor js = (JavascriptExecutor) driver;
+	        js.executeScript("window.open('" + DataProviders.getUrlTestData("waymorePageUrl") + "login','_blank');");
+	        Waiters.waitForTabsCount();
+	        Action.switchToHandleByTabNumber(2);
+	    }
+
+	    public void refreshCurrentPage() {
+	        driver.navigate().refresh();
+	    }
+
+	    public void selectRememberMeCheckboxByStatus(String checkboxStatus) throws Exception {
+	        Action.selectCheckboxByLocatorAndStatus(rememberMeCheckbox, checkboxStatus);
+	    }
+
+	    public boolean isRememberMeCheckboxChecked() {
+	        return Action.isElementCheckedByLocator(rememberMeCheckbox);
+	    }
+	 
+	    public WebElement getEmailErrorMessage() throws Exception {
+	        Waiters.waitForElementToBeDisplayed(emailErrorMessage);
+	        return ElementUtils.getElementWithWaitByLocator(emailErrorMessage, 0);
+	    }
+
+	    public WebElement getPasswordErrorMessage() throws Exception {
+	    	Waiters.waitForElementToBeDisplayed(passwordErrorMessage);
+	        return ElementUtils.getElementWithWaitByLocator(passwordErrorMessage, 0);
+	    }
+
+	    public String getEmailErrorMessageText() throws Exception {
+	    	Waiters.waitForElementToBeDisplayed(emailErrorMessage);
+	        return ElementUtils.getTextByLocator(emailErrorMessage, 0);
+	    }
+
+	    public String getPasswordErrorMessageText() throws Exception {
+	    	Waiters.waitForElementToBeDisplayed(passwordErrorMessage);
+	        return ElementUtils.getTextByLocator(passwordErrorMessage, 0);
+	    }
+
+	    public void clickOnSignUpButton() throws Exception {
+	        Waiters.waitForElementToBeDisplayed(signUpButton);
+	        Action.clickByLocator(signUpButton, 0);
+	    }
+
+	    public void clickOnCloseButton() throws Exception {
+	    	Waiters.waitForElementToBeDisplayed(closeButton);
+	    	Action.clickByLocator(closeButton, 0);
+	    }
+	    
+	    public String getEmailInputFieldValue() throws Exception {
+	        return ElementUtils.getValueByLocator(userEmailInput, 0);
+	    }
+
+	    public String getPasswordInputFieldValue() throws Exception {
+	        return ElementUtils.getValueByLocator(passwordInput, 0);
+	    }
+
+	    public void clickOnForgotPasswordLink() throws Exception {
+	    	Waiters.waitForElementToBeDisplayed(forgotPasswordLink);
+	    	Action.clickWithJSByLocator(forgotPasswordLink, 0);
+	        Waiters.waitForElementToBeInvisible(forgotPasswordLink);
+	    }
+
+
 }

@@ -41,9 +41,16 @@ public class Waiters extends BasePo {
     public static void waitForElementToBeClickable(By locator ) {
     	wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
+    
+    public static void waitForElementToBeClickable(WebElement element ) {
+    	
+    	wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+    
 
-    public static void waitForTabsCount(int tabsCount ) throws InterruptedException {
-        int counter = 0;
+    public static void waitForTabsCount( ) throws InterruptedException {
+    	int tabsCount =2;
+    	int counter = 0;
         while (driver.getWindowHandles().size() != tabsCount && counter < timeoutInSeconds) {
             waitWithSleepTimeout(100);
             counter++;

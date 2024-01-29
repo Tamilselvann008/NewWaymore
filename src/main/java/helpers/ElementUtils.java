@@ -1,12 +1,12 @@
 package helpers;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+
 import basePackage.BasePo;
 @SuppressWarnings("unchecked")
 public class ElementUtils extends BasePo {
@@ -39,6 +39,8 @@ public class ElementUtils extends BasePo {
 	        }
 	        throw new Exception("Unable to find element after retries");
 	    }
+	 
+	 
 	
 	    public static String getTextByLocator(By locator, int index) throws Exception {
 	        WebElement element = getElementByLocator(locator, index);
@@ -104,7 +106,8 @@ public class ElementUtils extends BasePo {
 	        List<WebElement> elements = driver.findElements(locator);
 	        return elements.stream().map(element -> element.getAttribute(attribute)).collect(Collectors.toList());
 	    }
-
+	    
+	   
 	    public static String getCssValueByElement(By locator, String value, int index) throws Exception {
 	        WebElement element = getElementByLocator(locator, index);
 	        return element.getCssValue(value);

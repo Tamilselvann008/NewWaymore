@@ -13,7 +13,7 @@ import actions.Action;
 
 public class OptInOptOutChannelsDialogPo extends BasePo {
 	 public OptInOptOutChannelsDialogPo(WebDriver driver) {
-			PageFactory.initElements(driver, this);
+		 PageFactory.initElements(driver, this);
 		}
     private By optInOptOutChannelsDialog = By.cssSelector("wm-optin-optout-dialog .contacts-dialog__optin-optout");
     private By optInOptOutChannelsDialogHeader = By.cssSelector("wm-optin-optout-dialog .wm-dialog__header div");
@@ -29,7 +29,7 @@ public class OptInOptOutChannelsDialogPo extends BasePo {
     }
 
     public boolean isOptInOptOutChannelsDialogDisplayed() throws Exception {
-        return Action.isElementDisplayedByLocator(optInOptOutChannelsDialog);
+        return Action.isElementDisplayedByLocator(optInOptOutChannelsDialog, 0);
     }
 
     public String getOptInOptOutChannelsDialogHeaderText() throws Exception {
@@ -42,11 +42,11 @@ public class OptInOptOutChannelsDialogPo extends BasePo {
     }
 
     public void clickOnRadioButtonByChannelAndButtonType(String channel, String radioButton) throws Exception {
-        Action.clickWithJSByLocator(radioButtonByChannelNameAndButtonValue(channel, radioButton));
+        Action.clickWithJSByLocator(radioButtonByChannelNameAndButtonValue(channel, radioButton), 0);
     }
 
     public void clickOnUpdateButton() throws Exception {
-        Action.clickByLocator(updateButton);
+        Action.clickByLocator(updateButton, 0);
         Waiters.waitForElementToBeInvisible(progressButtonSpinner);
     }
 }
