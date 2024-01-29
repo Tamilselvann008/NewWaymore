@@ -3,6 +3,7 @@ package steps.sideMenu;
 import java.util.List;
 
 import basePackage.BasePo;
+import enums.uienums.OptionEnum.MenuItemOptionEnum;
 import helpers.Assertions;
 import helpers.DataProviders;
 import helpers.StepUtils;
@@ -26,7 +27,7 @@ public class SideMenuSteps extends BasePo{
                 boolean isExpanded = sideMenuPo.isSideMenuItemExpanded();
                 if (!isExpanded) {
                     sideMenuPo.clickOnLinkFromSidebarMenuByName("Contact  Insights");
-                    StepUtils.addLog("the user clicks on the" + ContactInsights +" item");
+                    StepUtils.addLog("the user clicks on the" + MenuItemOptionEnum.ContactInsights +" item");
                 }
                 break;
             default:

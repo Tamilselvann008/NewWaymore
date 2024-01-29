@@ -228,6 +228,19 @@ public class Action extends BasePo {
 	        }
 	    }
 
+	 public static void clearTextInLocator(By locator, int index) {
+        Waiters.waitForElementToBeVisible( locator);
+        List<WebElement> elements = driver.findElements(locator);
+        
+        if (index < elements.size()) {
+            WebElement elementToClear = elements.get(index);
+            elementToClear.clear();
+        } else {
+            // Handle the case where the index is out of bounds
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + elements.size());
+        }
+    }
+
 	
 
 }

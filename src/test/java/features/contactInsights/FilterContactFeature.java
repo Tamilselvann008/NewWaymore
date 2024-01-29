@@ -1,21 +1,18 @@
 package features.contactInsights;
 
-import java.util.Collections;
-
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.testcase.WaymorePageLogin;
-
 import basePackage.BasePo;
 import steps.contactInsights.ContactInsightsSteps;
 import steps.contactInsights.FilterContactsDialogSteps;
+import steps.login.LoginSteps;
 import steps.sideMenu.SideMenuSteps;
 
 public class FilterContactFeature extends BasePo {
 
-	private WaymorePageLogin waymorePageLogin = new WaymorePageLogin();
+	private LoginSteps loginSteps = new LoginSteps();
 	//private LoginSteps loginPage= new LoginSteps(); // Assuming a LoginPage class for login functionality
     private SideMenuSteps sidemenuSteps = new SideMenuSteps(); // Assuming a DashboardPage class for navigation
     private ContactInsightsSteps contactInsightsPage = new ContactInsightsSteps(); // Assuming a ContactInsightsPage for Contact Insights specific actions
@@ -37,7 +34,7 @@ public class FilterContactFeature extends BasePo {
    // @Tag("Regression")
     public void testUserCanSeeFilterOptionOnContactInsightsPage() throws Exception {
         // Given the user № 1 is on the Getting started with WayMore page
-    	waymorePageLogin.theUserIsOnTheGettingStartedWithWayMorePage(1); // Assuming a method to log in a user by number
+    	loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1); // Assuming a method to log in a user by number
         // Then the Side Menu is displayed
         sidemenuSteps.thenTheSideMenuIsDisplayed();
         // When the user clicks on the Contact Insights item
@@ -55,7 +52,7 @@ public class FilterContactFeature extends BasePo {
     		+ "  Scenario: The user can see the Contact Filter dialog by clicking the Filter button" )
     public void TheUserCanSeeTheContactFilterDialogByClickingTheFilterButton() throws Exception {
 //      Given the user № 1 is on the Getting started with WayMore page
-    	waymorePageLogin.theUserIsOnTheGettingStartedWithWayMorePage(1);
+    	loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1);
 //      Then the Side Menu is displayed
     	 sidemenuSteps.thenTheSideMenuIsDisplayed();
 //      When the user clicks on the Contact Insights item
@@ -74,7 +71,7 @@ public class FilterContactFeature extends BasePo {
     public void theUserCanCloseFilterContactsDialogueByClickingOutsideTheDialog() throws Exception
     {
 //    Given the user № 1 is on the Getting started with WayMore page
-    	waymorePageLogin.theUserIsOnTheGettingStartedWithWayMorePage(1);
+    	loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1);
 //      Then the Side Menu is displayed
     	 sidemenuSteps.thenTheSideMenuIsDisplayed();
 //      When the user clicks on the Contact Insights item
@@ -97,7 +94,7 @@ public class FilterContactFeature extends BasePo {
     		+ "  Scenario: The user can close Filter Contacts dialogue by clicking the Close button")
     public void theUserCanCloseFilterContactsDialogueByClickingTheCloseButton() throws Exception {
 //      Given the user № 1 is on the Getting started with WayMore page
-      	waymorePageLogin.theUserIsOnTheGettingStartedWithWayMorePage(1);
+    	loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1);
 //        Then the Side Menu is displayed
       	 sidemenuSteps.thenTheSideMenuIsDisplayed();
 //        When the user clicks on the Contact Insights item
@@ -125,7 +122,7 @@ public class FilterContactFeature extends BasePo {
 //        And [API] the user № 1 adds a new contact № 1 to the list of contacts
 //        And [API] the user № 1 adds a new contact № 2 to the list of contacts
 //      Given the user № 1 is on the Getting started with WayMore page
-      	waymorePageLogin.theUserIsOnTheGettingStartedWithWayMorePage(1);
+    	loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1);
 //        Then the Side Menu is displayed
       	 sidemenuSteps.thenTheSideMenuIsDisplayed();
 //        When the user clicks on the Contact Insights item
@@ -164,7 +161,7 @@ public class FilterContactFeature extends BasePo {
 //    	 Given [API] the user № 1 sets authentication token
 //    	    And [API] the user № 1 adds a new contact № 1 to the list of contacts
 //      Given the user № 1 is on the Getting started with WayMore page
-      	waymorePageLogin.theUserIsOnTheGettingStartedWithWayMorePage(1);
+    	loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1);
 //        Then the Side Menu is displayed
       	 sidemenuSteps.thenTheSideMenuIsDisplayed();
 //        When the user clicks on the Contact Insights item
@@ -213,7 +210,7 @@ public class FilterContactFeature extends BasePo {
 //    	    And [API] the user № 1 adds a new group № 1 to the list of groups
 //    	    And [API] the user № 1 adds a new segment № 1 to the list of segments
 //      Given the user № 1 is on the Getting started with WayMore page
-      	waymorePageLogin.theUserIsOnTheGettingStartedWithWayMorePage(1);
+    	loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1);
 //        Then the Side Menu is displayed
       	 sidemenuSteps.thenTheSideMenuIsDisplayed();
 //        When the user clicks on the Contact Insights item
@@ -301,6 +298,78 @@ public class FilterContactFeature extends BasePo {
 
     }
     
+    @Test(description = "@ALW-36728 @TR-36728 @Regression\r\n"
+    		+ "    Scenario: The user can see a placeholder for each filter dropdown in the Filter Contacts dialog")
+    public void theUserCanSeeAPlaceholderForEachFilterDropdownInTheFilterContactsDialog() throws Exception {
     
+//      Given the user № 1 is on the Getting started with WayMore page
+    	loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1);
+//        Then the Side Menu is displayed
+      	 sidemenuSteps.thenTheSideMenuIsDisplayed();
+//        When the user clicks on the Contact Insights item
+           sidemenuSteps.whenTheUserClicksOnMyCampaignsLeadGenerationSettingsCommunicationAutomationsUserPluginsEventsMyTemplatesContactInsightsChatBotValidationServicesAnalyticsSupportItem("ContactInsights");
+//        And the user clicks on the Contact Insights submenu option in the Contact Insights side menu option
+           sidemenuSteps.whenTheUserClicksOnTheContactInsightsSegmentsSubmenuOptionInTheContactInsightsSideMenuOption("Contact Insights", "Contact Insights");;
+//        Then the CONTACTS title is displayed
+           contactInsightsPage.thenTheContactsTitleIsDisplayed("CONTACTS");
+//        When the user clicks on the Filter button on the Contact Insights page
+           contactInsightsPage.whenTheUserClicksOnTheFilterButtonOnTheContactInsightsPage();
+//        Then the Filter Contacts dialog is displayed
+           filterContactsDialogSteps.thenTheFilterContactsDialogIsDisplayed();
+//      And the placeholder for each filter dropdown is displayed in the Filter dialog
+           filterContactsDialogSteps.thenThePlaceholderForEachFilterDropdownIsDisplayedInTheFilterDialog();
+    }
+    @Test(description ="@ALW-36843 @TR-36843 @Regression\r\n"
+    		+ "    Scenario: The user can see the filter columns after clicking the Filter button on the Contact Insights page")
+    public void theUserCanSeeTheFilterColumnsAfterClickingTheFilterButtonOnTheContactInsightsPage() throws Exception {
+    	
+//      Given the user № 1 is on the Getting started with WayMore page
+    	loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1);
+//      Then the Side Menu is displayed
+    	 sidemenuSteps.thenTheSideMenuIsDisplayed();
+//      When the user clicks on the Contact Insights item
+         sidemenuSteps.whenTheUserClicksOnMyCampaignsLeadGenerationSettingsCommunicationAutomationsUserPluginsEventsMyTemplatesContactInsightsChatBotValidationServicesAnalyticsSupportItem("ContactInsights");
+//      And the user clicks on the Contact Insights submenu option in the Contact Insights side menu option
+         sidemenuSteps.whenTheUserClicksOnTheContactInsightsSegmentsSubmenuOptionInTheContactInsightsSideMenuOption("Contact Insights", "Contact Insights");;
+//      Then the CONTACTS title is displayed
+         contactInsightsPage.thenTheContactsTitleIsDisplayed("CONTACTS");
+//      When the user clicks on the Filter button on the Contact Insights page
+         contactInsightsPage.whenTheUserClicksOnTheFilterButtonOnTheContactInsightsPage();
+//      Then the Filter Contacts dialog is displayed
+         filterContactsDialogSteps.thenTheFilterContactsDialogIsDisplayed();
+//      And the filter columns dropdown are displayed in the Filter dialog
+         filterContactsDialogSteps.thenTheFilterColumnsDropdownAreDisplayedInTheFilterDialog();
+         
+    	
+    }
+    
+    @Test(description =" @ALW-36850 @TR-36850 @Regression\r\n"
+    		+ "    Scenario: The user can see unselected default options in all dropdowns in the Filter Contacts dialog")
+    public void theUserCanSeeUnselectedDefaultOptionsInAllDropdownsInTheFilterContactsDialog() throws Exception {
+    	
+//      Given the user № 1 is on the Getting started with WayMore page
+    	loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1);
+//      Then the Side Menu is displayed
+    	 sidemenuSteps.thenTheSideMenuIsDisplayed();
+//      When the user clicks on the Contact Insights item
+         sidemenuSteps.whenTheUserClicksOnMyCampaignsLeadGenerationSettingsCommunicationAutomationsUserPluginsEventsMyTemplatesContactInsightsChatBotValidationServicesAnalyticsSupportItem("ContactInsights");
+//      And the user clicks on the Contact Insights submenu option in the Contact Insights side menu option
+         sidemenuSteps.whenTheUserClicksOnTheContactInsightsSegmentsSubmenuOptionInTheContactInsightsSideMenuOption("Contact Insights", "Contact Insights");;
+//      Then the CONTACTS title is displayed
+         contactInsightsPage.thenTheContactsTitleIsDisplayed("CONTACTS");
+//      When the user clicks on the Filter button on the Contact Insights page
+         contactInsightsPage.whenTheUserClicksOnTheFilterButtonOnTheContactInsightsPage();
+//      Then the Filter Contacts dialog is displayed
+         filterContactsDialogSteps.thenTheFilterContactsDialogIsDisplayed();
+//      And all dropdown lists do not display selected options in the Filter dialog
+         filterContactsDialogSteps.thenAllDropdownListsDoNotDisplaySelectedOptionsInTheFilterDialog();
+//      And the Search button is disabled in the Filter dialog
+         filterContactsDialogSteps.thenTheSearchButtonIsDisabledEnabledInTheFilterDialog("disabled");
+    
+    }
+    
+    
+   
+
     
 }

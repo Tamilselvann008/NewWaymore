@@ -5,6 +5,9 @@ import java.util.List;
 import actions.Action;
 import basePackage.BasePo;
 import basePackage.CommonButtonsPo;
+import enums.uienums.ActionEnum;
+import enums.uienums.ActionEnum.ActionModeTypeEnum;
+import enums.uienums.PopupEnum.FormsPopupStatusEnum;
 import helpers.Assertions;
 import helpers.DataProviders;
 import helpers.DateUtils;
@@ -20,7 +23,7 @@ public class FormsSteps extends BasePo {
 	private FormsPo formsPo = new FormsPo(driver);
     private CommonButtonsPo commonButtonsPo = new CommonButtonsPo(driver);
 
-    public void whenTheUserClicksOnTheAddNewItemIcon() {
+    public void whenTheUserClicksOnTheAddNewItemIcon() throws Exception {
         formsPo.clickOnAddNewItemIcon();
     }
 
@@ -99,7 +102,7 @@ public class FormsSteps extends BasePo {
         }
     }
     
-    public void thenTheUserCanSeeANotificationAboutTheCreatedForm() {
+    public void thenTheUserCanSeeANotificationAboutTheCreatedForm() throws Exception {
         Assertions.expectToEqual(commonButtonsPo.getLeftPopupNotificationText(), FormsPopupStatusEnum.FormSaved, "The notification about the created form is incorrect");
     }
 
@@ -140,6 +143,7 @@ public class FormsSteps extends BasePo {
 
     public void thenTheUserIsOnTheFormPage(String title) {
         String currentTitle = driver.getTitle();
+        
         String currentUrl = driver.getCurrentUrl ();
         Assertions.expectToEqual(currentTitle, title, "The user is not on the '" + title + "' Form page");
         Assertions.expectToInclude(currentUrl, "dev-wayforms.int.amdtelecom.net/", "The URL of the '" + title + "' Form page is incorrect");
@@ -147,10 +151,10 @@ public class FormsSteps extends BasePo {
 
     public void thenTheViewPublishOptionInTheFormMenuDropdownIsDisabledEnabled(String optionName, String mode) throws Exception {
         switch (mode) {
-            case Disabled:
+            case ActionModeTypeEnum.Disabled.toString():
                 Assertions.expectToBeDisabled(formsPo.getFromDropdownOptionByOptionName(optionName), "The '" + optionName + "' option is enabled");
                 break;
-            case Enabled:
+            case ActionModeTypeEnum.Enabled.toString():
                 Assertions.expectToBeEnabled(formsPo.getFromDropdownOptionByOptionName(optionName), "The '" + optionName + "' option is disabled");
                 break;
         }

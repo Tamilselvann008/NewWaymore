@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 import basePackage.BasePo;
+import enums.uienums.OptionEnum.MenuItemOptionEnum;
 import helpers.Assertions;
 import helpers.DataProviders;
 import helpers.StepUtils;
@@ -26,7 +27,8 @@ public class ContactInsightsSteps extends BasePo {
     
     public void thenTheContactsTitleIsDisplayed(String title) throws Exception {
         Assertions.expectToEqual(contactInsightsPo.getContactsTitleText(), title, "The '" + title + "' title is not correct");
-        StepUtils.addLog("the "+title+" title is displayed");
+        String value = MenuItemOptionEnum.ContactInsights.getValue();
+        StepUtils.addLog("the "+value+" title is displayed");
     }
     
     public void thenTheFilterButtonIsDisplayedOnTheContactTableToolbar() throws Exception {

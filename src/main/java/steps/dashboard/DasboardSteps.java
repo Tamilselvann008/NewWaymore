@@ -3,6 +3,7 @@ package steps.dashboard;
 import java.util.List;
 
 import basePackage.BasePo;
+import enums.uienums.NotificationEnums.DashboardMessageEnum;
 import helpers.Assertions;
 import helpers.DataProviders;
 import pages.dashboard.DashboardPo;
@@ -33,7 +34,7 @@ public class DasboardSteps extends BasePo {
 	    }
 
 	    public void thenTheMessageThatTheAccountHasNotBeenVerifiedIsDisplayed() throws Exception {
-	        Assertions.expectToEqual(dashboardPo.getUnverifiedUserMessageText(), AccountIsNotVerified,
+	        Assertions.expectToEqual(dashboardPo.getUnverifiedUserMessageText(),  DashboardMessageEnum.AccountIsNotVerified,
 	            "The message that the account has not been verified is not displayed");
 	    }
 

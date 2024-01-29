@@ -17,7 +17,7 @@ public class FormsPo extends BasePo {
 	public FormsPo(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
-
+	CreateNewFormDialogPo createNewFormDialogPo = new CreateNewFormDialogPo(driver);
 	private By formTopBar = By.id("forms-top-bar");
 	private By formTabLink = By.cssSelector(".forms__tabs .forms__tab-link.is-active");
 	private By addNewItemIcon = By.cssSelector(".forms__item--new a.forms__item--new-link md-icon");
@@ -159,4 +159,11 @@ public class FormsPo extends BasePo {
 		String popupText = ElementUtils.getTextByLocator(rightPopupNotification, 0);
 		return StringUtils.getStringBySplit(popupText, "\n", 1);
 	}
+
+	public void clickOnAddNewItemIcon() throws Exception {
+        Waiters.waitForElementToBeDisplayed(addNewItemIcon);
+        Action.clickByLocator(addNewItemIcon, 0);
+        createNewFormDialogPo.waitForCreateFormDialogIsDisplayed();
+    }
+
 }

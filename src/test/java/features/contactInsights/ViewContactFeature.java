@@ -1,19 +1,17 @@
 package features.contactInsights;
 
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import com.testcase.WaymorePageLogin;
 
 import basePackage.BasePo;
 import steps.common.CommonButtonsSteps;
 import steps.contactInsights.ContactInsightsSteps;
+import steps.login.LoginSteps;
 import steps.sideMenu.SideMenuSteps;
 
 public class ViewContactFeature extends BasePo {
 
-	private WaymorePageLogin waymorePageLogin = new WaymorePageLogin();
+	private LoginSteps loginSteps = new LoginSteps();
 	private SideMenuSteps sidemenuSteps = new SideMenuSteps(); // Assuming a DashboardPage class for navigation
 	private ContactInsightsSteps contactInsightsPage = new ContactInsightsSteps();
 	private CommonButtonsSteps CommonButtonsSteps = new CommonButtonsSteps();
@@ -33,7 +31,7 @@ public class ViewContactFeature extends BasePo {
 	public void theUserCanSelectAllContactsOnThePageByClickingOnTheCheckboxInTheHeader() throws Exception {
 
 //	When the user № 1 is on the Getting started with WayMore page
-		waymorePageLogin.theUserIsOnTheGettingStartedWithWayMorePage(1);
+		loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1);
 //    Then the Side Menu is displayed
 		sidemenuSteps.thenTheSideMenuIsDisplayed();
 //    When the user clicks on the Contact Insights item
@@ -72,7 +70,7 @@ public class ViewContactFeature extends BasePo {
 			+ "  @BugALW-11389 @BugALW-10050")
 	public void TheUserCanSelectASpecificContactInTheContactInsightsPage() throws Exception {
 //	When the user № 1 is on the Getting started with WayMore page
-		waymorePageLogin.theUserIsOnTheGettingStartedWithWayMorePage(1);
+		loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1);
 //    Then the Side Menu is displayed
 		sidemenuSteps.thenTheSideMenuIsDisplayed();
 //    When the user clicks on the Contact Insights item
@@ -111,7 +109,7 @@ public class ViewContactFeature extends BasePo {
 		
 		
 //		When the user № 1 is on the Getting started with WayMore page
-			waymorePageLogin.theUserIsOnTheGettingStartedWithWayMorePage(1);
+		loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1);
 //	    Then the Side Menu is displayed
 			sidemenuSteps.thenTheSideMenuIsDisplayed();
 //	    When the user clicks on the Contact Insights item
@@ -159,7 +157,7 @@ public class ViewContactFeature extends BasePo {
 		
 		
 //		Given the user № 2 is on the Getting started with WayMore page
-		waymorePageLogin.theUserIsOnTheGettingStartedWithWayMorePage(2);
+		loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(2);
 //	     Then the Side Menu is displayed
 			sidemenuSteps.thenTheSideMenuIsDisplayed();
 //	    When the user clicks on the Contact Insights item
@@ -215,7 +213,7 @@ public class ViewContactFeature extends BasePo {
 		
 		
 //		 Given the user № 2 is on the Getting started with WayMore page
-		waymorePageLogin.theUserIsOnTheGettingStartedWithWayMorePage(2);
+		loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(2);
 //	     Then the Side Menu is displayed
 			sidemenuSteps.thenTheSideMenuIsDisplayed();
 //	    When the user clicks on the Contact Insights item

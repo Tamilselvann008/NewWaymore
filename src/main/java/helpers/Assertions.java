@@ -68,8 +68,8 @@ public class Assertions {
         }
     }
 
-    public static void expectToHaveMembers( List<String> result, String expectedResult, String errorMessage) {
-        Assert.assertEquals(result.toArray(), expectedResult, errorMessage);
+    public static void expectToHaveMembers( List<String> result, List<String> expectedResult, String errorMessage) {
+        Assert.assertEquals(result, expectedResult, errorMessage);
     }
 
     public static void expectToNotHaveMembers(Collection<?> result, Collection<?> expectedResult, String errorMessage) {

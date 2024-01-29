@@ -1,0 +1,24 @@
+{
+  "filterDropdownPlaceholder": [
+    "Select First Name",
+    "Select Group",
+    "Select Last Name",
+    "Select Segment",
+    "Select Country",
+    "Select Channel",
+    "Select Mobile Number",
+    "Select Preferences",
+    "Select Email"
+  ],
+  "filterDropdownLabel": [
+    "First Name",
+    "Group",
+    "Last Name",
+    "Segment",
+    "Country",
+    "Channel",
+    "Mobile",
+    "Preferences",
+    "Email"
+  ]
+}

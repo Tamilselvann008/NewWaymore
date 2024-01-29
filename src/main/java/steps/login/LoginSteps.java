@@ -1,7 +1,4 @@
-package com.testcase;
-
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+package steps.login;
 
 import basePackage.BasePo;
 import helpers.DataProviders;
@@ -10,16 +7,12 @@ import pages.dashboard.OnboardingDialogPo;
 import pages.login.LoginPo;
 
 
-public class WaymorePageLogin extends BasePo {
+public class LoginSteps extends BasePo {
+	LoginPo loginPo = new LoginPo(driver);
+	OnboardingDialogPo onboardingDialogPo = new OnboardingDialogPo(driver);
 
-	@BeforeTest
-	public void launchWebsite() {
-		browserLaunch();
-	}
-	@Test()
 	public void theUserIsOnTheGettingStartedWithWayMorePage(int index) throws Exception {
-		LoginPo loginPo = new LoginPo(driver);
-		OnboardingDialogPo onboardingDialogPo = new OnboardingDialogPo(driver);
+		
 		loginPo.openLandingPage();
 		StepUtils.addLog("The user opens the Landing Page...");
 

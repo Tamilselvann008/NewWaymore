@@ -1,7 +1,10 @@
 package steps.contactInsights;
 
+import java.util.List;
+
 import basePackage.BasePo;
 import helpers.Assertions;
+import helpers.DataProviders;
 import helpers.StepUtils;
 import pages.contactInsights.FilterContactsDialogPo;
 
@@ -35,6 +38,7 @@ public class FilterContactsDialogSteps extends BasePo{
     public void thenTheFilterContactsDialogIsDisplayed() throws Exception {
         Assertions.expectToBeTrue(filterContactsDialogPo.isFilterContactsDialogDisplayed(), "The Filter Contacts dialog is not displayed");
         Assertions.expectToEqual(filterContactsDialogPo.getFilterContactsDialogTitleText(), "Filter Contacts", "The Filter Contacts dialog title is incorrect");
+        StepUtils.addLog("the Filter Contacts dialog is displayed");
     }
     
     public void thenTheFilterContactsDialogIsNotDisplayed() throws Exception {
@@ -87,6 +91,23 @@ public class FilterContactsDialogSteps extends BasePo{
         }
     }
 
-    // ... Remaining methods ...
+    public void thenThePlaceholderForEachFilterDropdownIsDisplayedInTheFilterDialog() throws Exception {
+        List<String> placeholderOptionList = DataProviders.getFilterContactsDropdownTestData("filterDropdownPlaceholder");
+        List<String> dropdownPlaceholderTextList = filterContactsDialogPo.getDropdownPlaceholderTextList();
 
+        Assertions.expectToHaveMembers(dropdownPlaceholderTextList, placeholderOptionList,
+            "The placeholder is incorrect for each filter dropdown");
+    }
+    public void thenTheFilterColumnsDropdownAreDisplayedInTheFilterDialog() throws Exception {
+        List<String> labelOptionList = DataProviders.getFilterContactsDropdownTestData("filterDropdownLabel");
+        List<String> dropdownLabelTextList = filterContactsDialogPo.getDropdownLabelTextList();
+        Assertions.expectToHaveMembers(dropdownLabelTextList, labelOptionList,
+            "The filter columns dropdown are not displayed in the Filter dialog");
+    }
+    public void thenAllDropdownListsDoNotDisplaySelectedOptionsInTheFilterDialog() throws Exception {
+        Assertions.expectToBeFalse(filterContactsDialogPo.isDropdownSelectedValueLabelDisplayed(),
+            "Not all dropdown lists do not display selected options in the Filter dialog");
+    }
+    
+   
 }
