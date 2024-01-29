@@ -1,7 +1,10 @@
 package steps.contactInsights;
 
+import java.util.List;
+
 import basePackage.BasePo;
 import helpers.Assertions;
+import helpers.DataProviders;
 import helpers.StepUtils;
 import pages.contactInsights.FilterContactsDialogPo;
 
@@ -87,6 +90,21 @@ public class FilterContactsDialogSteps extends BasePo{
         }
     }
 
+    public void thenThePlaceholderForEachFilterDropdownIsDisplayedInTheFilterDialog() throws Exception {
+        List<String> placeholderOptionList = DataProviders.getFilterContactsDropdownTestData("filterDropdownPlaceholder");
+        List<String> dropdownPlaceholderTextList = filterContactsDialogPo.getDropdownPlaceholderTextList();
+
+        Assertions.expectToHaveMembers(dropdownPlaceholderTextList, placeholderOptionList,
+            "The placeholder is incorrect for each filter dropdown");
+    }
+
+    public void thenTheFilterColumnsDropdownAreDisplayedInTheFilterDialog() throws Exception {
+        List<String> labelOptionList = DataProviders.getFilterContactsDropdownTestData("filterDropdownLabel");
+        List<String> dropdownLabelTextList = filterContactsDialogPo.getDropdownLabelTextList();
+
+        Assertions.expectToHaveMembers(dropdownLabelTextList, labelOptionList,
+            "The filter columns dropdown are not displayed in the Filter dialog");
+    }
     // ... Remaining methods ...
 
 }

@@ -3,8 +3,11 @@ package helpers;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -44,7 +47,6 @@ public class DataProviders {
 			ObjectMapper objectMapper = new ObjectMapper();
 			File file = new File("testData/uiTestData/" + fileName + ".json");
 			Map<String, Object>[] testDataArray = objectMapper.readValue(file, Map[].class);
-//			JsonArray abc  = new JsonArray();
 			
 
 			for (Map<String, Object> data : testDataArray) {
@@ -57,6 +59,24 @@ public class DataProviders {
 		}
 
 		return null;
+	}
+	
+	public static List<String> provideTestDataArray(String fileName, String fieldName) {
+		JSONParser parser = new JSONParser();
+//		String[] output = null;
+		List<String> outputTemp = new ArrayList<>();
+		try (FileReader reader = new FileReader("testData/uiTestData/" + fileName + ".json")) {
+			Object obj = parser.parse(reader);
+			JSONObject data = (JSONObject) obj;
+			JSONArray temp = (JSONArray) data.get(fieldName);
+			temp.forEach(f -> outputTemp.add((String) f));
+//			output = (String[]) temp.stream().toArray(String[]::new);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return outputTemp;
 	}
 
 	private static String getIdentifierByChannelId(Map<String, Object> data, int channelId, String destinationData) {
@@ -74,7 +94,9 @@ public class DataProviders {
 	}
 
 	public static String getUrlTestData(String URLName) {
-		return provideTestData(UrlTestData,URLName);
+		String provideTestData = provideTestData(UrlTestData,URLName);
+		System.out.println(provideTestData);
+		return provideTestData;
 	}
 
 	public static String getUserTestData(String contactData, int index) {
@@ -121,8 +143,20 @@ public class DataProviders {
 //		return null;
 //	        
 //	    }
-//public static void main(String[] args) throws Exception, Throwable {
-//	getSideMenuOptionsIndexData();
-//}
+	
+	
+	public static List<String> getFilterContactsDropdownTestData(String testData) {
+		List<String> provideTestData = provideTestDataArray("filterContactsTestData",testData);
+//		StepUtils.addLog(provideTestData);
+//		for(String s : provideTestData) {
+//			System.out.println(s);
+//		}
+		
+		return provideTestData;
+		
+	}
+public static void main(String[] args) throws Exception, Throwable {
+	getFilterContactsDropdownTestData("filterDropdownPlaceholder");
+}
 
 }

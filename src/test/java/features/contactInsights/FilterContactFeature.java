@@ -301,6 +301,29 @@ public class FilterContactFeature extends BasePo {
 
     }
     
+    @Test(description = "@ALW-36728 @TR-36728 @Regression\r\n"
+    		+ "    Scenario: The user can see a placeholder for each filter dropdown in the Filter Contacts dialog")
+    public void theUserCanSeeAPlaceholderForEachFilterDropdownInTheFilterContactsDialog() throws Exception {
+    
+//      Given the user № 1 is on the Getting started with WayMore page
+      	waymorePageLogin.theUserIsOnTheGettingStartedWithWayMorePage(1);
+//        Then the Side Menu is displayed
+      	 sidemenuSteps.thenTheSideMenuIsDisplayed();
+//        When the user clicks on the Contact Insights item
+           sidemenuSteps.whenTheUserClicksOnMyCampaignsLeadGenerationSettingsCommunicationAutomationsUserPluginsEventsMyTemplatesContactInsightsChatBotValidationServicesAnalyticsSupportItem("ContactInsights");
+//        And the user clicks on the Contact Insights submenu option in the Contact Insights side menu option
+           sidemenuSteps.whenTheUserClicksOnTheContactInsightsSegmentsSubmenuOptionInTheContactInsightsSideMenuOption("Contact Insights", "Contact Insights");;
+//        Then the CONTACTS title is displayed
+           contactInsightsPage.thenTheContactsTitleIsDisplayed("CONTACTS");
+//        When the user clicks on the Filter button on the Contact Insights page
+           contactInsightsPage.whenTheUserClicksOnTheFilterButtonOnTheContactInsightsPage();
+//        Then the Filter Contacts dialog is displayed
+           filterContactsDialogSteps.thenTheFilterContactsDialogIsDisplayed();
+//      And the placeholder for each filter dropdown is displayed in the Filter dialog
+           filterContactsDialogSteps.thenThePlaceholderForEachFilterDropdownIsDisplayedInTheFilterDialog();
+    }
+
+    
     
     
 }

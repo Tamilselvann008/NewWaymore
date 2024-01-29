@@ -1,5 +1,6 @@
 package helpers;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -64,7 +65,14 @@ public class ElementUtils extends BasePo {
 	    public static List<String> getTextListByLocator(By locator) throws Exception {
 	        Waiters.waitForElementToBeVisible(locator);
 	        List<WebElement> elements = driver.findElements(locator);
-	        return elements.stream().map(WebElement::getText).collect(Collectors.toList());
+	        List<String> output = new ArrayList<>();
+	        for(WebElement e : elements) {
+	        	System.out.println(e.getText());
+	        	output.add(e.getText());
+	        }
+//	        return elements.stream().map(WebElement::getText).collect(Collectors.toList());
+	        System.out.println(output);
+	        return output;
 	    }
 	    
 	    public static String getTextWithJSByLocator(By locator, int index) throws Exception {

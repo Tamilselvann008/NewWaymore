@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="features.contactInsights.ViewContactFeature">
+      <class name="features.contactInsights.FilterContactFeature">
         <methods>
-          <include name="theUserCanSelectAllContactsOnThePageByClickingOnTheCheckboxInTheHeader"/>
           <include name="launchWebsite"/>
+          <include name="theUserCanSeeAPlaceholderForEachFilterDropdownInTheFilterContactsDialog"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- features.contactInsights.ViewContactFeature -->
+      </class> <!-- features.contactInsights.FilterContactFeature -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
