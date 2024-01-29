@@ -44,7 +44,7 @@ public class RemoveFromGroupDialogPo extends BasePo {
 
     public void clickOnRemoveFromGroupButton() throws Exception {
         Waiters.waitForElementToBeClickable(removeFromGroupButton);
-        Action.clickByLocator(removeFromGroupButton);
+        Action.clickByLocator(removeFromGroupButton, 0);
         Waiters.waitForElementToBeNotVisible(removeFromGroupButtonLoading);
     }
 
@@ -59,8 +59,8 @@ public class RemoveFromGroupDialogPo extends BasePo {
 
     public void selectOptionFromDropdownByOptionName(String optionName) throws Exception {
         Waiters.waitForElementToBeDisplayed(removeFromGroupDropdown);
-        Action.clickByLocator(removeFromGroupDropdown);
-        Thread.sleep(1000); // This is generally discouraged; use explicit waits instead.
+        Action.clickByLocator(removeFromGroupDropdown, 0);
+        Waiters.waitWithSleepTimeout(1000);// This is generally discouraged; use explicit waits instead.
         Waiters.waitForElementToBeClickable(removeFromGroupDropdownOption);
         List<WebElement> options = driver.findElements(removeFromGroupDropdownOption);
         
@@ -75,12 +75,12 @@ public class RemoveFromGroupDialogPo extends BasePo {
     }
     public void clickOnCloseButton() throws Exception {
         Waiters.waitForElementToBeDisplayed(closeButton);
-        Action.clickByLocator(closeButton);
+        Action.clickByLocator(closeButton, 0);
         Waiters.waitForElementToBeNotVisible(closeButton);
     }
 
     public void clickOnCancelButton() throws Exception {
         Waiters.waitForElementToBeDisplayed(cancelButton);
-        Action.clickByLocator(cancelButton);
+        Action.clickByLocator(cancelButton, 0);
     }
 }

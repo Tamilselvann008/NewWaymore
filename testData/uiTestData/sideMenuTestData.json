@@ -1,0 +1,122 @@
+{
+  "sideMenuOption": [
+    "Dashboard",
+    "My Campaigns",
+    "My Templates",
+    "Communication",
+    "Automations",
+    "Validation services",
+    "Lead generation",
+    "Analytics",
+    "ChatBot",
+    "Pop Up",
+    "Business Solutions",
+    "Settings",
+    "Support",
+    "Contact Insights",
+    "Events",
+    "Jobs"
+  ],
+  "Contact Insights": {
+    "data": [
+      "Contact Insights",
+      "Segments"
+    ]
+  },
+  "My Templates": {
+    "data": [
+      "SMS",
+      "Email",
+      "Viber"
+    ]
+  },
+  "Communication": {
+    "data": [
+      "SMS",
+      "Email",
+      "Viber",
+      "WhatsApp",
+      "Voice",
+      "Push Notification",
+      "Telegram",
+      "Facebook Messenger"
+    ]
+  },
+  "Automations": {
+    "data": [
+      "My Integrations"
+    ]
+  },
+  "Validation services": {
+    "data": [
+      "Number validation",
+      "Number lookup",
+      "Email validation"
+    ]
+  },
+  "Lead generation": {
+    "data": [
+      "Forms",
+      "Landing Page Builder",
+      "Popup"
+    ]
+  },
+  "Analytics": {
+    "data": [
+      "Executive Summary"
+    ]
+  },
+  "ChatBot": {
+    "data": [
+      "Unified Chat Board",
+      "Predefined Chatbot",
+      "AI Chatbot"
+    ]
+  },
+  "Support": {
+    "data": [
+      "Contact Us",
+      "Integrations",
+      "Build your custom plugin",
+      "Feedback"
+    ]
+  },
+  "Jobs": {
+    "data": [
+      "Dashboard",
+      "Jobs Management"
+    ]
+  },
+  "SMS": {
+    "data": [
+      "Send a campaign",
+      "Templates",
+      "Analytics",
+      "Logs"
+    ]
+  },
+  "Email": {
+    "data": [
+      "Campaign",
+      "Domains",
+      "Transactional Email"
+    ]
+  },
+  "Viber": {
+    "data": [
+      "Register"
+    ]
+  },
+  "WhatsApp": {
+    "data": [
+      "Register"
+    ]
+  },
+  "Voice": {
+    "data": [
+      "Send Campaign",
+      "Analytics",
+      "Logs"
+    ]
+  }
+}

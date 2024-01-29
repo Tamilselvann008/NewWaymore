@@ -37,7 +37,7 @@ public class AddToGroupDialogPo extends BasePo {
 	}
 
 	public boolean isAddToGroupDialogElementDisplayed() {
-		return Action.isElementDisplayedByLocator(addToGroupDialog);
+		return Action.isElementDisplayedByLocator(addToGroupDialog, 0);
 	}
 
 	public void typeSearchCriteriaInAddToGroupDropdown(String searchValue) throws Exception {
@@ -61,7 +61,7 @@ public class AddToGroupDialogPo extends BasePo {
 	}
 
 	public void selectOptionFromDropdownByOptionName(String optionName) throws Exception {
-		Action.clickByLocator(addToGroupDropdown);
+		Action.clickByLocator(addToGroupDropdown, 0);
 		Waiters.waitForElementToBeInvisible(dropdownOptionSpinner);
 		List<WebElement> options = ElementUtils.getElementListWithWaitByLocator(addToGroupDropdownOption);
 
@@ -102,17 +102,17 @@ public class AddToGroupDialogPo extends BasePo {
 
 	public void clickOnAddToGroupButton() throws Exception {
 		Waiters.waitForElementToBeEnabled(addToGroupButton);
-		Action.clickWithJSByLocator(addToGroupButton);
+		Action.clickWithJSByLocator(addToGroupButton, 0);
 		Waiters.waitForElementToBeInvisible(addToGroupButtonLoading);
 	}
 
 	public void clickOnCloseButton() throws Exception {
 		Waiters.waitForElementToBeDisplayed(closeButton);
-		Action.clickByLocator(closeButton);
+		Action.clickByLocator(closeButton, 0);
 	}
 
 	public void clickOnCancelButton() throws Exception {
 		Waiters.waitForElementToBeDisplayed(cancelButton);
-		Action.clickByLocator(cancelButton);
+		Action.clickByLocator(cancelButton, 0);
 	}
 }

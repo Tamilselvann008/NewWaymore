@@ -10,24 +10,24 @@ import helpers.StepUtils;
 import pages.dashboard.OnboardingDialogPo;
 import pages.login.LoginPo;
 
-@Test(description = "Getting Started with Waymore Pages")
+
 public class WaymorePageLogin extends BasePo {
 
 	@BeforeTest
 	public void launchWebsite() {
 		browserLaunch();
 	}
-
-	public void Login() throws Exception {
+	@Test()
+	public void theUserIsOnTheGettingStartedWithWayMorePage(int index) throws Exception {
 		LoginPo loginPo = new LoginPo(driver);
 		OnboardingDialogPo onboardingDialogPo = new OnboardingDialogPo(driver);
-		loginPo.openLandingPage(DataProviders.getUrlTestData());
+		loginPo.openLandingPage();
 		StepUtils.addLog("The user opens the Landing Page...");
 		
-		loginPo.typeValueInUserEmailInputField(DataProviders.getUserTestData("username"));
+		loginPo.typeValueInUserEmailInputField(DataProviders.getUserTestData("username", index));
 		StepUtils.addLog("The user types the user email...");
 
-		loginPo.typeValueInPasswordInputField(DataProviders.getUserTestData("password"));
+		loginPo.typeValueInPasswordInputField(DataProviders.getUserTestData("password", index));
 		StepUtils.addLog("The user types the user password...");
 
 		loginPo.clickOnLoginButton();

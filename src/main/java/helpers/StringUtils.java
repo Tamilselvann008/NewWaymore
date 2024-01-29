@@ -1,10 +1,13 @@
 package helpers;
 
 import java.util.Base64;
+import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
+
+import org.apache.commons.lang3.RandomStringUtils;
 
 public class StringUtils {
 
@@ -42,7 +45,7 @@ public class StringUtils {
 
 
     public static String getRandomString(int length, String type) {
-        return org.apache.commons.lang3.RandomStringUtils.random(length, type.equals("alphabetic"),true);
+        return RandomStringUtils.random(length, type.equals("alphabetic"),true);
     }
 
     public static String getStringByToFixed(double value, int fractionDigits) {
@@ -86,6 +89,9 @@ public class StringUtils {
             return 0.0f; // or handle the error as needed
         }
     }
+    public static int getRoundedNumber(double value) {
+        return (int) Math.round(value);
+    }
 
     public static String getRandomStringWithLineBreak(int length, String type, int matchNumber, String lineBreak) {
         String characters = org.apache.commons.lang3.RandomStringUtils.random(length, type.equals("alphabetic"), true);
@@ -96,6 +102,10 @@ public class StringUtils {
 
     public static int getUTF16CodeOfCharacter(String character, int index) {
         return character.codePointAt(index);
+    }
+
+    public static String getStringByJoin( List<String> array) {
+        return String.join(" ",array);
     }
 
 }

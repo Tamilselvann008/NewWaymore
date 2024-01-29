@@ -28,7 +28,7 @@ public class SortContactsDialogPo extends BasePo {
 	private By conditionSortTypeDropdownOption = By.cssSelector(".mat-select-panel-wrap mat-option");
 
 	public boolean isSortContactsDialogDisplayed() throws Exception {
-		return Action.isElementDisplayedByLocator(sortContactsDialog);
+		return Action.isElementDisplayedByLocator(sortContactsDialog, 0);
 	}
 
 	public void waitForSortContactsDialogIsDisplayed() throws Exception {
@@ -40,11 +40,11 @@ public class SortContactsDialogPo extends BasePo {
 	}
 
 	public void clickOnConditionVariableDropdown() throws Exception {
-		Action.clickByLocator(conditionVariableDropdown);
+		Action.clickByLocator(conditionVariableDropdown, 0);
 	}
 
 	public void clickOnCloseButton() throws Exception {
-		Action.clickByLocator(closeButton);
+		Action.clickByLocator(closeButton, 0);
 	}
 
 	public void selectSortTypeDropdownOptionByNameAndRowIndex(String optionName) throws Exception {
@@ -66,7 +66,7 @@ public class SortContactsDialogPo extends BasePo {
 	}
 
 	public void clickOnAddSortButton() throws Exception {
-		Action.clickByLocator(addSortButton);
+		Action.clickByLocator(addSortButton, 0);
 	}
 
 	public int getSortConditionsAmount() throws Exception {
@@ -74,6 +74,6 @@ public class SortContactsDialogPo extends BasePo {
 	}
 
 	public void clickOnDeleteSortConditionButtonByRowIndex() throws Exception {
-		Action.clickByLocator(deleteSortConditionButton);
+		Action.clickByLocator(deleteSortConditionButton, 0);
 	}
 }

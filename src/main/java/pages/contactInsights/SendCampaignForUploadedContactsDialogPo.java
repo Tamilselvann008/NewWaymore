@@ -25,13 +25,13 @@ public class SendCampaignForUploadedContactsDialogPo extends BasePo {
 
     public void clickOnNoButton() throws Exception {
         Waiters.waitForElementToBeDisplayed(noButton);
-        Action.clickByLocator(noButton);
+        Action.clickByLocator(noButton, 0);
         Waiters.waitForElementToBeNotVisible(sendCampaignDialog);
     }
 
     public void clickOnYesButton() throws Exception {
         Waiters.waitForElementToBeDisplayed(yesButton);
-        Action.clickByLocator(yesButton);
+        Action.clickByLocator(yesButton, 0);
         Waiters.waitForElementToBeInvisible(yesButton);
     }
 }
