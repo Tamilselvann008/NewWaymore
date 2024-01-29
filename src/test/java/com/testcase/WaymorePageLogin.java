@@ -3,7 +3,6 @@ package com.testcase;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-
 import basePackage.BasePo;
 import helpers.DataProviders;
 import helpers.StepUtils;
@@ -23,7 +22,7 @@ public class WaymorePageLogin extends BasePo {
 		OnboardingDialogPo onboardingDialogPo = new OnboardingDialogPo(driver);
 		loginPo.openLandingPage(DataProviders.getUrlTestData());
 		StepUtils.addLog("The user opens the Landing Page...");
-		
+
 		loginPo.typeValueInUserEmailInputField(DataProviders.getUserTestData("username"));
 		StepUtils.addLog("The user types the user email...");
 
