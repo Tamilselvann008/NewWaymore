@@ -13,7 +13,7 @@ import pages.sidemenu.SideMenuPo;
 
 public class SideMenuSteps extends BasePo{
 
-    private static final String ContactInsights = "ContactInsights";
+    private static final String ContactInsights = "Contact  Insights";
 	private static final String UserPlugins = "User Plugins";
 	private SideMenuPo sideMenuPo = new SideMenuPo(driver);
     private DashboardPo dashboardPo = new DashboardPo(driver);
@@ -26,8 +26,8 @@ public class SideMenuSteps extends BasePo{
             case ContactInsights:
                 boolean isExpanded = sideMenuPo.isSideMenuItemExpanded();
                 if (!isExpanded) {
-                    sideMenuPo.clickOnLinkFromSidebarMenuByName("Contact  Insights");
-                    StepUtils.addLog("the user clicks on the" + MenuItemOptionEnum.ContactInsights +" item");
+                    sideMenuPo.clickOnLinkFromSidebarMenuByName(ContactInsights);
+                    StepUtils.addLog("the user clicks on the " + ContactInsights +" item");
                 }
                 break;
             default:
@@ -65,10 +65,10 @@ public class SideMenuSteps extends BasePo{
         sideMenuPo.hoverOverOnMenuItem(option);
     }
 
-    public void whenTheUserHoverOverTheMyTemplatesCommunicationAutomationsValidationServicesLeadGenerationAnalyticsChatBotSupportContactInsightsItemWithSubmenuInTheMainMenu(String option) {
+    public void whenTheUserHoverOverTheMyTemplatesCommunicationAutomationsValidationServicesLeadGenerationAnalyticsChatBotSupportContactInsightsItemWithSubmenuInTheMainMenu(String option) throws Exception {
         switch (option) {
             case ContactInsights:
-                sideMenuPo.hoverOverOnMenuItemWithSubmenu(StringUtils.replaceAllStringForValue(MenuItemOptionEnum.ContactInsights, " ", "  "));
+                sideMenuPo.hoverOverOnMenuItemWithSubmenu(StringUtils.replaceAllStringForValue(ContactInsights, " ", "  "));
                 break;
             default:
                 sideMenuPo.hoverOverOnMenuItemWithSubmenu(option);

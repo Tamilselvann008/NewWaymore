@@ -1,35 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="9" total="10" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-29T17:57:44 IST" name="Default suite" finished-at="2024-01-29T17:58:44 IST" duration-ms="59748">
+  <suite started-at="2024-01-30T17:26:15 IST" name="Default suite" finished-at="2024-01-30T17:27:16 IST" duration-ms="61345">
     <groups>
     </groups>
-    <test started-at="2024-01-29T17:57:44 IST" name="Default test" finished-at="2024-01-29T17:58:44 IST" duration-ms="59748">
-      <class name="features.contactInsights.FilterContactFeature">
-        <test-method is-config="true" signature="launchWebsite()[pri:0, instance:features.contactInsights.FilterContactFeature@58cbafc2]" started-at="2024-01-29T17:57:44 IST" name="launchWebsite" finished-at="2024-01-29T17:57:45 IST" duration-ms="1507" status="PASS">
+    <test started-at="2024-01-30T17:26:15 IST" name="Default test" finished-at="2024-01-30T17:27:16 IST" duration-ms="61345">
+      <class name="features.contactInsights.AddNewFeature">
+        <test-method is-config="true" signature="launchWebsite()[pri:0, instance:features.contactInsights.AddNewFeature@248e319b]" started-at="2024-01-30T17:26:15 IST" name="launchWebsite" finished-at="2024-01-30T17:26:16 IST" duration-ms="1468" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWebsite -->
-        <test-method signature="theUserCanSelectAllFilterConditionsInTheFilterContactsDialog()[pri:0, instance:features.contactInsights.FilterContactFeature@58cbafc2]" started-at="2024-01-29T17:57:45 IST" name="theUserCanSelectAllFilterConditionsInTheFilterContactsDialog" description="@ALW-35814 @TR-35814 @Regression
-  Scenario: The user can select all filter conditions in the Filter Contacts dialog" finished-at="2024-01-29T17:58:44 IST" duration-ms="58057" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method signature="testUserInteractionsOnContactInsightsPage()[pri:0, instance:features.contactInsights.AddNewFeature@248e319b]" started-at="2024-01-30T17:26:17 IST" name="testUserInteractionsOnContactInsightsPage" description="@ALW-12074 @TR-12074 @Regression
+    	  @BugALW-32607 @BugALW-18862
+    	  Scenario: The user can add a new contact" finished-at="2024-01-30T17:27:16 IST" duration-ms="59835" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Dropdown option not found: AQAFirstName
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-GEA9L1T', ip: '192.168.3.249', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
-Driver info: driver.version: unknown]]>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //span[text()='Contact  Insights']/parent::span/parent::li//a//span[text()='Contact  Insights'] (tried for 10 second(s) with 500 milliseconds interval)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Dropdown option not found: AQAFirstName
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-GEA9L1T', ip: '192.168.3.249', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
-Driver info: driver.version: unknown
-at pages.contactInsights.FilterContactsDialogPo.selectCheckboxByStatusAndOptionName(FilterContactsDialogPo.java:147)
-at steps.contactInsights.FilterContactsDialogSteps.whenTheUserChecksUnchecksTheCheckboxInTheOptionInTheExpandedDropdownInTheFilterDialog(FilterContactsDialogSteps.java:30)
-at features.contactInsights.FilterContactFeature.theUserCanSelectAllFilterConditionsInTheFilterContactsDialog(FilterContactFeature.java:229)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[text()='Contact  Insights']/parent::span/parent::li//a//span[text()='Contact  Insights'] (tried for 10 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at helpers.Waiters.waitForElementToBeDisplayed(Waiters.java:22)
+at pages.sidemenu.SideMenuPo.clickOnSubmenuItemFromSideMenuByName(SideMenuPo.java:109)
+at steps.sideMenu.SideMenuSteps.whenTheUserClicksOnTheContactInsightsSegmentsSubmenuOptionInTheContactInsightsSideMenuOption(SideMenuSteps.java:90)
+at features.contactInsights.AddNewFeature.testUserInteractionsOnContactInsightsPage(AddNewFeature.java:59)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -58,17 +54,41 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Contact  Insights']/parent::span/parent::li//a//span[text()='Contact  Insights']"}
+  (Session info: chrome=121.0.6167.86)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-GEA9L1T', ip: '192.168.3.249', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.86, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\Users\SOFTSU~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55556}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3fd57ba47636eb63d77dfac18d6753fc
+*** Element info: {Using=xpath, value=//span[text()='Contact  Insights']/parent::span/parent::li//a//span[text()='Contact  Insights']}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+... 32 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- theUserCanSelectAllFilterConditionsInTheFilterContactsDialog -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:features.contactInsights.FilterContactFeature@58cbafc2]" started-at="2024-01-29T17:58:44 IST" name="tearDown" finished-at="2024-01-29T17:58:44 IST" duration-ms="157" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- features.contactInsights.FilterContactFeature -->
+        </test-method> <!-- testUserInteractionsOnContactInsightsPage -->
+      </class> <!-- features.contactInsights.AddNewFeature -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

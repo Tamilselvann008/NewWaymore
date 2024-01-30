@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -67,13 +68,17 @@ public class DateUtils {
         return (int) Math.ceil((double) minutes / integer) * integer;
     }
 
-    public static LocalDate getDateByValue(Object value) {
-        if (value instanceof LocalDate) {
-            return (LocalDate) value;
-        } else if (value instanceof String) {
-            return LocalDate.parse((String) value);
-        }
-        throw new IllegalArgumentException("Unsupported value type for date conversion");
+//    public static LocalDate getDateByValue(Object value) {
+//        if (value instanceof LocalDate) {
+//            return (LocalDate) value;
+//        } else if (value instanceof String) {
+//            return LocalDate.parse((String) value);
+//        }
+//        throw new IllegalArgumentException("Unsupported value type for date conversion");
+//    }
+    
+    public static Date getDateByValue(Object value) {
+        return new Date((Long) value);
     }
 
     public static String convertTimeToNewFormat(String time, String format) {

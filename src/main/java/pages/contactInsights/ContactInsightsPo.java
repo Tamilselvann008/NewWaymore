@@ -524,13 +524,23 @@ public class ContactInsightsPo extends BasePo {
 		Waiters.waitWithSleepTimeout(1000);
 	}
 
-	public List<String> getGroupTextByContactName(String contactName) throws Exception {
-		List<String> contactFirstNameList = ElementUtils.getTextListByLocator(contactFirstName);
-		int index = contactFirstNameList.indexOf(contactName);
-		List<String> groupTextList = ElementUtils.getTextListWithJSByLocator(contactGroupByRowNumber(index));
-		return groupTextList == null ? Collections.singletonList("") : groupTextList;
-	}
+	 public String getGroupTextByContactName(String contactName) throws Exception {
+	        List<WebElement> contactFirstNameElements = ElementUtils.getElementListWithWaitByLocator( contactFirstName);
+	        int optionIndex = -1;
 
+	        for (int i = 0; i < contactFirstNameElements.size(); i++) {
+	            if (contactFirstNameElements.get(i).getText().equals(contactName)) {
+	                optionIndex = i;
+	                break;
+	            }
+	        }
+
+	        if (optionIndex != -1) {
+	            return ElementUtils.getTextByLocator( contactGroup, optionIndex);
+	        } else {
+	            return "";
+	        }
+	    }
 	public List<String> getContactChannelTextListByContactName(String contactName) throws Exception {
 		List<String> contactNameList = ElementUtils.getTextListByLocator(contactFirstName);
 		int index = contactNameList.indexOf(contactName);

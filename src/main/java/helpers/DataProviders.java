@@ -109,9 +109,9 @@ public class DataProviders {
 		return (String) testData.get(contactData);
 	}
 
-	public static String getContactTestData(String contactData, String destinationData, int index) {
+	public static String getContactTestData(String contactData, String destinationData, int index, int channelId) {
 		Map<String, Object> data = provideTestData(ContactTestData, index);
-		return getIdentifierByChannelId(data, 7, destinationData);
+		return getIdentifierByChannelId(data, channelId , destinationData);
 	}
 
 	public static String getphoneDetails(String phoneData , int index) {
@@ -156,7 +156,8 @@ public class DataProviders {
 		
 	}
 public static void main(String[] args) throws Exception, Throwable {
-	getFilterContactsDropdownTestData("filterDropdownPlaceholder");
+	String contactTestData2 = getphoneDetails("number", 1);
+	System.out.println(contactTestData2);
 }
 
 }

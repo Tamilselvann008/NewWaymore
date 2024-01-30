@@ -81,12 +81,12 @@ public class CreateNewFormDialogSteps extends BasePo{
             "The Create New Form dialog is displayed");
     }
 
-    public void thenTheCreateNewFormDialogTitleIsCorrect(String title) {
+    public void thenTheCreateNewFormDialogTitleIsCorrect(String title) throws Exception {
         Assertions.expectToInclude(createNewFormDialogPo.getCreateFormDialogTitleText(),
             title, "The '" + title + "' dialog title is incorrect");
     }
 
-    public void thenTheFormGroupForTheRouteeContactsIsDisplayed() {
+    public void thenTheFormGroupForTheRouteeContactsIsDisplayed() throws Exception {
         Assertions.expectToDisplay(createNewFormDialogPo.getRouteeContactContainer(),
             "The form group for the Routee contacts is not displayed");
     }
@@ -108,24 +108,24 @@ public class CreateNewFormDialogSteps extends BasePo{
             "The warning message about enabling number validation service is not displayed");
     }
 
-    public void thenTheAddNewGroupButtonIsDisplayed() {
+    public void thenTheAddNewGroupButtonIsDisplayed() throws Exception {
         Assertions.expectToDisplay(createNewFormDialogPo.getAddNewGroupButton(),
             "The Add New Group button is not displayed");
     }
 
-    public void thenTheDefaultGroupInTheCreateFormDialogIsNotSelected() {
+    public void thenTheDefaultGroupInTheCreateFormDialogIsNotSelected() throws Exception {
         String defaultGroup = createNewFormDialogPo.getSelectedDefaultGroupDropdownText();
         Assertions.expectToEqual(defaultGroup, "",
             "The Default Group is not empty");
     }
 
-    public void thenTheCreatedGroupIsDisplayedAsSelectedInTheDefaultGroupDropdown(String groupName) {
+    public void thenTheCreatedGroupIsDisplayedAsSelectedInTheDefaultGroupDropdown(String groupName) throws Exception {
         String defaultGroup = createNewFormDialogPo.getSelectedDefaultGroupDropdownText();
         Assertions.expectToEqual(defaultGroup, groupName,
             "The Default Group is empty");
     }
 
-    public void thenTheCreateFormButtonIsDisabled() {
+    public void thenTheCreateFormButtonIsDisabled() throws Exception {
         Assertions.expectToBeDisabled(createNewFormDialogPo.isCreateFormButtonEnabled(),
             "The Create Form button is enabled");
     }
@@ -140,4 +140,3 @@ public class CreateNewFormDialogSteps extends BasePo{
 }
 
     
-}

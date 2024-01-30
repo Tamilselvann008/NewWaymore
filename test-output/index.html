@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\softsuave\AppData\Local\Temp\testng-eclipse--1441277356\testng-customsuite.xml</span>
+                    <span>C:\Users\softsuave\AppData\Local\Temp\testng-eclipse-496054845\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="features.contactInsights.FilterContactFeature" class="method navigator-link" hash-for-method="theUserCanSelectAllFilterConditionsInTheFilterContactsDialog">theUserCanSelectAllFilterConditionsInTheFilterContactsDialog</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="features.contactInsights.AddNewFeature" class="method navigator-link" hash-for-method="testUserInteractionsOnContactInsightsPage">testUserInteractionsOnContactInsightsPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -122,22 +122,21 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">features.contactInsights.FilterContactFeature</span>
+              <span class="class-name">features.contactInsights.AddNewFeature</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="theUserCanSelectAllFilterConditionsInTheFilterContactsDialog">
-                  </a> <!-- theUserCanSelectAllFilterConditionsInTheFilterContactsDialog -->
-                  <span class="method-name">theUserCanSelectAllFilterConditionsInTheFilterContactsDialog</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Dropdown option not found: AQAFirstName
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-GEA9L1T&apos;, ip: &apos;192.168.3.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: driver.version: unknown
-	at pages.contactInsights.FilterContactsDialogPo.selectCheckboxByStatusAndOptionName(FilterContactsDialogPo.java:147)
-	at steps.contactInsights.FilterContactsDialogSteps.whenTheUserChecksUnchecksTheCheckboxInTheOptionInTheExpandedDropdownInTheFilterDialog(FilterContactsDialogSteps.java:30)
-	at features.contactInsights.FilterContactFeature.theUserCanSelectAllFilterConditionsInTheFilterContactsDialog(FilterContactFeature.java:229)
+                  <a name="testUserInteractionsOnContactInsightsPage">
+                  </a> <!-- testUserInteractionsOnContactInsightsPage -->
+                  <span class="method-name">testUserInteractionsOnContactInsightsPage</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[text()=&apos;Contact  Insights&apos;]/parent::span/parent::li//a//span[text()=&apos;Contact  Insights&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at helpers.Waiters.waitForElementToBeDisplayed(Waiters.java:22)
+	at pages.sidemenu.SideMenuPo.clickOnSubmenuItemFromSideMenuByName(SideMenuPo.java:109)
+	at steps.sideMenu.SideMenuSteps.whenTheUserClicksOnTheContactInsightsSegmentsSubmenuOptionInTheContactInsightsSideMenuOption(SideMenuSteps.java:90)
+	at features.contactInsights.AddNewFeature.testUserInteractionsOnContactInsightsPage(AddNewFeature.java:59)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -166,11 +165,40 @@ Driver info: driver.version: unknown
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;Contact  Insights&apos;]/parent::span/parent::li//a//span[text()=&apos;Contact  Insights&apos;]&quot;}
+  (Session info: chrome=121.0.6167.86)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-GEA9L1T&apos;, ip: &apos;192.168.3.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.86, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\Users\SOFTSU~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55556}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3fd57ba47636eb63d77dfac18d6753fc
+*** Element info: {Using=xpath, value=//span[text()=&apos;Contact  Insights&apos;]/parent::span/parent::li//a//span[text()=&apos;Contact  Insights&apos;]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 32 more
 
 </div> <!-- stack-trace -->
                   <em>
-(@ALW-35814 @TR-35814 @Regression
-  Scenario: The user can select all filter conditions in the Filter Contacts dialog)                  </em>
+(@ALW-12074 @TR-12074 @Regression
+    	  @BugALW-32607 @BugALW-18862
+    	  Scenario: The user can add a new contact)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -178,7 +206,7 @@ Driver info: driver.version: unknown
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\softsuave\AppData\Local\Temp\testng-eclipse--1441277356\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\softsuave\AppData\Local\Temp\testng-eclipse-496054845\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -187,11 +215,11 @@ Driver info: driver.version: unknown
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;features.contactInsights.FilterContactFeature&quot;&gt;
+      &lt;class name=&quot;features.contactInsights.AddNewFeature&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;theUserCanSelectAllFilterConditionsInTheFilterContactsDialog&quot;/&gt;
+          &lt;include name=&quot;testUserInteractionsOnContactInsightsPage&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- features.contactInsights.FilterContactFeature --&gt;
+      &lt;/class&gt; &lt;!-- features.contactInsights.AddNewFeature --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -233,14 +261,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'theUserCanSelectAllFilterConditionsInTheFilterContactsDialog')
-data.setCell(0, 2, 'features.contactInsights.FilterContactFeature')
-data.setCell(0, 3, 58057);
+data.setCell(0, 1, 'testUserInteractionsOnContactInsightsPage')
+data.setCell(0, 2, 'features.contactInsights.AddNewFeature')
+data.setCell(0, 3, 59835);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 58 seconds</span>
+              <span class="suite-total-time">Total running time: 59 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -255,32 +283,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">9 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">features.contactInsights.FilterContactFeature</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">theUserCanFilterContactsByFirstNameBasedOnASpecificCondition</span>
-                <br/>
-                <span class="ignored-method-name">theUserCanSeeUnselectedDefaultOptionsInAllDropdownsInTheFilterContactsDialog</span>
-                <br/>
-                <span class="ignored-method-name">theUserCanCloseFilterContactsDialogueByClickingTheCloseButton</span>
-                <br/>
-                <span class="ignored-method-name">theUserCanCloseFilterContactsDialogueByClickingOutsideTheDialog</span>
-                <br/>
-                <span class="ignored-method-name">testUserCanSeeFilterOptionOnContactInsightsPage</span>
-                <br/>
-                <span class="ignored-method-name">theUserCanSeeTheFilterColumnsAfterClickingTheFilterButtonOnTheContactInsightsPage</span>
-                <br/>
-                <span class="ignored-method-name">TheUserCanSeeTheContactFilterDialogByClickingTheFilterButton</span>
-                <br/>
-                <span class="ignored-method-name">theUserCanSeeAPlaceholderForEachFilterDropdownInTheFilterContactsDialog</span>
-                <br/>
-                <span class="ignored-method-name">theUserCanDeleteFilteringConditionsInTheFilterContactsDialog</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -289,7 +294,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">features.contactInsights.FilterContactFeature</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">features.contactInsights.AddNewFeature</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">launchWebsite</span>
                 <span class="method-start">0 ms</span>
@@ -297,13 +302,9 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">theUserCanSelectAllFilterConditionsInTheFilterContactsDialog</span>
-                <span class="method-start">1525 ms</span>
+                <span class="method-name">testUserInteractionsOnContactInsightsPage</span>
+                <span class="method-start">1492 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-test after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">59587 ms</span>
-              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

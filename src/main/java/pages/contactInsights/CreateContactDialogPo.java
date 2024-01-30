@@ -2,6 +2,8 @@ package pages.contactInsights;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -26,26 +28,26 @@ public class CreateContactDialogPo extends BasePo {
 
 	private static By createContactDialog = By.cssSelector("wm-create-contact-dialog wm-settings-dialog-wrapper");
 	private static By createContactDialogTitle = By.cssSelector("wm-settings-dialog-wrapper .connection-dialog__head-title");
-	private static By countryDropdown = By.cssSelector("[formcontrolname=\"country\"] .mat-select-trigger");
-	private static By selectedCountryDropdown = By.cssSelector("mat-select[formcontrolname=\"country\"] .mat-select-value");
-	private static By activeDropdownOptionsContent = By.cssSelector(".mat-autocomplete-visible[role=\"listbox\"]");
+	private static By countryDropdown = By.cssSelector("[formcontrolname='country'] .mat-select-trigger");
+	private static By selectedCountryDropdown = By.cssSelector("mat-select[formcontrolname='country'] .mat-select-value");
+	private static By activeDropdownOptionsContent = By.cssSelector(".mat-autocomplete-visible[role='listbox']");
 	private static By assignContactToGroupsPlusButton = By.cssSelector("button.connection-dialog__btn-add");
 	private static By groupsDropdownWidth = By.cssSelector("wm-contact-groups .connection-dialog__control-variable");
 	private static By groupsDropdownOptionsContentWidth = By.cssSelector(".cdk-overlay-container .mat-autocomplete-panel");
-	private static By countryDropdownInput = By.cssSelector("[role=\"listbox\"] input[name=\"countrySearch\"]");
+	private static By countryDropdownInput = By.cssSelector("[role='listbox'] input[name='countrySearch']");
 	private static By countryDropdownOption = By.cssSelector(".country-dropdown mat-option .mat-option-text");
 	private static By countryDropdownFilteredOption = By.cssSelector(".country-dropdown mat-option:not([hidden])");
 	private static By mobileNumberInput = By.cssSelector("input#phone");
 	private static By saveButton = By.cssSelector(".progress-btn.actionBtn");
 	private static By loadingButton = By.cssSelector(".progress-btn.actionBtn.disabled-button.loading");
 	private static By addDateOfBirthInput = By.cssSelector("input#birthdate");
-	private static By groupLoader = By.cssSelector("md-content md-progress-circular[ng-if=\"vm.isLoadMore\"]");
-	private static By openCalendarButton = By.cssSelector("button[aria-label=\"Open calendar\"]");
-	private static By calendarHeader = By.cssSelector("button[aria-label=\"Choose month and year\"]");
-	private static By calendarBackButton = By.cssSelector("button[aria-label=\"Previous 24 years\"]");
-	private static By calendarNextButton = By.cssSelector("button[aria-label=\"Next 24 years\"]");
+	private static By groupLoader = By.cssSelector("md-content md-progress-circular[ng-if='vm.isLoadMore']");
+	private static By openCalendarButton = By.cssSelector("button[aria-label='Open calendar']");
+	private static By calendarHeader = By.cssSelector("button[aria-label='Choose month and year']");
+	private static By calendarBackButton = By.cssSelector("button[aria-label='Previous 24 years']");
+	private static By calendarNextButton = By.cssSelector("button[aria-label='Next 24 years']");
 	private static By calendarOption = By.cssSelector("td.mat-calendar-body-cell-container");
-	private static By mobileNumberErrorMessage = By.cssSelector("div[ng-messages=\"vm.form['phone'].$error\"] ng-message");
+	private static By mobileNumberErrorMessage = By.cssSelector("div[ng-messages='vm.form['phone'].$error'] ng-message");
 	// Inside CreateContactDialogPo class
 
 	private By groupsDropdownOption = By.cssSelector(".cdk-overlay-container .mat-autocomplete-panel mat-option.ng-star-inserted");
@@ -209,7 +211,7 @@ public class CreateContactDialogPo extends BasePo {
         WebElement groupsDropdown = ElementUtils.getElementWithWaitByLocator(assignContactToGroupsPlusButton, 0);
         Action.scrollIntoView(assignContactToGroupsPlusButton);
         Action.clickWithJSByElement(groupsDropdown, 0);
-        Waiters.waitForElementToBeNotVisible(groupLoader);
+//        Waiters.waitForElementToBeNotVisible(groupLoader);
         Waiters.waitForElementToBeDisplayed(groupsDropdownOption);
     }
 
@@ -276,12 +278,48 @@ public class CreateContactDialogPo extends BasePo {
         return Action.isElementCheckedByLocator(channelUseOptionByName(optionName));
     }
 
-	public void selectBirthdateFromBirthdateCalendarByDate(String date) throws Exception {
-        LocalDate contactBirthdate = DateUtils.getDateByValue(date);
-        String year = String.valueOf(contactBirthdate.getYear() + 1900); // Adding 1900 as Java Date year starts from 1900
-        String month = new SimpleDateFormat("MMM").format(contactBirthdate);
-        String day = String.format("%02d", contactBirthdate.getDayOfMonth());
-
+//	public void selectBirthdateFromBirthdateCalendarByDate(String date) throws Exception {
+//         Date contactBirthdate = DateUtils.getDateByValue(date);
+//        String year = String.valueOf(contactBirthdate.getYear() + 1900); // Adding 1900 as Java Date year starts from 1900
+//        String month = new SimpleDateFormat("MMM").format(contactBirthdate);
+//        String day = String.format("%02d", contactBirthdate.getDayOfMonth());
+//
+//        Action.clickByLocator(openCalendarButton, 0);
+//        Action.clickByLocator(calendarHeader, 0);
+//        List<String> calendarData = getCalendarOptionTextList();
+//
+//        while (!calendarData.contains(year)) {
+//            if (Integer.parseInt(calendarData.get(calendarData.size() - 1)) < Integer.parseInt(year)) {
+//                Action.clickByLocator(calendarNextButton, 0);
+//            } else {
+//                Action.clickByLocator(calendarBackButton, 0);
+//            }
+//            calendarData = getCalendarOptionTextList();
+//        }
+//
+//        Action.clickByLocator(dateOptionItem(year), 0);
+//        Waiters.waitWithSleepTimeout(2500);
+//        Action.clickByLocator(dateOptionItem(month.toUpperCase()), 0);
+//        Waiters.waitWithSleepTimeout(0);
+//        Action.clickByLocator(dateOptionItem(day), 0);
+//        Waiters.waitForElementToBeInvisible(calendarHeader);
+//    }
+	
+    public void selectBirthdateFromBirthdateCalendarByDate(String dateStr) throws Exception {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date contactBirthdate = dateFormat.parse(dateStr);
+System.out.println("Date -"+contactBirthdate);
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(contactBirthdate);
+        String year = String.valueOf(cal.get(Calendar.YEAR));
+        System.out.println("year-"+year);
+        String month = new SimpleDateFormat("MMM").format(cal.getTime());
+        System.out.println("month-"+month);
+        int day = StringUtils.getIntFromString(String.format("%02d", cal.get(Calendar.DAY_OF_MONTH)), 2);
+        String day1 = StringUtils.getStringFromInt(StringUtils.getRoundedNumber(day),1);
+        System.out.println("day-"+day);
+        System.out.println("day1-"+day1);
+        
         Action.clickByLocator(openCalendarButton, 0);
         Action.clickByLocator(calendarHeader, 0);
         List<String> calendarData = getCalendarOptionTextList();
@@ -292,14 +330,15 @@ public class CreateContactDialogPo extends BasePo {
             } else {
                 Action.clickByLocator(calendarBackButton, 0);
             }
+
             calendarData = getCalendarOptionTextList();
         }
 
         Action.clickByLocator(dateOptionItem(year), 0);
-        Waiters.waitWithSleepTimeout(2500);
+        Waiters.waitWithSleepTimeout(1000);
         Action.clickByLocator(dateOptionItem(month.toUpperCase()), 0);
-        Waiters.waitWithSleepTimeout(0);
-        Action.clickByLocator(dateOptionItem(day), 0);
+        Waiters.waitWithSleepTimeout(1000);
+        Action.clickByLocator(dateOptionItem(day1), 0);
         Waiters.waitForElementToBeInvisible(calendarHeader);
     }
 

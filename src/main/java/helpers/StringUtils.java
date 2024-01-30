@@ -71,11 +71,12 @@ public class StringUtils {
 
   
     public static int getIntFromString(String stringForParseInt, int radix) {
-        try {
-            return Integer.parseInt(stringForParseInt, radix);
-        } catch (NumberFormatException e) {
-            return 0; // or handle the error as needed
-        }
+        return Integer.parseInt(stringForParseInt, radix);
+    }
+
+    // Overloaded method with default radix of 10
+    public static int getIntFromString(String stringForParseInt) {
+        return Integer.parseInt(stringForParseInt);
     }
 
     public static String getStringFromInt(int integerForParseString, int radix) {
@@ -107,6 +108,11 @@ public class StringUtils {
     public static String getStringByJoin( List<String> array) {
         return String.join(" ",array);
     }
+    
+//    public static void main(String[] args) {
+//    	int roundedNumber = getRoundedNumber(01);
+//    	System.out.println(roundedNumber);
+//	}
 
 }
 

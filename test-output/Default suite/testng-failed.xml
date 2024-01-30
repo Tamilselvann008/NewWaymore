@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="features.contactInsights.FilterContactFeature">
+      <class name="features.contactInsights.AddNewFeature">
         <methods>
-          <include name="theUserCanSelectAllFilterConditionsInTheFilterContactsDialog"/>
+          <include name="testUserInteractionsOnContactInsightsPage"/>
           <include name="launchWebsite"/>
-          <include name="tearDown"/>
         </methods>
-      </class> <!-- features.contactInsights.FilterContactFeature -->
+      </class> <!-- features.contactInsights.AddNewFeature -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
