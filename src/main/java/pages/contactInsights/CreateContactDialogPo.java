@@ -11,8 +11,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-import actions.Action;
 import basePackage.BasePo;
+import helpers.Action;
 import helpers.DateUtils;
 import helpers.ElementUtils;
 import helpers.StringUtils;
@@ -87,8 +87,8 @@ public class CreateContactDialogPo extends BasePo {
 
 		private By createContactErrorMessageByOption(String option) {
 	    switch (option) {
-	        case "FirstName":
-	        case "LastName":
+	        case "First Name":
+	        case "Last Name":
 	            String modifiedOption = StringUtils.getStringToLowerCase(StringUtils.replaceAllStringForValue(option, "-", " "));
 	            return By.xpath("//input[@id='" + modifiedOption + "']/parent::md-input-container/div/div");
 	        case "Email":

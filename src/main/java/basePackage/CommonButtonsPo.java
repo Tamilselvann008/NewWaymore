@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-import actions.Action;
+import helpers.Action;
 import helpers.ElementUtils;
 import helpers.StringUtils;
 import helpers.Waiters;

@@ -1,6 +1,7 @@
 package pages.contactInsights;
 
 import basePackage.BasePo;
+import helpers.Action;
 import helpers.ElementUtils;
 
 import helpers.Waiters;
@@ -8,8 +9,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-
-import actions.Action;
 
 public class OptInOptOutChannelsDialogPo extends BasePo {
 	 public OptInOptOutChannelsDialogPo(WebDriver driver) {

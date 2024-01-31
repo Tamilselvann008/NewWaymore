@@ -89,8 +89,8 @@ public class ContactInsightsSteps extends BasePo {
         String mobileViber;
 
         // Assuming that DataProviders.getContactTestData provides destination identifiers for SMS and Viber
-        String smsIdentifier = DataProviders.getContactTestData( "destination", "identifier", contactIndex, 1);
-        String viberIdentifier = DataProviders.getContactTestData("destination", "identifier", contactIndex, 5);
+        String smsIdentifier = DataProviders.getContactTestData("identifier", contactIndex, 1);
+        String viberIdentifier = DataProviders.getContactTestData("identifier", contactIndex, 5);
 
         if ("DEU".equals(countryCode)) {
             mobileSMS = "+491" + smsIdentifier.substring(3);
@@ -107,8 +107,8 @@ public class ContactInsightsSteps extends BasePo {
     public void thenTheDataOfSMSViberChannelForTheContactNumberIsDisplayedInTheContactsList(String channel, int contactIndex) throws Exception {
         // Directly fetching the first name of the contact and other required data using a Data Provider.
         String firstName = DataProviders.getContactTestData("firstName", contactIndex);
-        String smsIdentifier = DataProviders.getContactTestData("destination", "identifier", contactIndex, 1);
-        String viberIdentifier = DataProviders.getContactTestData("destination", "identifier", contactIndex, 5);
+        String smsIdentifier = DataProviders.getContactTestData("identifier", contactIndex, 1);
+        String viberIdentifier = DataProviders.getContactTestData("identifier", contactIndex, 5);
         String countryCode = contactInsightsPo.getCountryCodeTextByContactName(firstName);
 
         String mobileSMS;
@@ -142,8 +142,8 @@ public class ContactInsightsSteps extends BasePo {
         String mobileViber;
 
         if (addType != null && !addType.isEmpty()) {
-            String smsIdentifier = DataProviders.getContactTestData("destination", "identifier", contactIndex, 1);
-            String viberIdentifier = DataProviders.getContactTestData("destination", "identifier", contactIndex, 5);
+            String smsIdentifier = DataProviders.getContactTestData("identifier", contactIndex, 1);
+            String viberIdentifier = DataProviders.getContactTestData("identifier", contactIndex, 5);
 
             if ("DEU".equals(countryCode)) {
                 mobileSMS = "+491" + smsIdentifier.substring(3);
@@ -171,7 +171,7 @@ public class ContactInsightsSteps extends BasePo {
     
     public void thenTheEmailDataOfTheContactNumberIsDisplayedInTheContactsList(int contactIndex) throws Exception {
         // Fetching the email of the contact using the Data Provider.
-        String contactEmail = DataProviders.getContactTestData("destination", "identifier", contactIndex, 7);
+        String contactEmail = DataProviders.getContactTestData("identifier", contactIndex, 7);
 
         // Checking if the contact's email is present in the Contacts list.
         Assertions.expectToInclude(contactInsightsPo.getContactsEmailTextList(), contactEmail, 

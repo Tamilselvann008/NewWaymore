@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import actions.Action;
 import basePackage.BasePo;
+import helpers.Action;
 import helpers.Waiters;
 
 public class ExportContactsDialogPo extends BasePo {

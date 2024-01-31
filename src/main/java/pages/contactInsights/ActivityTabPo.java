@@ -5,9 +5,9 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import helpers.Action;
 import helpers.ElementUtils;
 import helpers.Waiters;
-import actions.Action;
 import basePackage.BasePo;
 
 public class ActivityTabPo extends BasePo {

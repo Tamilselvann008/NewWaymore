@@ -19,18 +19,19 @@ import com.google.gson.JsonArray;
 @SuppressWarnings("unchecked")
 public class DataProviders {
 
-	private static final String sideMenuOptionsTestData = "sideMenuTestData";
-	private static final String UrlTestData = "DEV";
-	private static final String UserTestData = "userTestData";
-	private static final String ContactTestData = "addContactTestData";
-	private static final String GroupTestData = "groupTestData";
-	private static String FormTestData ="formTestData";
+	private static final String sideMenuOptionsTestData = "testData/uiTestData/sideMenuTestData";
+	private static final String UrlTestData = "testData/urlTestData/DEV";
+	private static final String UserTestData = "testData/userTestData";
+	private static final String addContactTestData = "testData/uiTestData/addContactTestData";
+	private static final String GroupTestData = "testData/uiTestData/groupTestData";
+	private static final String FormTestData ="testData/uiTestData/formTestData";
+	private static final String filterContactsTestData = "testData/uiTestData/filterContactsTestData";
 
 	public static String provideTestData(String fileName,String datas) {
 
 		JSONParser parser = new JSONParser();
 		String output = "";
-		try (FileReader reader = new FileReader("testData/uiTestData/" + fileName + ".json")) {
+		try (FileReader reader = new FileReader(fileName + ".json")) {
 			Object obj = parser.parse(reader);
 			JSONObject data = (JSONObject) obj;
 			output = (String) data.get(datas);
@@ -45,7 +46,7 @@ public class DataProviders {
 	public static Map<String, Object> provideTestData(String fileName, int contactIndex) {
 		try {
 			ObjectMapper objectMapper = new ObjectMapper();
-			File file = new File("testData/uiTestData/" + fileName + ".json");
+			File file = new File(fileName + ".json");
 			Map<String, Object>[] testDataArray = objectMapper.readValue(file, Map[].class);
 			
 
@@ -63,14 +64,12 @@ public class DataProviders {
 	
 	public static List<String> provideTestDataArray(String fileName, String fieldName) {
 		JSONParser parser = new JSONParser();
-//		String[] output = null;
 		List<String> outputTemp = new ArrayList<>();
-		try (FileReader reader = new FileReader("testData/uiTestData/" + fileName + ".json")) {
+		try (FileReader reader = new FileReader( fileName + ".json")) {
 			Object obj = parser.parse(reader);
 			JSONObject data = (JSONObject) obj;
 			JSONArray temp = (JSONArray) data.get(fieldName);
 			temp.forEach(f -> outputTemp.add((String) f));
-//			output = (String[]) temp.stream().toArray(String[]::new);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (ParseException e) {
@@ -105,17 +104,17 @@ public class DataProviders {
 	}
 
 	public static String getContactTestData(String contactData, int index) {
-		Map<String, Object> testData = provideTestData(ContactTestData, index);
+		Map<String, Object> testData = provideTestData(addContactTestData, index);
 		return (String) testData.get(contactData);
 	}
 
-	public static String getContactTestData(String contactData, String destinationData, int index, int channelId) {
-		Map<String, Object> data = provideTestData(ContactTestData, index);
+	public static String getContactTestData(String destinationData, int index, int channelId) {
+		Map<String, Object> data = provideTestData(addContactTestData, index);
 		return getIdentifierByChannelId(data, channelId , destinationData);
 	}
 
 	public static String getphoneDetails(String phoneData , int index) {
-		Map<String, Object> testData = provideTestData(ContactTestData, index);
+		Map<String, Object> testData = provideTestData(addContactTestData, index);
 		Map<String, Object> phoneObject = (Map<String, Object>) testData.get("phone");
 		return (String) phoneObject.get(phoneData);
 	}
@@ -124,16 +123,20 @@ public class DataProviders {
 		Map<String, Object> groupTestData = provideTestData(GroupTestData, groupIndex);
 		return (String)groupTestData.get(dataName);
 	}
-//
-//	public static Object getSubmenuOptionsByName(String option) {
-//		
-//		return null;
-//	}
-
+	public static List<String> getFilterContactsDropdownTestData(String testData) {
+		List<String> provideTestData = provideTestDataArray(filterContactsTestData,testData);
+		return provideTestData;
+	}
 	public static String getFormTestData(String data, int groupIndex) {
 		Map<String, Object> formTestdata = provideTestData(FormTestData, groupIndex);
 		return (String) formTestdata.get(data);
 	}
+	
+	
+//	public static Object getSubmenuOptionsByName(String option) {
+//		
+//		return null;
+//	}
 	
 //	 public static List<String> getSideMenuOptionsIndexData() throws Throwable, Exception {
 //		 String data = provideTestData(sideMenuOptionsTestData, "sideMenuOption");
@@ -145,16 +148,7 @@ public class DataProviders {
 //	    }
 	
 	
-	public static List<String> getFilterContactsDropdownTestData(String testData) {
-		List<String> provideTestData = provideTestDataArray("filterContactsTestData",testData);
-//		StepUtils.addLog(provideTestData);
-//		for(String s : provideTestData) {
-//			System.out.println(s);
-//		}
-		
-		return provideTestData;
-		
-	}
+
 public static void main(String[] args) throws Exception, Throwable {
 	String contactTestData2 = getphoneDetails("number", 1);
 	System.out.println(contactTestData2);

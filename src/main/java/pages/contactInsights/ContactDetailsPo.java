@@ -11,10 +11,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 
 import basePackage.BasePo;
+import helpers.Action;
 import helpers.ElementUtils;
 import helpers.StringUtils;
 import helpers.Waiters;
-import actions.Action;
 
 public class ContactDetailsPo extends BasePo {
 	

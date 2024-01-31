@@ -2,12 +2,12 @@ package steps.forms;
 
 import java.util.List;
 
-import actions.Action;
 import basePackage.BasePo;
 import basePackage.CommonButtonsPo;
 import enums.uienums.ActionEnum;
 import enums.uienums.ActionEnum.ActionModeTypeEnum;
 import enums.uienums.PopupEnum.FormsPopupStatusEnum;
+import helpers.Action;
 import helpers.Assertions;
 import helpers.DataProviders;
 import helpers.DateUtils;
@@ -151,10 +151,10 @@ public class FormsSteps extends BasePo {
 
     public void thenTheViewPublishOptionInTheFormMenuDropdownIsDisabledEnabled(String optionName, String mode) throws Exception {
         switch (mode) {
-            case ActionModeTypeEnum.Disabled.toString():
+            case Disabled:
                 Assertions.expectToBeDisabled(formsPo.getFromDropdownOptionByOptionName(optionName), "The '" + optionName + "' option is enabled");
                 break;
-            case ActionModeTypeEnum.Enabled.toString():
+            case Enabled:
                 Assertions.expectToBeEnabled(formsPo.getFromDropdownOptionByOptionName(optionName), "The '" + optionName + "' option is disabled");
                 break;
         }

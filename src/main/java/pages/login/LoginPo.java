@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-import actions.Action;
 import basePackage.BasePo;
+import helpers.Action;
 import helpers.DataProviders;
 import helpers.ElementUtils;
 import helpers.Waiters;
@@ -40,12 +40,6 @@ public class LoginPo extends BasePo {
 	        Action.clearTextInLocatorAndTypeText(passwordInput, value);
 	    }
 
-//
-//	 public void clickOnLoginButton() throws Exception {
-//	        Action.clickByLocator(loginButton, 0);
-//	        Waiters.waitForElementToBeInvisible(loginButton);
-//	        // Adjust URL waiting as per Java conventions
-//	    }
 	    public void clickOnLoginButton() throws Exception {
 	        Action.clickByLocator(loginButton, 0);
 	        Waiters.waitForElementToBeInvisible(loginButton);

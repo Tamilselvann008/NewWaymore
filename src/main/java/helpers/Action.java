@@ -1,4 +1,4 @@
-package actions;
+package helpers;
 
 import java.util.List;
 
@@ -13,9 +13,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import basePackage.BasePo;
-import helpers.ElementUtils;
-import helpers.StringUtils;
-import helpers.Waiters;
 
 public class Action extends BasePo {
 

@@ -31,7 +31,7 @@ public class CreateContactDialogSteps extends BasePo{
                 contactData = DataProviders.getContactTestData("lastName", contactIndex);;
                 break;
             case email:
-                contactData = DataProviders.getContactTestData("destination", "identifier", contactIndex, 7);
+                contactData = DataProviders.getContactTestData("identifier", contactIndex, 7);
                 break;
         }
         createContactDialogPo.typeContactDataByOptionName(optionName, contactData);
@@ -60,6 +60,17 @@ public class CreateContactDialogSteps extends BasePo{
         StepUtils.addLog("The user enters a '" + mobile + "' mobile number with a code for '" + country + "' in the mobile number input field");
         createContactDialogPo.typeMobileNumber(mobile);
     }
+    
+    public void whenTheUserClicksOnTheFirstNameLastNameEmailInputFieldForInTheCreateContactDialog(String optionName) throws Exception {
+        createContactDialogPo.clickOnCreateContactInputByOptionName(optionName);
+    }
+    
+    public void thenTheUserSeesThisFieldIsRequiredPleaseEnableAtLeastOneChannelErrorMessageAtField(String errorMessage, String optionName) throws Exception {
+        String actualErrorMessage = createContactDialogPo.getCreateContactErrorMessageByOption(optionName);
+        Assertions.expectToEqual(actualErrorMessage, errorMessage, 
+            "The '" + optionName + "' error message is wrong");
+    }
+
     
     public void whenTheUserSelectsACountryByTypingInInputFieldInTheDropdownMenuOfCountriesInTheCreateContactDialog(String searchValue) throws Exception {
         createContactDialogPo.selectCountryFromCountryDropdownByValue(searchValue);
@@ -168,10 +179,7 @@ public class CreateContactDialogSteps extends BasePo{
         Assertions.expectToBeDisabled(createContactDialogPo.getSaveButton(), "The Save Button is enabled");
     }
 
-    public void thenTheUserSeesErrorMessageAtField(String errorMessage, String optionName) throws Exception {
-        Assertions.expectToEqual(createContactDialogPo.getCreateContactErrorMessageByOption(optionName), errorMessage, 
-            "The '" + optionName + "' error message is wrong");
-    }
+
     public void whenTheUserClicksOnTheSaveButtonInTheCreateContactDialog() throws Exception {
         createContactDialogPo.clickOnSaveButton();
         StepUtils.addLog("the user clicks on the Save Button in the Create Contact dialog");

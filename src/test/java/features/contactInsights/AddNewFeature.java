@@ -29,6 +29,8 @@ public class AddNewFeature extends BasePo {
 	private static final String viber = "Viber";
 	private static final String jor = "JOR";
 	private static final String grc = "GRC";
+	private static final String ThisFieldIsRequired = "This field is required";
+	private static final String PleaseEnableAtLeastOneChannel = "Please enable at least one channel";
 	private LoginSteps loginSteps = new LoginSteps();
 	private SideMenuSteps sideMenuSteps = new SideMenuSteps();
 	private ContactInsightsSteps contactInsightsSteps = new ContactInsightsSteps();
@@ -311,5 +313,53 @@ public class AddNewFeature extends BasePo {
 		contactInsightsSteps.thenTheGroupNumberForTheContactNumberIsDisplayedAsSelectedInTheContactsList(4, 2);
 
 	}
+	
+	
+	@Test(description = "@ALW-12619 @TR-12619 @Regression\r\n"
+			+ "	  @BugALW-23622\r\n"
+			+ "	  Scenario: The user can't create a new contact without filling required fields")
+	public void theUserCannotCreateANewContactWithoutFillingRequiredFields() throws Exception {
+		
+		
+//      When the user № 1 is on the Getting started with WayMore page
+		loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1);
+//      Then the Side Menu is displayed
+		sideMenuSteps.thenTheSideMenuIsDisplayed();
+//      When the user clicks on the Contact Insights item
+		sideMenuSteps
+				.whenTheUserClicksOnMyCampaignsLeadGenerationSettingsCommunicationAutomationsUserPluginsEventsMyTemplatesContactInsightsChatBotValidationServicesAnalyticsSupportItem(
+						ContactInsights);
+//      And the user clicks on the Contact Insights submenu option in the Contact Insights side menu option
+		sideMenuSteps.whenTheUserClicksOnTheContactInsightsSegmentsSubmenuOptionInTheContactInsightsSideMenuOption(
+				"Contact Insights", "Contact Insights");
+//     Then the CONTACTS title is displayed
+		contactInsightsSteps.thenTheContactsTitleIsDisplayed("CONTACTS");
+//     And the table does not display any contacts on the Contacts Insights page
+		contactInsightsSteps.thenTheTableDoesNotDisplayAnyContactsOnTheContactsInsightsPage();
+//     When the user clicks on the Add New button on the Contact Insights page
+		contactInsightsSteps.whenTheUserClicksOnTheAddNewButtonOnTheContactInsightsPage();
+//     Then the Create contact dialog is displayed
+		createContactDialogSteps.thenTheCreateContactOrEditContactDialogIsDisplayed(createContact);
+//		    When the user clicks on the First Name input field for in the Create Contact dialog
+		createContactDialogSteps.whenTheUserClicksOnTheFirstNameLastNameEmailInputFieldForInTheCreateContactDialog(firstName);
+//		    Then the user sees This field is required error message at the First Name field
+		createContactDialogSteps.thenTheUserSeesThisFieldIsRequiredPleaseEnableAtLeastOneChannelErrorMessageAtField(ThisFieldIsRequired,firstName);
+//		    When the user clicks on the Last Name input field for in the Create Contact dialog
+		createContactDialogSteps.whenTheUserClicksOnTheFirstNameLastNameEmailInputFieldForInTheCreateContactDialog(lastName);
+//		    Then the user sees This field is required error message at the Last Name field
+		createContactDialogSteps.thenTheUserSeesThisFieldIsRequiredPleaseEnableAtLeastOneChannelErrorMessageAtField(ThisFieldIsRequired,lastName);
+//		    When the user clicks on the Email input field for in the Create Contact dialog
+		createContactDialogSteps.whenTheUserClicksOnTheFirstNameLastNameEmailInputFieldForInTheCreateContactDialog(email);
+//		    Then the user sees This field is required error message at the Email field
+		createContactDialogSteps.thenTheUserSeesThisFieldIsRequiredPleaseEnableAtLeastOneChannelErrorMessageAtField(ThisFieldIsRequired,email);
+//		    When the user clicks on the Mobile Number input field for in the Create Contact dialog
+		createContactDialogSteps.whenTheUserClicksOnTheMobileNumberInputFieldForInTheCreateContactDialog();
+//		    Then the user sees This field is required error message at the Mobile Number field
+		createContactDialogSteps.thenTheUserSeesThisFieldIsRequiredPleaseEnableAtLeastOneChannelErrorMessageAtField(ThisFieldIsRequired,"MobileNumber");
+//		    And the Save Button is disabled in the Create Contact dialog
+		createContactDialogSteps.thenTheSaveButtonIsDisabledInTheCreateContactDialog();
+	}
+	
+	   
 
 }

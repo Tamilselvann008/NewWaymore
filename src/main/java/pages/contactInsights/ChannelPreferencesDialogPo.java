@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-import actions.Action;
 import basePackage.BasePo;
 import helpers.Waiters;
+import helpers.Action;
 import helpers.ElementUtils;
 
 public class ChannelPreferencesDialogPo extends BasePo {
