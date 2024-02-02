@@ -1,0 +1,32 @@
+[
+  {
+    "sampleInfo": "New AQA Campaign",
+    "index": 1,
+    "name": "AQA Campaign",
+    "senderName": "WaymoreQA",
+    "emailType": "html",
+    "successOn": "Delivered",
+    "smtpProvider": "waymore",
+    "emailTemplateName": "AQA-email-template"
+  },
+  {
+    "sampleInfo": "Edit Existing Campaign",
+    "index": 2,
+    "name": "Edit AQA Campaign",
+    "senderName": "",
+    "emailType": "",
+    "successOn": "",
+    "smtpProvider": "",
+    "emailTemplateName": ""
+  },
+  {
+    "sampleInfo": "Details AQA Campaign",
+    "index": 3,
+    "name": "Details AQA Campaign",
+    "senderName": "WaymoreQA",
+    "emailType": "html",
+    "successOn": "Delivered",
+    "smtpProvider": "waymore",
+    "emailTemplateName": "AQA-email-template"
+  }
+]

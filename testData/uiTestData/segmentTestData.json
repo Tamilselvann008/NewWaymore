@@ -1,0 +1,34 @@
+[
+  {
+    "sampleInfo": "The general segment that includes contacts that contain the letter A in their First Name",
+    "index": 1,
+    "variable": "firstName",
+    "value": "a",
+    "apiOperator": "contains",
+    "name": "AQA Testing Segment"
+  },
+  {
+    "sampleInfo": "The segment that will be created manually and includes contacts that begin with the letter A in their First Name",
+    "index": 2,
+    "variable": "firstName",
+    "value": "A",
+    "apiOperator": "startsWith",
+    "name": "AQA New Segment"
+  },
+  {
+    "sampleInfo": "Segment without contacts for user № 1",
+    "index": 3,
+    "variable": "firstName",
+    "value": "noContact",
+    "apiOperator": "equal",
+    "name": "AQA Segment Without Contact"
+  },
+  {
+    "sampleInfo": "Segment based on Subscription Status",
+    "index": 4,
+    "variable": "Subscription Status",
+    "value": "",
+    "apiOperator": "is",
+    "name": "AQA-Subscription-Status"
+  }
+]

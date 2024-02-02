@@ -1,0 +1,20 @@
+[
+  {
+    "index": 1,
+    "domainName": "test2.aqa.com",
+    "email": "aqatest@test2.aqa.com",
+    "smtpProvider": "sendPulse"
+  },
+  {
+    "index": 2,
+    "domainName": "a20.mailtest.waymore.io",
+    "email": "a20_1@a20.mailtest.waymore.io",
+    "smtpProvider": "sendPulse"
+  },
+  {
+    "index": 3,
+    "domainName": "test.test.aqa.com",
+    "email": "aqatest@test.test.aqa.com",
+    "smtpProvider": "sendPulse"
+  }
+]

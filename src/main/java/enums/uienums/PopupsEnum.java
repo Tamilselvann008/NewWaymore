@@ -1,6 +1,6 @@
 package enums.uienums;
 
-public class PopupEnum {
+public class PopupsEnum {
 	
 public enum CampaignAudiencePopupStatusEnum {
     GroupCreated("New group has been successfully created"),

@@ -1,0 +1,12 @@
+{
+  "DomainSettings": {
+    "headers": [
+      "Name",
+      "Senders",
+      "Status",
+      "SPF",
+      "DKIM",
+      ""
+    ]
+  }
+}

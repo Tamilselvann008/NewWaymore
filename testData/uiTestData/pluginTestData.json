@@ -1,0 +1,42 @@
+[
+  {
+    "index": 1,
+    "source": "WooCommerce",
+    "type": "E-COMMERCE",
+    "version": "1.0.0",
+    "domain": "www.aqa-woocommerce-test.com",
+    "senderInfoTrackingId": "andreas"
+  },
+  {
+    "index": 2,
+    "source": "Shopify",
+    "type": "E-COMMERCE",
+    "version": "1.0.0",
+    "domain": "www.aqa-shopify-test.com",
+    "senderInfoTrackingId": "andreas"
+  },
+  {
+    "index": 3,
+    "source": "WooCommerce",
+    "type": "E-COMMERCE",
+    "version": "1.0.0",
+    "domain": "http://www.aqatest.com",
+    "senderInfoTrackingId": "andreas"
+  },
+  {
+    "index": 4,
+    "source": "Shopify",
+    "type": "E-COMMERCE",
+    "version": "1.0.0",
+    "domain": "www.cms-api-shopify-test.com",
+    "senderInfoTrackingId": "andreas"
+  },
+  {
+    "index": 5,
+    "source": "WooCommerce",
+    "type": "E-COMMERCE",
+    "version": "1.0.0",
+    "domain": "www.cms-api-woocommerce-test.com",
+    "senderInfoTrackingId": "andreas"
+  }
+]

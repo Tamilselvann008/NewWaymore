@@ -1,0 +1,11 @@
+[
+  {
+    "index": 1,
+    "senderName": "AQASender",
+    "firstName": "AQAFirstName",
+    "lastName": "AQALastName",
+    "email":"waymoreaqa@gmail.com",
+    "country": "aqaTestCountry",
+    "zip": "12345"
+  }
+]

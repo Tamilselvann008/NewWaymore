@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\softsuave\AppData\Local\Temp\testng-eclipse-496054845\testng-customsuite.xml</span>
+                    <span>C:\Users\softsuave\AppData\Local\Temp\testng-eclipse--1295317013\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="features.contactInsights.AddNewFeature" class="method navigator-link" hash-for-method="testUserInteractionsOnContactInsightsPage">testUserInteractionsOnContactInsightsPage</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="features.contactInsights.SearchContactsByUsingSearchContactsInput" class="method navigator-link" hash-for-method="theCheckboxInTheHeaderIsCheckedWhenTheUserSearchAndSelectAllContacts">theCheckboxInTheHeaderIsCheckedWhenTheUserSearchAndSelectAllContacts</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -122,21 +122,38 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">features.contactInsights.AddNewFeature</span>
+              <span class="class-name">features.contactInsights.SearchContactsByUsingSearchContactsInput</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testUserInteractionsOnContactInsightsPage">
-                  </a> <!-- testUserInteractionsOnContactInsightsPage -->
-                  <span class="method-name">testUserInteractionsOnContactInsightsPage</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //span[text()=&apos;Contact  Insights&apos;]/parent::span/parent::li//a//span[text()=&apos;Contact  Insights&apos;] (tried for 10 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at helpers.Waiters.waitForElementToBeDisplayed(Waiters.java:22)
-	at pages.sidemenu.SideMenuPo.clickOnSubmenuItemFromSideMenuByName(SideMenuPo.java:109)
-	at steps.sideMenu.SideMenuSteps.whenTheUserClicksOnTheContactInsightsSegmentsSubmenuOptionInTheContactInsightsSideMenuOption(SideMenuSteps.java:90)
-	at features.contactInsights.AddNewFeature.testUserInteractionsOnContactInsightsPage(AddNewFeature.java:59)
+                  <a name="theCheckboxInTheHeaderIsCheckedWhenTheUserSearchAndSelectAllContacts">
+                  </a> <!-- theCheckboxInTheHeaderIsCheckedWhenTheUserSearchAndSelectAllContacts -->
+                  <span class="method-name">theCheckboxInTheHeaderIsCheckedWhenTheUserSearchAndSelectAllContacts</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;checkbox&quot; class=&quot;mat-checkbox-input cdk-visually-hidden&quot; id=&quot;mat-checkbox-2-input&quot; tabindex=&quot;0&quot; aria-checked=&quot;false&quot;&gt; is not clickable at point (328, 301). Other element would receive the click: &lt;div _ngcontent-vda-c390=&quot;&quot; class=&quot;wm-table__cell contacts__check-cell&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=121.0.6167.86)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-GEA9L1T&apos;, ip: &apos;192.168.3.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.86, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\Users\SOFTSU~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50466}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f98d33ec53f44cd712dec3c5b22bbcc9
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at helpers.Action.clickByLocator(Action.java:80)
+	at pages.contactInsights.ContactInsightsPo.clickOnCheckboxInHeader(ContactInsightsPo.java:233)
+	at steps.contactInsights.ContactInsightsSteps.whenTheUserChecksCheckboxInTheHeaderOfTheTableOnTheContactInsightsPage(ContactInsightsSteps.java:109)
+	at features.contactInsights.SearchContactsByUsingSearchContactsInput.theCheckboxInTheHeaderIsCheckedWhenTheUserSearchAndSelectAllContacts(SearchContactsByUsingSearchContactsInput.java:536)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -165,40 +182,11 @@
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;Contact  Insights&apos;]/parent::span/parent::li//a//span[text()=&apos;Contact  Insights&apos;]&quot;}
-  (Session info: chrome=121.0.6167.86)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-GEA9L1T&apos;, ip: &apos;192.168.3.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.86, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\Users\SOFTSU~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55556}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3fd57ba47636eb63d77dfac18d6753fc
-*** Element info: {Using=xpath, value=//span[text()=&apos;Contact  Insights&apos;]/parent::span/parent::li//a//span[text()=&apos;Contact  Insights&apos;]}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 32 more
 
 </div> <!-- stack-trace -->
                   <em>
-(@ALW-12074 @TR-12074 @Regression
-    	  @BugALW-32607 @BugALW-18862
-    	  Scenario: The user can add a new contact)                  </em>
+(@ALW-15102 @TR-15102 @Regression
+	  Scenario: The checkbox in the header is checked when the user search and select all contacts)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -206,7 +194,7 @@ Session ID: 3fd57ba47636eb63d77dfac18d6753fc
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\softsuave\AppData\Local\Temp\testng-eclipse-496054845\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\softsuave\AppData\Local\Temp\testng-eclipse--1295317013\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -215,11 +203,11 @@ Session ID: 3fd57ba47636eb63d77dfac18d6753fc
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;features.contactInsights.AddNewFeature&quot;&gt;
+      &lt;class name=&quot;features.contactInsights.SearchContactsByUsingSearchContactsInput&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;testUserInteractionsOnContactInsightsPage&quot;/&gt;
+          &lt;include name=&quot;theCheckboxInTheHeaderIsCheckedWhenTheUserSearchAndSelectAllContacts&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- features.contactInsights.AddNewFeature --&gt;
+      &lt;/class&gt; &lt;!-- features.contactInsights.SearchContactsByUsingSearchContactsInput --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -261,14 +249,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testUserInteractionsOnContactInsightsPage')
-data.setCell(0, 2, 'features.contactInsights.AddNewFeature')
-data.setCell(0, 3, 59835);
+data.setCell(0, 1, 'theCheckboxInTheHeaderIsCheckedWhenTheUserSearchAndSelectAllContacts')
+data.setCell(0, 2, 'features.contactInsights.SearchContactsByUsingSearchContactsInput')
+data.setCell(0, 3, 79000);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 59 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -283,9 +271,42 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">14 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">features.contactInsights.SearchContactsByUsingSearchContactsInput</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">theUserCanPartialTextSearchOnTheContactInsightsPage</span>
+                <br/>
+                <span class="ignored-method-name">theUserCanSearchContactsFromTheWayMoreContactInsightsListByLastName</span>
+                <br/>
+                <span class="ignored-method-name">theUserCanSearchSpecificValueAndChangeTheNumberOfContactsPerPageTo100</span>
+                <br/>
+                <span class="ignored-method-name">theUserCanSearchContactsFromTheWayMoreContactInsightsListByEmail</span>
+                <br/>
+                <span class="ignored-method-name">theUserCanSearchContactsFromTheWayMoreContactInsightsListByFirstName</span>
+                <br/>
+                <span class="ignored-method-name">theUserCanSearchContactsFromTheWayMoreContactInsightsListByCountry</span>
+                <br/>
+                <span class="ignored-method-name">theUserCanSeeAMessageThatThereAreNoResultsMatchingTheSearch</span>
+                <br/>
+                <span class="ignored-method-name">theUserCanSearchContactsFromTheWayMoreContactInsightsListByMobilePhone</span>
+                <br/>
+                <span class="ignored-method-name">theUserCanSearchContactsByEnteringSpecialCharactersInTheInputField</span>
+                <br/>
+                <span class="ignored-method-name">theUserCanSeeTheFullListOfContactsAfterDeletingTheValueFromTheSearchInput</span>
+                <br/>
+                <span class="ignored-method-name">theSearchContactsFilteringIsResetAndTheInputIsClearedAfterTheUserClicksTheClearIScon</span>
+                <br/>
+                <span class="ignored-method-name">theUserCanStartSearchingContactOnlyAfterEntering3rdLetter</span>
+                <br/>
+                <span class="ignored-method-name">theUserCanSearchForSomeValueChangeTheNumberOfContactsPerPageAndThenDeleteTheSearchTerm</span>
+                <br/>
+                <span class="ignored-method-name">theUserCanSearchContactsFromTheWayMoreContactInsightsListByGroups</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -294,7 +315,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">features.contactInsights.AddNewFeature</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">features.contactInsights.SearchContactsByUsingSearchContactsInput</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">launchWebsite</span>
                 <span class="method-start">0 ms</span>
@@ -302,8 +323,8 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">testUserInteractionsOnContactInsightsPage</span>
-                <span class="method-start">1492 ms</span>
+                <span class="method-name">theCheckboxInTheHeaderIsCheckedWhenTheUserSearchAndSelectAllContacts</span>
+                <span class="method-start">2066 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

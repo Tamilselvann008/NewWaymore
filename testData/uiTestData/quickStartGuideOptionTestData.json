@@ -1,0 +1,14 @@
+{
+  "Services Setup": [
+    "Integrate",
+    "Synchronize",
+    "Automate",
+    "Push Notification",
+    "Send a campaign"
+  ],
+  "Channel Setup": [
+    "Viber Set up",
+    "Email Set up",
+    "SMS Set up"
+  ]
+}

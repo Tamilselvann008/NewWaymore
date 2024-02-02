@@ -1,0 +1,38 @@
+[
+  {
+    "index": 1,
+    "name": "wmaqa-2",
+    "url": "https://wmaqa-2.web.app",
+    "campaignTitle": "AQA Campaign Title",
+    "campaignMessage": "AQA Message",
+    "launchURL": "https://joecoffeecompany.com",
+    "uuid": "53e7eba2-a7f1-4411-b97b-3b45c4e14f20"
+  },
+  {
+    "index": 2,
+    "name": "AQA",
+    "url": "https://wmaqa-1.web.app",
+    "campaignTitle": "Welcome to Firebase Hosting",
+    "campaignMessage": "We will send you occasional personalised messages when we have something great to share!",
+    "launchURL": "",
+    "uuid": "20356b17-2426-45ac-8478-7bd359964875"
+  },
+  {
+    "index": 3,
+    "name": "wmaqa-2",
+    "url": "https://wmaqa-2.web.app",
+    "campaignTitle": "Edit AQA Campaign Title",
+    "campaignMessage": "Edit AQA Message",
+    "launchURL": "https://www.bestcoffee.guide",
+    "uuid": "53e7eba2-a7f1-4411-b97b-3b45c4e14f20"
+  },
+  {
+    "index": 4,
+    "name": "wmaqa-2",
+    "url": "https://wmaqa-2.web.app",
+    "campaignTitle": "Duplicate AQA Campaign Title",
+    "campaignMessage": "Duplicate AQA Message",
+    "launchURL": "https://atlascoffeeclub.com",
+    "uuid": "53e7eba2-a7f1-4411-b97b-3b45c4e14f20"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "index": 1,
+    "name": "AQA-testing-email-template",
+    "tags": "AQA",
+    "description": "AQA testing email template"
+  },
+  {
+    "index": 2,
+    "name": "AQA-testing-email-template-editable",
+    "tags": "AQA",
+    "description": "Editable AQA testing email template"
+  },
+  {
+    "index": 3,
+    "name": "Webinar",
+    "tags": "",
+    "description": ""
+  },
+  {
+    "index": 4,
+    "name": "AQA-email-template",
+    "tags": "",
+    "description": ""
+  },
+  {
+    "index": 5,
+    "name": "AQA-testing-email-template(1)",
+    "tags": "AQA",
+    "description": "Duplicate AQA testing email template"
+  }
+]

@@ -104,7 +104,7 @@ public class CreateNewFormDialogPo extends BasePo {
 
     public String getRouteeContactsTooltipText() throws Exception {
         Waiters.waitForElementToBeDisplayed(routeeContactTooltip);
-        return ElementUtils.getAttributeByLocator(routeeContactTooltip, AttributeEnum.Title.getValue(), 0);
+        return ElementUtils.getAttributeByLocator(routeeContactTooltip, "title", 0);
     }
 
     public void clickOnCloseFormDialogButton() throws Exception {

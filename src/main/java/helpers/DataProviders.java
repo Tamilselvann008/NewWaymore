@@ -19,13 +19,36 @@ import com.google.gson.JsonArray;
 @SuppressWarnings("unchecked")
 public class DataProviders {
 
-	private static final String sideMenuOptionsTestData = "testData/uiTestData/sideMenuTestData";
-	private static final String UrlTestData = "testData/urlTestData/DEV";
-	private static final String UserTestData = "testData/userTestData";
+	
 	private static final String addContactTestData = "testData/uiTestData/addContactTestData";
-	private static final String GroupTestData = "testData/uiTestData/groupTestData";
-	private static final String FormTestData ="testData/uiTestData/formTestData";
+	private static final String addRouteeContactsTestData = "testData/uiTestData/addRouteeContactsTestData";
+	private static final String addRouteeGroupTestData = "testData/uiTestData/addRouteeGroupTestData";
+	private static final String automationRecepientTestData = "testData/uiTestData/automationRecepientTestData";
+	private static final String campaignTestData = "testData/uiTestData/campaignTestData";
+	private static final String columnRulesTestData = "testData/uiTestData/columnRulesTestData";
+	private static final String contactLabelTestData = "testData/uiTestData/contactLabelTestData";
+	private static final String customFieldTestData = "testData/uiTestData/customFieldTestData";
+	private static final String downloadContactsTestData = "testData/uiTestData/downloadContactsTestData";
+	private static final String downloadTempalteTestData = "testData/uiTestData/downloadTempalteTestData";
+	private static final String editContactOptionTestData = "testData/uiTestData/editContactOptionTestData";
+	private static final String emailSettingsTestData = "testData/uiTestData/emailSettingsTestData";
+	private static final String emailTemplateTestData = "testData/uiTestData/emailTemplateTestData";
+	private static final String emailTestData = "testData/uiTestData/emailTestData";
 	private static final String filterContactsTestData = "testData/uiTestData/filterContactsTestData";
+	private static final String FormTestData ="testData/uiTestData/formTestData";
+	private static final String GroupTestData = "testData/uiTestData/groupTestData";
+	private static final String landingPageTestData = "testData/uiTestData/landingPageTestData";
+	private static final String linkTestData = "testData/uiTestData/linkTestData";
+	private static final String pluginTestData = "testData/uiTestData/pluginTestData";
+	private static final String profileSettingsTestData = "testData/uiTestData/profileSettingsTestData";
+	private static final String pushNotificationTestData = "testData/uiTestData/pushNotificationTestData";
+	private static final String quickStartGuideOptionTestData = "testData/uiTestData/quickStartGuideOptionTestData";
+	private static final String segmentTestData = "testData/uiTestData/segmentTestData";
+	private static final String STAGE = "testData/uiTestData/downloadContactsTestData";
+	private static final String sideMenuOptionsTestData = "testData/uiTestData/sideMenuTestData";
+	private static final String databaseTestData = "testData/databaseTestData/DEV";
+	private static final String DEV = "testData/urlTestData/DEV";
+	private static final String UserTestData = "testData/userTestData";
 
 	public static String provideTestData(String fileName,String datas) {
 
@@ -93,7 +116,7 @@ public class DataProviders {
 	}
 
 	public static String getUrlTestData(String URLName) {
-		String provideTestData = provideTestData(UrlTestData,URLName);
+		String provideTestData = provideTestData(DEV,URLName);
 		//System.out.println(provideTestData);
 		return provideTestData;
 	}
@@ -106,6 +129,11 @@ public class DataProviders {
 	public static String getContactTestData(String contactData, int index) {
 		Map<String, Object> testData = provideTestData(addContactTestData, index);
 		return (String) testData.get(contactData);
+	}
+	
+	public static String getRouteeContactTestData(String geRouteeContactData, int index) {
+		Map<String, Object> testData = provideTestData(addRouteeContactsTestData, index);
+		return (String) testData.get(geRouteeContactData);
 	}
 
 	public static String getContactTestData(String destinationData, int index, int channelId) {

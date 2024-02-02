@@ -3,6 +3,9 @@ package steps.contactInsights;
 import java.util.List;
 
 import basePackage.BasePo;
+import enums.uienums.ActionEnum.ActionModeTypeEnum;
+import enums.uienums.NotificationEnums.CreateContactMessageEnum;
+import enums.uienums.OptionEnum.CountryOptionEnum;
 import helpers.ArrayUtils;
 import helpers.Assertions;
 import helpers.DataProviders;
@@ -16,7 +19,6 @@ public class CreateContactDialogSteps extends BasePo{
     private static final String firstName = "First Name";
 	private static final String lastName = "Last Name";
 	private static final String email = "Email";
-	private static final String GERMANY = "Germany";
 	private CreateContactDialogPo createContactDialogPo = new CreateContactDialogPo(driver);
 
     // ... Previous When methods ...
@@ -39,14 +41,14 @@ public class CreateContactDialogSteps extends BasePo{
        
     }
     
-    public void whenTheUserEntersAMobileNumberWithACodeForGermanyGreeceJordanCountryInTheMobileNumberInputFieldForTheContactInTheCreateContactDialog(String country, int contactIndex) throws InterruptedException {
+    public void whenTheUserEntersAMobileNumberWithACodeForGermanyGreeceJordanCountryInTheMobileNumberInputFieldForTheContactInTheCreateContactDialog(CountryOptionEnum country, int contactIndex) throws InterruptedException {
     
         String mobile;
 
         switch (country) {
-            case GERMANY:
+            case Germany:
                 // Assuming getPhone() and getNumber() methods exist to extract phone number from contactData
-                mobile =  DataProviders.getphoneDetails("number", contactIndex);
+                mobile =  DataProviders.getphoneDetails("number", contactIndex);//this need to be changed
                 break;
             default:
                 mobile = DataProviders.getphoneDetails("number", contactIndex);
@@ -98,8 +100,8 @@ public class CreateContactDialogSteps extends BasePo{
     }
     public void whenTheUserSelectsGroupNumberOptionInTheGroupsDropdown(int groupIndex) throws Exception {
         String groupName = DataProviders.getGroupTestData("name", groupIndex);
-        StepUtils.addLog("The user selects the '" + groupName + "' group in the Groups dropdown");
         createContactDialogPo.selectOptionFromGroupsDropdownByOptionName(groupName);
+        StepUtils.addLog("The user selects the '" + groupName + "' group in the Groups dropdown");
     }
     public void thenTheSelectedGroupNumberIsDisplayedInTheGroupsDropdown(int groupIndex) throws Exception {
         String groupName = DataProviders.getGroupTestData("name", groupIndex);
@@ -112,10 +114,10 @@ public class CreateContactDialogSteps extends BasePo{
         StepUtils.addLog("the user clicks on the Assign contact to Groups dropdown in the Create Contact dialog");
     }
     public void thenTheCheckboxSMSViberVoiceOptionIsEnabledDisabledInTheCreateContactDialog(String channel, String optionStatus) throws Exception {
-        if ("Disabled".equalsIgnoreCase(optionStatus)) {
+        if (ActionModeTypeEnum.Disabled.getValue().equalsIgnoreCase(optionStatus)) {
             Assertions.expectToBeDisabled(createContactDialogPo.getChannelUseCheckboxByName(channel),
                 "The checkbox for the '" + channel + "' channel is enabled");
-        } else if ("Enabled".equalsIgnoreCase(optionStatus)) {
+        } else if (ActionModeTypeEnum.Enabled.getValue().equalsIgnoreCase(optionStatus)) {
             Assertions.expectToBeEnabled(createContactDialogPo.getChannelUseCheckboxByName(channel),
                 "The checkbox for the '" + channel + "' channel is disabled");
         }
@@ -186,7 +188,7 @@ public class CreateContactDialogSteps extends BasePo{
     }
     public void thenTheUserCanSeeTheErrorMessageAboutAnInvalidMobileNumberInTheCreateContactDialog() throws Exception {
         Assertions.expectToEqual(createContactDialogPo.getMobileNumberErrorMessageText(), 
-            CreateContactMessageEnum.ADD_VALID_PHONE_NUMBER,
+            CreateContactMessageEnum.AddValidPhoneNumber,
             "The error message about an invalid mobile number is incorrect");
     }
 

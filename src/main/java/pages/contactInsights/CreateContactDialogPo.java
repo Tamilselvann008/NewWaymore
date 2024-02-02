@@ -308,18 +308,12 @@ public class CreateContactDialogPo extends BasePo {
     public void selectBirthdateFromBirthdateCalendarByDate(String dateStr) throws Exception {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date contactBirthdate = dateFormat.parse(dateStr);
-System.out.println("Date -"+contactBirthdate);
         Calendar cal = Calendar.getInstance();
         cal.setTime(contactBirthdate);
         String year = String.valueOf(cal.get(Calendar.YEAR));
-        System.out.println("year-"+year);
         String month = new SimpleDateFormat("MMM").format(cal.getTime());
-        System.out.println("month-"+month);
         int day = StringUtils.getIntFromString(String.format("%02d", cal.get(Calendar.DAY_OF_MONTH)), 2);
         String day1 = StringUtils.getStringFromInt(StringUtils.getRoundedNumber(day),1);
-        System.out.println("day-"+day);
-        System.out.println("day1-"+day1);
-        
         Action.clickByLocator(openCalendarButton, 0);
         Action.clickByLocator(calendarHeader, 0);
         List<String> calendarData = getCalendarOptionTextList();

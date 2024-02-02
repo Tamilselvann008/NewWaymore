@@ -1,6 +1,8 @@
 package steps.forms;
 
 import basePackage.BasePo;
+import enums.uienums.NotificationEnums.FormDialogMessageEnum;
+import enums.uienums.ToolTipsEnum.FormsTooltipEnum;
 import helpers.Assertions;
 import helpers.DataProviders;
 import pages.forms.CreateNewFormDialogPo;
@@ -69,11 +71,11 @@ public class CreateNewFormDialogSteps extends BasePo{
             "The Create New Form dialog is not displayed");
     }
 
-    public void thenTheWarningThatTheFormNameFieldIsRequiredIsDisplayedInTheDialog() {
+    public void thenTheWarningThatTheFormNameFieldIsRequiredIsDisplayedInTheDialog() throws Exception {
         Assertions.expectToDisplay(createNewFormDialogPo.getFormNameWarning(),
             "The Warning message is not displayed");
         Assertions.expectToEqual(createNewFormDialogPo.getFormNameWarningText(),
-            FormDialogMessageEnum.FORM_NAME_REQUIRED, "The Warning message is incorrect");
+            FormDialogMessageEnum.FormNameRequired, "The Warning message is incorrect");
     }
 
     public void thenTheCreateNewFormDialogIsNotDisplayed() {
@@ -96,15 +98,15 @@ public class CreateNewFormDialogSteps extends BasePo{
             "The form group radio button is not checked");
     }
 
-    public void thenTheUserCanSeeAMessageThatAPhoneFormElementWillBeAddedToTheForm() {
+    public void thenTheUserCanSeeAMessageThatAPhoneFormElementWillBeAddedToTheForm() throws Exception {
         Assertions.expectToEqual(createNewFormDialogPo.getRouteeContactMessageText(),
-            FormDialogMessageEnum.PHONE_FORM_ELEMENT,
+            FormDialogMessageEnum.PhoneFormElement,
             "The message that a phone form element will be added to the form is not displayed");
     }
 
-    public void thenTheUserCanSeeAWarningMessageAboutEnablingNumberValidationService() {
+    public void thenTheUserCanSeeAWarningMessageAboutEnablingNumberValidationService() throws Exception {
         Assertions.expectToEqual(createNewFormDialogPo.getNumberValidationMessageText(),
-            FormDialogMessageEnum.ENABLING_NUMBER_VALIDATION_SERVICE,
+            FormDialogMessageEnum.EnablingNumberValidationService,
             "The warning message about enabling number validation service is not displayed");
     }
 
@@ -130,9 +132,9 @@ public class CreateNewFormDialogSteps extends BasePo{
             "The Create Form button is enabled");
     }
 
-    public void thenTheUserCanSeeTheTooltipTextOfTheRouteeContactsInTheCreateNewFormDialog() {
+    public void thenTheUserCanSeeTheTooltipTextOfTheRouteeContactsInTheCreateNewFormDialog() throws Exception {
         String popOverContent = createNewFormDialogPo.getRouteeContactsTooltipText();
-        Assertions.expectToEqual(popOverContent, FormsTooltipEnum.ALL_FORM_FIELDS,
+        Assertions.expectToEqual(popOverContent, FormsTooltipEnum.AllFormFields,
             "The tooltip text of the Routee Contacts in the Create New form dialog is incorrect");
     }
 

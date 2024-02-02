@@ -1,0 +1,44 @@
+[
+  {
+    "index": 1,
+    "firstName": "AQAFirstName",
+    "lastName": "AQALastName",
+    "email": "test@gmail.com",
+    "mobile": "+375291111111",
+    "vip": false,
+    "country": "BY",
+    "label": {
+      "name": "test",
+      "value": "test",
+      "type": "text"
+    }
+  },
+  {
+    "index": 2,
+    "firstName": "AQATestName",
+    "lastName": "AQATestSurname",
+    "email": "testAQA@gmail.com",
+    "mobile": "+375291111112",
+    "vip": false,
+    "country": "GR",
+    "label": {
+      "name": "testAQA",
+      "value": "testAQA",
+      "type": "text"
+    }
+  },
+  {
+    "index": 3,
+    "firstName": "AQAAnotherTestName",
+    "lastName": "AQAAnotherTestSurname",
+    "email": "testAnotherAQA@gmail.com",
+    "mobile": "+375291111113",
+    "vip": false,
+    "country": "RU",
+    "label": {
+      "name": "anotherTestAQA",
+      "value": "anotherTestAQA",
+      "type": "text"
+    }
+  }
+]

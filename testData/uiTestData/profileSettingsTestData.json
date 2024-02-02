@@ -1,0 +1,11 @@
+{
+  "profileSettings": [
+    "Username",
+    "First name",
+    "Last name",
+    "Phone number",
+    "Email address",
+    "Installed plugins",
+    "is Verified"
+  ]
+}

@@ -5,27 +5,23 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import basePackage.BasePo;
+import enums.uienums.ActionEnum.ActionModeTypeEnum;
+import enums.uienums.ActionEnum.CheckboxActionTypeEnum;
+import enums.uienums.ActionEnum.SwitchTypeEnum;
+import enums.uienums.OptionEnum.CountryOptionEnum;
+import enums.uienums.OptionEnum.MenuItemOptionEnum;
 import steps.contactInsights.ContactInsightsSteps;
 import steps.contactInsights.CreateContactDialogSteps;
 import steps.login.LoginSteps;
 import steps.sideMenu.SideMenuSteps;
 
-public class AddNewFeature extends BasePo {
+public class AddNewContactFeature extends BasePo {
 	private static final String createContact = "Create contact";
 	private static final String editContact = "Edit contact";
 	private static final String firstName = "First Name";
 	private static final String lastName = "Last Name";
 	private static final String email = "Email";
-	private static final String Jordan = "Jordan";
-	private static final String Greece = "Greece";
-	private static final String ContactInsights = "Contact  Insights";
-	private static final String check = "Check";
-	private static final String uncheck = "unchecks";
 	private static final String SMS = "SMS";
-	private static final String checked = "checked";
-	private static final String unchecked = "unchecked";
-	private static final String enabled = "Enabled";
-	private static final String disabled = "Disabled";
 	private static final String viber = "Viber";
 	private static final String jor = "JOR";
 	private static final String grc = "GRC";
@@ -40,11 +36,11 @@ public class AddNewFeature extends BasePo {
 	public void launchWebsite() {
 		browserLaunch();
 	}
-
-	@AfterTest
-	public void tearDown() {
-		closeBrowser();
-	}
+//
+//	@AfterTest
+//	public void tearDown() {
+//		closeBrowser();
+//	}
 
 	@Test(description = "@ALW-12074 @TR-12074 @Regression\r\n" + "@BugALW-32607 @BugALW-18862\r\n"
 			+ "Scenario: The user can add a new contact")
@@ -60,7 +56,7 @@ public class AddNewFeature extends BasePo {
 //         When the user clicks on the Contact Insights item
 		sideMenuSteps
 				.whenTheUserClicksOnMyCampaignsLeadGenerationSettingsCommunicationAutomationsUserPluginsEventsMyTemplatesContactInsightsChatBotValidationServicesAnalyticsSupportItem(
-						ContactInsights);
+						MenuItemOptionEnum.ContactInsights);
 //         And the user clicks on the Contact Insights submenu option in the Contact Insights side menu option
 		sideMenuSteps.whenTheUserClicksOnTheContactInsightsSegmentsSubmenuOptionInTheContactInsightsSideMenuOption(
 				"Contact Insights", "Contact Insights");
@@ -87,31 +83,31 @@ public class AddNewFeature extends BasePo {
 //        And the user enters a mobile number with a code for Jordan in the mobile number input field for the contact № 1 in the Create Contact dialog
 		createContactDialogSteps
 				.whenTheUserEntersAMobileNumberWithACodeForGermanyGreeceJordanCountryInTheMobileNumberInputFieldForTheContactInTheCreateContactDialog(
-						Jordan, 1);
+						CountryOptionEnum.Jordan, 1);
 //        And the user selects a country by typing Jordan in the input field in the dropdown menu of countries in the Create Contact dialog
 		createContactDialogSteps
 				.whenTheUserSelectsACountryByTypingInInputFieldInTheDropdownMenuOfCountriesInTheCreateContactDialog(
-						Jordan);
+						CountryOptionEnum.Jordan.getValue());
 //        Then the country is changed to Jordan
-		createContactDialogSteps.thenTheCountryIsChangedToGermanyGreeceJordan(Jordan);
+		createContactDialogSteps.thenTheCountryIsChangedToGermanyGreeceJordan(CountryOptionEnum.Jordan.getValue());
 //        And the country code is changed to 🇯🇴
 		createContactDialogSteps.thenTheCountryCodeIsChangedToDEGRJO("🇯🇴");
 //        And the mobile number flag is changed to Jordan
-		createContactDialogSteps.thenTheMobileNumberFlagIsChangedToGermanyGreeceJordan(Jordan);
+		createContactDialogSteps.thenTheMobileNumberFlagIsChangedToGermanyGreeceJordan(CountryOptionEnum.Jordan.getValue());
 //        When the user checks SMS checkbox in the Create Contact dialog
-		createContactDialogSteps.whenTheUserChecksUnchecksSMSViberCheckboxInCreateContactDialog(check, SMS);
+		createContactDialogSteps.whenTheUserChecksUnchecksSMSViberCheckboxInCreateContactDialog(CheckboxActionTypeEnum.Checks.getValue(), SMS);
 //        Then the checkbox SMS is checked in the Create Contact dialog
-		createContactDialogSteps.thenTheCheckboxSMSViberVoiceIsCheckedUncheckedInTheCreateContactDialog(SMS, checked);
+		createContactDialogSteps.thenTheCheckboxSMSViberVoiceIsCheckedUncheckedInTheCreateContactDialog(SMS, SwitchTypeEnum.Checked.getValue());
 //        And the checkbox SMS option is Enabled in the Create Contact dialog
 		createContactDialogSteps.thenTheCheckboxSMSViberVoiceOptionIsEnabledDisabledInTheCreateContactDialog(SMS,
-				enabled);
+				ActionModeTypeEnum.Enabled.getValue());
 //        When the user checks Viber checkbox in the Create Contact dialog
-		createContactDialogSteps.whenTheUserChecksUnchecksSMSViberCheckboxInCreateContactDialog(check, viber);
+		createContactDialogSteps.whenTheUserChecksUnchecksSMSViberCheckboxInCreateContactDialog(CheckboxActionTypeEnum.Checks.getValue(), viber);
 //        Then the checkbox Viber is checked in the Create Contact dialog
-		createContactDialogSteps.thenTheCheckboxSMSViberVoiceIsCheckedUncheckedInTheCreateContactDialog(viber, checked);
+		createContactDialogSteps.thenTheCheckboxSMSViberVoiceIsCheckedUncheckedInTheCreateContactDialog(viber, SwitchTypeEnum.Checked.getValue());
 //        And the checkbox Viber option is Enabled in the Create Contact dialog
 		createContactDialogSteps.thenTheCheckboxSMSViberVoiceOptionIsEnabledDisabledInTheCreateContactDialog(viber,
-				enabled);
+				ActionModeTypeEnum.Enabled.getValue());
 //        When the user clicks on the Assign contact to Groups dropdown in the Create Contact dialog
 		createContactDialogSteps.whenTheUserClicksOnTheAssignContactToGroupsDropdownInTheCreateContactDialog();
 //        And the user selects group № 3 option in the Groups dropdown
@@ -155,7 +151,7 @@ public class AddNewFeature extends BasePo {
 //    	    When the user clicks on the Contact Insights item
 		sideMenuSteps
 				.whenTheUserClicksOnMyCampaignsLeadGenerationSettingsCommunicationAutomationsUserPluginsEventsMyTemplatesContactInsightsChatBotValidationServicesAnalyticsSupportItem(
-						ContactInsights);
+						MenuItemOptionEnum.ContactInsights);
 //        And the user clicks on the Contact Insights submenu option in the Contact Insights side menu option
 		sideMenuSteps.whenTheUserClicksOnTheContactInsightsSegmentsSubmenuOptionInTheContactInsightsSideMenuOption(
 				"Contact Insights", "Contact Insights");
@@ -183,24 +179,24 @@ public class AddNewFeature extends BasePo {
 //    	    And the user enters a mobile number with a code for Greece in the mobile number input field for the contact № 2 in the Create Contact dialog
 		createContactDialogSteps
 				.whenTheUserEntersAMobileNumberWithACodeForGermanyGreeceJordanCountryInTheMobileNumberInputFieldForTheContactInTheCreateContactDialog(
-						Greece, 2);
+						CountryOptionEnum.Greece, 2);
 //    	    And the user selects a country by typing Greece in the input field in the dropdown menu of countries in the Create Contact dialog
 		createContactDialogSteps
 				.whenTheUserSelectsACountryByTypingInInputFieldInTheDropdownMenuOfCountriesInTheCreateContactDialog(
-						Greece);
+						CountryOptionEnum.Greece.getValue());
 //    	    Then the country is changed to Greece
-		createContactDialogSteps.thenTheCountryIsChangedToGermanyGreeceJordan(Greece);
+		createContactDialogSteps.thenTheCountryIsChangedToGermanyGreeceJordan(CountryOptionEnum.Greece.getValue());
 //    	    And the country code is changed to 🇬🇷
 		createContactDialogSteps.thenTheCountryCodeIsChangedToDEGRJO("🇬🇷");
 //    	    And the mobile number flag is changed to Greece
-		createContactDialogSteps.thenTheMobileNumberFlagIsChangedToGermanyGreeceJordan(Greece);
+		createContactDialogSteps.thenTheMobileNumberFlagIsChangedToGermanyGreeceJordan(CountryOptionEnum.Greece.getValue());
 //    	    When the user checks SMS checkbox in the Create Contact dialog
-		createContactDialogSteps.whenTheUserChecksUnchecksSMSViberCheckboxInCreateContactDialog(check, SMS);
+		createContactDialogSteps.whenTheUserChecksUnchecksSMSViberCheckboxInCreateContactDialog(CheckboxActionTypeEnum.Checks.getValue(), SMS);
 //      Then the checkbox SMS is checked in the Create Contact dialog
-		createContactDialogSteps.thenTheCheckboxSMSViberVoiceIsCheckedUncheckedInTheCreateContactDialog(SMS, checked);
+		createContactDialogSteps.thenTheCheckboxSMSViberVoiceIsCheckedUncheckedInTheCreateContactDialog(SMS, SwitchTypeEnum.Checked.getValue());
 //      And the checkbox SMS option is Enabled in the Create Contact dialog
 		createContactDialogSteps.thenTheCheckboxSMSViberVoiceOptionIsEnabledDisabledInTheCreateContactDialog(SMS,
-				enabled);
+				ActionModeTypeEnum.Enabled.getValue());
 //    	    When the user clicks on the Assign contact to Groups dropdown in the Create Contact dialog
 		createContactDialogSteps.whenTheUserClicksOnTheAssignContactToGroupsDropdownInTheCreateContactDialog();
 //    	    And the user selects group № 3 option in the Groups dropdown
@@ -222,7 +218,7 @@ public class AddNewFeature extends BasePo {
 		contactInsightsSteps.thenTheCountryCodeForTheContactNumberIsDisplayedAsDEUGRCJOROnTheContactsInsightsPage(2,
 				grc);
 //    	    And the data of SMS channel for the contact № 2 is displayed in the Contacts list
-		contactInsightsSteps.thenTheDataOfSMSViberChannelForTheContactNumberIsDisplayedInTheContactsList(SMS, 2);
+		contactInsightsSteps.thenTheDataOfSMSOrViberChannelForTheContactNumberIsDisplayedInTheContactsList(SMS, 2);
 //    	    And the Viber channel data for the contact № 2 is empty for added contact in the Contacts list
 		contactInsightsSteps.thenTheSMSViberChannelDataForTheContactNumberIsEmptyForAddedContactInTheContactsList(viber,
 				2, "for added contact");
@@ -250,7 +246,7 @@ public class AddNewFeature extends BasePo {
 //      When the user clicks on the Contact Insights item
 		sideMenuSteps
 				.whenTheUserClicksOnMyCampaignsLeadGenerationSettingsCommunicationAutomationsUserPluginsEventsMyTemplatesContactInsightsChatBotValidationServicesAnalyticsSupportItem(
-						ContactInsights);
+						MenuItemOptionEnum.ContactInsights);
 //      And the user clicks on the Contact Insights submenu option in the Contact Insights side menu option
 		sideMenuSteps.whenTheUserClicksOnTheContactInsightsSegmentsSubmenuOptionInTheContactInsightsSideMenuOption(
 				"Contact Insights", "Contact Insights");
@@ -273,24 +269,24 @@ public class AddNewFeature extends BasePo {
 //		    And the user enters a mobile number with a code for Greece in the mobile number input field for the contact № 2 in the Create Contact dialog
 		createContactDialogSteps
 				.whenTheUserEntersAMobileNumberWithACodeForGermanyGreeceJordanCountryInTheMobileNumberInputFieldForTheContactInTheCreateContactDialog(
-						Greece, 2);
+						CountryOptionEnum.Greece, 2);
 //		    And the user selects a country by typing Greece in the input field in the dropdown menu of countries in the Create Contact dialog
 		createContactDialogSteps
 				.whenTheUserSelectsACountryByTypingInInputFieldInTheDropdownMenuOfCountriesInTheCreateContactDialog(
-						Greece);
+						CountryOptionEnum.Greece.getValue());
 //		    Then the country is changed to Greece
-		createContactDialogSteps.thenTheCountryIsChangedToGermanyGreeceJordan(Greece);
+		createContactDialogSteps.thenTheCountryIsChangedToGermanyGreeceJordan(CountryOptionEnum.Greece.getValue());
 //    	    And the country code is changed to 🇬🇷
 		createContactDialogSteps.thenTheCountryCodeIsChangedToDEGRJO("🇬🇷");
 //		    And the mobile number flag is changed to Greece
-		createContactDialogSteps.thenTheMobileNumberFlagIsChangedToGermanyGreeceJordan(Greece);
+		createContactDialogSteps.thenTheMobileNumberFlagIsChangedToGermanyGreeceJordan(CountryOptionEnum.Greece.getValue());
 //		    When the user checks SMS checkbox in the Create Contact dialog
-		createContactDialogSteps.whenTheUserChecksUnchecksSMSViberCheckboxInCreateContactDialog(check, SMS);
+		createContactDialogSteps.whenTheUserChecksUnchecksSMSViberCheckboxInCreateContactDialog(CheckboxActionTypeEnum.Checks.getValue(), SMS);
 //		    Then the checkbox SMS is checked in the Create Contact dialog
-		createContactDialogSteps.thenTheCheckboxSMSViberVoiceIsCheckedUncheckedInTheCreateContactDialog(SMS, checked);
+		createContactDialogSteps.thenTheCheckboxSMSViberVoiceIsCheckedUncheckedInTheCreateContactDialog(SMS, SwitchTypeEnum.Checked.getValue());
 //		    And the checkbox SMS option is Enabled in the Create Contact dialog
 		createContactDialogSteps.thenTheCheckboxSMSViberVoiceOptionIsEnabledDisabledInTheCreateContactDialog(SMS,
-				enabled);
+				ActionModeTypeEnum.Enabled.getValue());
 //		    When the user clicks on the Assign contact to Groups dropdown in the Create Contact dialog
 		createContactDialogSteps.whenTheUserClicksOnTheAssignContactToGroupsDropdownInTheCreateContactDialog();
 //		    And the user selects group № 3 option in the Groups dropdown
@@ -328,7 +324,7 @@ public class AddNewFeature extends BasePo {
 //      When the user clicks on the Contact Insights item
 		sideMenuSteps
 				.whenTheUserClicksOnMyCampaignsLeadGenerationSettingsCommunicationAutomationsUserPluginsEventsMyTemplatesContactInsightsChatBotValidationServicesAnalyticsSupportItem(
-						ContactInsights);
+						MenuItemOptionEnum.ContactInsights);
 //      And the user clicks on the Contact Insights submenu option in the Contact Insights side menu option
 		sideMenuSteps.whenTheUserClicksOnTheContactInsightsSegmentsSubmenuOptionInTheContactInsightsSideMenuOption(
 				"Contact Insights", "Contact Insights");

@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import basePackage.BasePo;
+import enums.uienums.ActionEnum.CheckboxActionTypeEnum;
 
 public class Action extends BasePo {
 
@@ -158,7 +159,7 @@ public class Action extends BasePo {
 
 	public static void selectCheckboxByLocatorAndStatus(By locator, String checkboxStatus) throws Exception {
 		boolean isChecked = isElementCheckedByLocator(locator);
-		if ((checkboxStatus.equals("Check") && !isChecked) || (checkboxStatus.equals("Uncheck") && isChecked)) {
+		if ((checkboxStatus.equals(CheckboxActionTypeEnum.Checks.getValue()) && !isChecked) || (checkboxStatus.equals(CheckboxActionTypeEnum.Unchecks.getValue()) && isChecked)) {
 			clickWithJSByLocator(locator, 0);
 		}
 	}

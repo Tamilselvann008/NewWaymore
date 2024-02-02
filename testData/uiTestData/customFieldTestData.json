@@ -1,0 +1,58 @@
+[
+  {
+    "index": 1,
+    "label": "Name, Surname, Mobile, Email",
+    "contact": "AQATestName, AQATestSurname, 30695256743, aqatest@gmail.com",
+    "associatedValue": ["firstName", "lastName", "mobile", "email"],
+    "skippedValue": ["Email"]
+  },
+  {
+    "index": 2,
+    "label": "Name, Mobile",
+    "contact": "AQATestName, 30695256743",
+    "associatedValue": ["firstName", "mobile"],
+    "skippedValue": ["Surname", "Email"]
+  },
+  {
+    "index": 3,
+    "label": "Name, Mobile",
+    "contact": "AQATestName, 12345",
+    "associatedValue": ["firstName", "mobile"],
+    "skippedValue": []
+  },
+  {
+    "index": 4,
+    "label": "Name, CustomField, Mobile",
+    "contact": "AQATestName, CustomField, 30695256743",
+    "associatedValue": ["firstName", "aqaTestField", "mobile"],
+    "skippedValue": []
+  },
+  {
+    "index": 5,
+    "label": "Name, Surname, Mobile, Email",
+    "contact": "testNameOne, testSurnameOne, 30695256954, aqatestone@gmail.com\ntestNameTwo, testSurnameTwo, 30695256743, aqatesttwo@gmail.com",
+    "associatedValue": ["firstName", "lastName", "mobile", "email"],
+    "skippedValue": ["Email"]
+  },
+  {
+    "index": 6,
+    "label": "Name , Surname , Mobile, Email",
+    "contact": "AQATestName, AQATestSurname, 30695256743, aqatest@gmail.com",
+    "associatedValue": ["firstName", "lastName", "mobile", "email"],
+    "skippedValue": []
+  },
+  {
+    "index": 7,
+    "label": "First Name, Last Name, Country, Mobile Phone, Email",
+    "contact": "",
+    "associatedValue": ["firstName", "lastName", "country", "mobile", "email"],
+    "skippedValue": []
+  },
+  {
+    "index": 8,
+    "label": "Mobile, SMS, CRS",
+    "contact": "",
+    "associatedValue": ["mobile", "SMS", "CRS"],
+    "skippedValue": []
+  }
+]

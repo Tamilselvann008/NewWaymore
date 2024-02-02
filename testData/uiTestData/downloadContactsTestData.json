@@ -1,0 +1,20 @@
+[
+  {
+    "index": 1,
+    "fileName": "contacts.csv",
+    "columnName": "\"id\",\"firstName\",\"lastName\",\"middleName\",\"gender\",\"city\",\"country\",\"address\",\"zip\",\"birthDate\",\"profilePicUrl\",\"createdAt\",\"updatedAt\",\"blacklistedServices\",\"groups\",\"SMS\",\"Viber\",\"Email\"",
+    "contactData": "\"AQAFirstName\",\"AQALastName\",\"\",\"Male\",\"AQA City\",\"AQA Country\",\"12345 Test Address\",\"12345\",\"2000-01-01\",\"\",\"\",\"\",\"\",\"AQA Test Group\",\"1112223333\",\"1112223333\",\"bribri880@email-temp.com\""
+  },
+  {
+    "index": 2,
+    "fileName": "contacts.xlsx",
+    "columnName": "",
+    "contactData": ""
+  },
+  {
+    "index": 3,
+    "fileName": "contacts.pdf",
+    "columnName": "idfirstNamelastNamemiddleNamegendercitycountryaddresszipbirthDateprofilePicUrlcreatedAtupdatedAtblacklistedServicesgroupsSMSViberEmail",
+    "contactData": "AQAFirstNameAQALastName Male\nAQA\nCity\nAQA\nCountry\n12345\nTest\nAddress123452000-01-01    \nAQA\nTest\nGroup11122233331112223333bribri880@email-temp.com"
+  }
+]

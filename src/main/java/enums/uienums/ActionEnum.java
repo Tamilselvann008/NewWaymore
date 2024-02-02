@@ -2,8 +2,8 @@ package enums.uienums;
 
 public class ActionEnum {
 	public enum ActionModeTypeEnum {
-	    Disabled("disabled"),
-	    Enabled("enabled"),
+	    Disabled("Disabled"),
+	    Enabled("Enabled"),
 	    Created("created"),
 	    Updated("updated"),
 	    Canceled("canceled"),

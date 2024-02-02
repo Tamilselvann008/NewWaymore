@@ -1,0 +1,22 @@
+[
+  {
+    "index": 1,
+    "templateName": "Template.csv",
+    "templateInfo": "First Name,Last Name,Mobile Phone,Email,Landline Phone John,Doe,306912345678,example@example.com,302310123456 John,Smith,306987654321,johnsmith@gmail.com,302310654321"
+  },
+  {
+    "index": 2,
+    "templateName": "Template.txt",
+    "templateInfo": "First Name Last Name Mobile Phone Email Landline Phone John Doe 306912345678 example@example.com 302310123456 John Smith 306987654321 johnsmith@gmail.com 302310654321"
+  },
+  {
+    "index": 3,
+    "templateName": "Template.xls",
+    "templateInfo": ""
+  },
+  {
+    "index": 4,
+    "templateName": "Template.xlsx",
+    "templateInfo": ""
+  }
+]
