@@ -14,12 +14,10 @@ import org.json.simple.parser.ParseException;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.JsonArray;
 
 @SuppressWarnings("unchecked")
 public class DataProviders {
 
-	
 	private static final String addContactTestData = "testData/uiTestData/addContactTestData";
 	private static final String addRouteeContactsTestData = "testData/uiTestData/addRouteeContactsTestData";
 	private static final String addRouteeGroupTestData = "testData/uiTestData/addRouteeGroupTestData";
@@ -35,7 +33,7 @@ public class DataProviders {
 	private static final String emailTemplateTestData = "testData/uiTestData/emailTemplateTestData";
 	private static final String emailTestData = "testData/uiTestData/emailTestData";
 	private static final String filterContactsTestData = "testData/uiTestData/filterContactsTestData";
-	private static final String FormTestData ="testData/uiTestData/formTestData";
+	private static final String FormTestData = "testData/uiTestData/formTestData";
 	private static final String GroupTestData = "testData/uiTestData/groupTestData";
 	private static final String landingPageTestData = "testData/uiTestData/landingPageTestData";
 	private static final String linkTestData = "testData/uiTestData/linkTestData";
@@ -50,7 +48,7 @@ public class DataProviders {
 	private static final String DEV = "testData/urlTestData/DEV";
 	private static final String UserTestData = "testData/userTestData";
 
-	public static String provideTestData(String fileName,String datas) {
+	public static String provideTestData(String fileName, String datas) {
 
 		JSONParser parser = new JSONParser();
 		String output = "";
@@ -71,7 +69,6 @@ public class DataProviders {
 			ObjectMapper objectMapper = new ObjectMapper();
 			File file = new File(fileName + ".json");
 			Map<String, Object>[] testDataArray = objectMapper.readValue(file, Map[].class);
-			
 
 			for (Map<String, Object> data : testDataArray) {
 				if (String.valueOf(data.get("index")).equals(String.valueOf(contactIndex))) {
@@ -84,11 +81,11 @@ public class DataProviders {
 
 		return null;
 	}
-	
+
 	public static List<String> provideTestDataArray(String fileName, String fieldName) {
 		JSONParser parser = new JSONParser();
 		List<String> outputTemp = new ArrayList<>();
-		try (FileReader reader = new FileReader( fileName + ".json")) {
+		try (FileReader reader = new FileReader(fileName + ".json")) {
 			Object obj = parser.parse(reader);
 			JSONObject data = (JSONObject) obj;
 			JSONArray temp = (JSONArray) data.get(fieldName);
@@ -116,8 +113,8 @@ public class DataProviders {
 	}
 
 	public static String getUrlTestData(String URLName) {
-		String provideTestData = provideTestData(DEV,URLName);
-		//System.out.println(provideTestData);
+		String provideTestData = provideTestData(DEV, URLName);
+		// System.out.println(provideTestData);
 		return provideTestData;
 	}
 
@@ -130,7 +127,7 @@ public class DataProviders {
 		Map<String, Object> testData = provideTestData(addContactTestData, index);
 		return (String) testData.get(contactData);
 	}
-	
+
 	public static String getRouteeContactTestData(String geRouteeContactData, int index) {
 		Map<String, Object> testData = provideTestData(addRouteeContactsTestData, index);
 		return (String) testData.get(geRouteeContactData);
@@ -138,10 +135,10 @@ public class DataProviders {
 
 	public static String getContactTestData(String destinationData, int index, int channelId) {
 		Map<String, Object> data = provideTestData(addContactTestData, index);
-		return getIdentifierByChannelId(data, channelId , destinationData);
+		return getIdentifierByChannelId(data, channelId, destinationData);
 	}
 
-	public static String getphoneDetails(String phoneData , int index) {
+	public static String getphoneDetails(String phoneData, int index) {
 		Map<String, Object> testData = provideTestData(addContactTestData, index);
 		Map<String, Object> phoneObject = (Map<String, Object>) testData.get("phone");
 		return (String) phoneObject.get(phoneData);
@@ -149,37 +146,44 @@ public class DataProviders {
 
 	public static String getGroupTestData(String dataName, int groupIndex) {
 		Map<String, Object> groupTestData = provideTestData(GroupTestData, groupIndex);
-		return (String)groupTestData.get(dataName);
+		return (String) groupTestData.get(dataName);
 	}
+
 	public static List<String> getFilterContactsDropdownTestData(String testData) {
-		List<String> provideTestData = provideTestDataArray(filterContactsTestData,testData);
-		return provideTestData;
+		return provideTestDataArray(filterContactsTestData, testData);
 	}
+
 	public static String getFormTestData(String data, int groupIndex) {
 		Map<String, Object> formTestdata = provideTestData(FormTestData, groupIndex);
 		return (String) formTestdata.get(data);
 	}
-	
-	
-//	public static Object getSubmenuOptionsByName(String option) {
-//		
-//		return null;
-//	}
-	
-//	 public static List<String> getSideMenuOptionsIndexData() throws Throwable, Exception {
-//		 String data = provideTestData(sideMenuOptionsTestData, "sideMenuOption");
-//		 System.out.println(data);
-//		 JsonNode jsonData = new ObjectMapper().valueToTree(data.getBytes("Dashboard"));
-//		 System.out.println(jsonData);
-//		return null;
-//	        
-//	    }
-	
-	
 
-public static void main(String[] args) throws Exception, Throwable {
-	String contactTestData2 = getphoneDetails("number", 1);
-	System.out.println(contactTestData2);
-}
+	public static void main(String[] args) throws Exception, Throwable {
+		String contactTestData2 = getphoneDetails("number", 1);
+		System.out.println(contactTestData2);
+	}
+
+	public static List<String> getQuickStartGuideOptionsTestDataByName(String option) {
+		return provideTestDataArray(quickStartGuideOptionTestData, option);
+	}
+
+	public static String getPluginTestData(String plugindata, int pluginIndex) {
+		Map<String, Object> provideTestData = provideTestData(pluginTestData, pluginIndex);
+		return (String) provideTestData.get(plugindata);
+	}
+
+	public static List<String> getSideMenuOptionsIndexData() {
+
+		return provideTestDataArray(sideMenuOptionsTestData, "sideMenuOption");
+	}
+
+	public static List<String> getSubmenuOptionsByName(String option) {
+		return provideTestDataArray(sideMenuOptionsTestData, option);
+	}
+
+	public static String getDownloadContactsTestData(String downloadContactData, int fileIndex) {
+		Map<String, Object> downloadcontactdata = provideTestData(downloadContactsTestData, fileIndex);
+		return (String) downloadcontactdata.get(downloadContactData);
+	}
 
 }

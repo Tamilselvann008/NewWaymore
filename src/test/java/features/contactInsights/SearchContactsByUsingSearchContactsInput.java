@@ -22,10 +22,10 @@ public class SearchContactsByUsingSearchContactsInput extends BasePo {
 		browserLaunch();
 	}
 
-//	@AfterTest
-//	public void tearDown() {
-//		closeBrowser();
-//	}
+	@AfterTest
+	public void tearDown() {
+		closeBrowser();
+	}
 
 	@Test(description = "@WQ-418 @TR-418 @Regression\r\n" + "	  @BugALW-11389 @BugALW-10050\r\n"
 			+ "	  Scenario: The user can search contacts from the WayMore Contact Insights list by first name")
@@ -549,12 +549,24 @@ public class SearchContactsByUsingSearchContactsInput extends BasePo {
 //	    And [API] the user № 1 adds the contact № 1 to the group № 3
 //	    And [API] the user № 1 adds the contact № 2 to the group № 3
 //	    When the user № 1 is on the Getting started with WayMore page
-//	    Then the Side Menu is displayed
-//	    When the user clicks on the Contact Insights item
-//	    And the user clicks on the Contact Insights submenu option in the Contact Insights side menu option
-//	    Then the CONTACTS title is displayed
+		loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1);
+//    Then the Side Menu is displayed
+		sidemenuSteps.thenTheSideMenuIsDisplayed();
+//    When the user clicks on the Contact Insights item
+		sidemenuSteps
+				.whenTheUserClicksOnMyCampaignsLeadGenerationSettingsCommunicationAutomationsUserPluginsEventsMyTemplatesContactInsightsChatBotValidationServicesAnalyticsSupportItem(
+						MenuItemOptionEnum.ContactInsights);
+//    And the user clicks on the Contact Insights submenu option in the Contact Insights side menu option
+		sidemenuSteps.whenTheUserClicksOnTheContactInsightsSegmentsSubmenuOptionInTheContactInsightsSideMenuOption(
+				"Contact Insights", "Contact Insights");
+//    Then the CONTACTS title is displayed
+		contactInsightsSteps.thenTheContactsTitleIsDisplayed("CONTACTS");
 //	    When the user filters contacts by entering the @#$ value into the Search Contacts input on the Contact Insights page
+		contactInsightsSteps
+		.whenTheUserFiltersContactsByEnteringTheValueIntoTheSearchContactsInputOnTheContactInsightsPage(
+				"@#$");
 //	    Then the message that there are no results matching the search is displayed
+		contactInsightsSteps.thenTheMessageThatThereAreNoResultsMatchingTheSearchIsDisplayed();
 //	    And [API] the user № 1 removes the existing group № 3 with all contacts in that group from the list of groups
 	}
 }

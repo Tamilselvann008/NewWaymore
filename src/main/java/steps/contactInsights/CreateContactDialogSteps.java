@@ -142,7 +142,7 @@ public class CreateContactDialogSteps extends BasePo{
         createContactDialogPo.selectBirthdateFromBirthdateCalendarByDate(contactBirthdate);
     }
 
-    public void whenTheUserEntersInvalidDataInTheSuitableInputFieldInTheCreateContactDialog(String optionName) {
+    public void whenTheUserEntersInvalidFirstNameLastNameEmailInTheSuitableInputFieldInTheCreateContactDialog(String optionName) {
         String invalidData = StringUtils.getRandomString(10, "lower");
         createContactDialogPo.typeContactDataByOptionName(optionName, invalidData);
     }

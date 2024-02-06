@@ -10,7 +10,6 @@ import pages.dashboard.DashboardPo;
 
 public class DasboardSteps extends BasePo {
 
-	private static final Object AccountIsNotVerified = "Your account has not been verified. Please talk to your account manager or proceed to mobile number";
 	private DashboardPo dashboardPo = new DashboardPo(driver);
 
 	 public void whenTheUserClicksOnIntegrateSynchronizeAutomatePushNotificationSendACampaignLinkInTheQuickStartGuideOnTheDashboardPage(String option) throws Exception {
@@ -38,7 +37,7 @@ public class DasboardSteps extends BasePo {
 	            "The message that the account has not been verified is not displayed");
 	    }
 
-	    public void thenTheQuickStartGuideChannelSetupServicesSetupItemsAreDisplayed(String option) {
+	    public void thenTheQuickStartGuideChannelSetupServicesSetupItemsAreDisplayed(String option) throws Exception {
 	        List<String> quickStartGuideChannelSetupItemTextList = dashboardPo.getQuickStartGuideOptionTextListByOptionName(option);
 	        Assertions.expectToEveryStringIncludeSomeValueFromArray(quickStartGuideChannelSetupItemTextList,
 	           DataProviders.getQuickStartGuideOptionsTestDataByName(option), "The Quick Start guide '" + option + "' items are not displayed");
@@ -56,7 +55,5 @@ public class DasboardSteps extends BasePo {
 	    public void thenTheCountryViewIsDisplayedOnTheCountryStatsTab(String tab) throws Exception {
 	        Assertions.expectToBeTrue(dashboardPo.isCountryViewDisplayed(tab), "The country view is not displayed on the '" + tab + "' tab");
 	    }
-
-	// Other methods...
 
 }

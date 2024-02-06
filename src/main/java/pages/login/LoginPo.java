@@ -114,4 +114,9 @@ public class LoginPo extends BasePo {
 	    }
 
 
+		public Object getCurrentUrl() {
+			return driver.getCurrentUrl();
+		}
+
+
 }

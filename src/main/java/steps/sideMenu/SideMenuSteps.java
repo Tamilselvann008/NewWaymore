@@ -102,18 +102,18 @@ public class SideMenuSteps extends BasePo {
 		StepUtils.addLog("the Side Menu is displayed");
 	}
 
-	public void thenThePluginNumberIsDisplayedInTheSideMenuDomain(int pluginIndex) {
-		String getDomain = DataProviders.getPluginTestData(pluginIndex);
-		String getSource = DataProviders.getPluginTestData(pluginIndex);
+	public void thenThePluginNumberIsDisplayedInTheSideMenuDomain(int pluginIndex) throws Exception {
+		String getDomain = DataProviders.getPluginTestData("domain", pluginIndex);
+		String getSource = DataProviders.getPluginTestData("source", pluginIndex);
 		Assertions.expectToEqual(sideMenuPo.getSideMenuDomainOptionText(), getDomain,
 				"The plugin domain '" + getDomain + "' is not displayed");
 		Assertions.expectToEqual(sideMenuPo.getSideMenuPluginInfoText(), getSource,
 				"The plugin info '" + getSource + "' is not displayed");
 	}
 
-	public void thenTheOrderOfTheSideMenuItemsIsCorrect() {
+	public void thenTheOrderOfTheSideMenuItemsIsCorrect() throws Exception {
 		List<String> sideMenuTextList = sideMenuPo.getSideMenuTextList();
-		String sideMenuTestData = DataProviders.getSideMenuOptionsIndexData();
+		List<String> sideMenuTestData = DataProviders.getSideMenuOptionsIndexData();
 		Assertions.expectToHaveMembers(sideMenuTextList, sideMenuTestData, "The order of the side menu items is wrong");
 	}
 
@@ -130,29 +130,29 @@ public class SideMenuSteps extends BasePo {
 
 	public void thenTheMyTemplatesCommunicationAutomationsValidationServicesLeadGenerationAnalyticsChatBotSupportContactInsightsSubmenuOptionsAreDisplayed(
 			String option) throws Exception {
-		String submenuOption = option;
+		List<String> submenuOption = DataProviders.getSubmenuOptionsByName(option);
 		Assertions.expectToHaveMembers(sideMenuPo.getSideMenuSubmenuOptionOnHoverTextList(), submenuOption,
 				"The '" + option + "' submenu options are not displayed");
 	}
 
 	public void thenTheSubmenuOptionsOfTheExpandedCommunicationMyTemplatesAutomationsValidationServicesLeadGenerationAnalyticsChatBotSupportMenuItemAreDisplayed(
 			String option) throws Exception {
-		String submenuOption = option;
+		List<String> submenuOption = DataProviders.getSubmenuOptionsByName(option);;
 		Assertions.expectToHaveMembers(sideMenuPo.getSideMenuSubmenuOptionTextList(), submenuOption,
 				"The '" + option + "' submenu options are not displayed");
 	}
 
 	public void thenTheSubmenuOptionsOfTheExpandedSmsEmailViberSubmenuItemOfTheActiveCommunicationMenuItemAreDisplayed(
-			String subMenuItem, String menuItem) {
-		String submenuOption = DataProviders.getSubmenuOptionsByName(subMenuItem).getData();
+			String subMenuItem, String menuItem) throws Exception {
+		List<String> submenuOption = DataProviders.getSubmenuOptionsByName(subMenuItem);
 		Assertions.expectToHaveMembers(
 				sideMenuPo.getSideMenuExpandedSubSubmenuOptionByMenuOptionsTextList(menuItem, subMenuItem),
 				submenuOption,
 				"The '" + subMenuItem + "' submenu options of the active '" + menuItem + "' are not displayed");
 	}
 
-	public void thenTheSmsEmailViberWhatsappVoiceSubmenuOptionsAreDisplayed(String option) {
-		String submenuOption = DataProviders.getSubmenuOptionsByName(option).getData();
+	public void thenTheSmsEmailViberWhatsappVoiceSubmenuOptionsAreDisplayed(String option) throws Exception {
+		List<String> submenuOption = DataProviders.getSubmenuOptionsByName(option);
 		Assertions.expectToHaveMembers(sideMenuPo.getSideMenuTooltipSubSubmenuOptionTextList(), submenuOption,
 				"The '" + option + "' submenu options are not displayed");
 	}
@@ -168,5 +168,4 @@ public class SideMenuSteps extends BasePo {
 				"The '" + option + "' menu is expanded");
 	}
 
-	// Other methods...
 }

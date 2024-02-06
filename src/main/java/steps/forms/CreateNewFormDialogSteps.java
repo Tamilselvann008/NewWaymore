@@ -61,7 +61,7 @@ public class CreateNewFormDialogSteps extends BasePo{
         createNewFormDialogPo.clickOnRadioButtonByLabel(radioButton);
     }
 
-    public void whenTheUserSelectsOptionInDefaultGroupDropdownInCreateNewFormDialog(int indexValue) {
+    public void whenTheUserSelectsOptionInDefaultGroupDropdownInCreateNewFormDialog(int indexValue) throws Exception {
         createNewFormDialogPo.selectOptionFromDropdownByNumber(indexValue);
     }
  // Continuing from the previous methods...

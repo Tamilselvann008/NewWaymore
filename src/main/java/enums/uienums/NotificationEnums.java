@@ -329,7 +329,8 @@ public class NotificationEnums {
 	}
 
 	public enum DashboardMessageEnum {
-	    AccountIsNotVerified("Your account has not been verified. Please talk to your account manager or proceed to mobile number verification after login in Routee platform (with the same credentials) here");
+	    AccountIsNotVerified("Your account has not been verified. Please talk to your account manager or proceed to mobile number " +
+	            "verification after login in Routee platform (with same credentials) here");
 
 	    private final String value;
 

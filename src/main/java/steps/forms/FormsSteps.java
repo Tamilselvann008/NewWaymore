@@ -6,11 +6,12 @@ import basePackage.BasePo;
 import basePackage.CommonButtonsPo;
 import enums.uienums.ActionEnum;
 import enums.uienums.ActionEnum.ActionModeTypeEnum;
-import enums.uienums.PopupEnum.FormsPopupStatusEnum;
+import enums.uienums.PopupsEnum.FormsPopupStatusEnum;
 import helpers.Action;
 import helpers.Assertions;
 import helpers.DataProviders;
 import helpers.DateUtils;
+import helpers.LocalStorage;
 import helpers.StepUtils;
 import helpers.StringUtils;
 import helpers.Waiters;
@@ -64,9 +65,9 @@ public class FormsSteps extends BasePo {
         formsPo.typeValueInSearchInputField(value);
     }
 
-    public void whenTheUserStoresTheDataOfExistingForms() {
+    public void whenTheUserStoresTheDataOfExistingForms() throws Exception {
         List<String> formNameList = formsPo.getFormItemNameTextList();
-        formsPo.localStorage.setItem("formNameListData", formNameList);
+        LocalStorage.setItem("formNameListData", formNameList);
     }
 
     public void thenTheFormTopBarIsDisplayed() throws InterruptedException {
@@ -126,8 +127,8 @@ public class FormsSteps extends BasePo {
 
     // ... More methods ...
 
-    public void thenThePublishedFormNumberIsDisplayedInANewBrowserTab(int formIndex) {
-        String isPublishedFlag = formsPo.localStorage.getItem("isPublishedFlag");
+    public void thenThePublishedFormNumberIsDisplayedInANewBrowserTab(int formIndex) throws InterruptedException {
+        String isPublishedFlag = LocalStorage.getItem("isPublishedFlag");
         String formName = DataProviders.getFormTestData("Value", formIndex);
         Waiters.waitForTabsCount();
         Action.switchToHandleByTabNumber(2);
@@ -135,7 +136,7 @@ public class FormsSteps extends BasePo {
         Assertions.expectToEqual(title, formName, "The published Form title is incorrect");
 
         if ("true".equals(isPublishedFlag)) {
-            String publishedFormLinkValue = formsPo.localStorage.getItem("publishedFormLinkValue");
+            String publishedFormLinkValue = LocalStorage.getItem("publishedFormLinkValue");
             String url = driver.getCurrentUrl();
             Assertions.expectToEqual(url, "http://" + publishedFormLinkValue, "The published Form link is incorrect");
         }

@@ -36,7 +36,7 @@ public class AddNewContactFeature extends BasePo {
 	public void launchWebsite() {
 		browserLaunch();
 	}
-//
+
 //	@AfterTest
 //	public void tearDown() {
 //		closeBrowser();
@@ -356,6 +356,180 @@ public class AddNewContactFeature extends BasePo {
 		createContactDialogSteps.thenTheSaveButtonIsDisabledInTheCreateContactDialog();
 	}
 	
-	   
+	
+	@Test(description = "@ALW-12620 @TR-12620 @Regression\r\n"
+			+ "	  @BugALW-23622\r\n"
+			+ "	  Scenario: The user can't create a new contact with invalid mobile number")
+	public void theUserCannotCreateANewContactWithInvalidMobileNumber() throws Exception {
+	
+//      When the user № 1 is on the Getting started with WayMore page
+		loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1);
+//      Then the Side Menu is displayed
+		sideMenuSteps.thenTheSideMenuIsDisplayed();
+//      When the user clicks on the Contact Insights item
+		sideMenuSteps
+				.whenTheUserClicksOnMyCampaignsLeadGenerationSettingsCommunicationAutomationsUserPluginsEventsMyTemplatesContactInsightsChatBotValidationServicesAnalyticsSupportItem(
+						MenuItemOptionEnum.ContactInsights);
+//      And the user clicks on the Contact Insights submenu option in the Contact Insights side menu option
+		sideMenuSteps.whenTheUserClicksOnTheContactInsightsSegmentsSubmenuOptionInTheContactInsightsSideMenuOption(
+				"Contact Insights", "Contact Insights");
+//     Then the CONTACTS title is displayed
+		contactInsightsSteps.thenTheContactsTitleIsDisplayed("CONTACTS");
+//	    When the user clicks on the Add New button on the Contact Insights page
+		contactInsightsSteps.whenTheUserClicksOnTheAddNewButtonOnTheContactInsightsPage();
+//	    Then the Create contact dialog is displayed
+		createContactDialogSteps.thenTheCreateContactOrEditContactDialogIsDisplayed(createContact);
+//	    When the user enters a First Name in the suitable input field for the contact № 1 in the Create Contact dialog
+		createContactDialogSteps
+		.whenTheUserEntersAFirstNameLastNameEmailInTheSuitableInputFieldForTheContactInTheCreateContactDialog(
+				firstName, 1);
+//	    And the user enters a Last Name in the suitable input field for the contact № 1 in the Create Contact dialog
+		createContactDialogSteps
+		.whenTheUserEntersAFirstNameLastNameEmailInTheSuitableInputFieldForTheContactInTheCreateContactDialog(
+				lastName, 1);
+//	    And the user enters an invalid mobile number in the suitable input field in the Create Contact dialog
+		
+//	    And the user checks SMS checkbox in the Create Contact dialog
+		createContactDialogSteps.whenTheUserChecksUnchecksSMSViberCheckboxInCreateContactDialog(CheckboxActionTypeEnum.Checks.getValue(), SMS);
+//	    Then the checkbox SMS is checked in the Create Contact dialog
+		createContactDialogSteps.thenTheCheckboxSMSViberVoiceIsCheckedUncheckedInTheCreateContactDialog(SMS, SwitchTypeEnum.Checked.getValue());
+//	    And the checkbox SMS option is Enabled in the Create Contact dialog
+		createContactDialogSteps.thenTheCheckboxSMSViberVoiceOptionIsEnabledDisabledInTheCreateContactDialog(SMS,
+				ActionModeTypeEnum.Enabled.getValue());
+//	    And the user can see the error message about an invalid mobile number in the Create Contact dialog
+		
+//	    And the Save Button is disabled in the Create Contact dialog
+		createContactDialogSteps.thenTheSaveButtonIsDisabledInTheCreateContactDialog();
+	}
+	
+	@Test(description = "@ALW-12622 @TR-12622 @Regression\r\n"
+			+ "	  @BugALW-23622\r\n"
+			+ "	  Scenario: The user can't create a new contact without selecting at least one channel")
+	public void theUserCannotCreateANewContactWithoutSelectingAtLeastOneChannel() throws Exception {
+	  
+//      When the user № 1 is on the Getting started with WayMore page
+		loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1);
+//      Then the Side Menu is displayed
+		sideMenuSteps.thenTheSideMenuIsDisplayed();
+//      When the user clicks on the Contact Insights item
+		sideMenuSteps
+				.whenTheUserClicksOnMyCampaignsLeadGenerationSettingsCommunicationAutomationsUserPluginsEventsMyTemplatesContactInsightsChatBotValidationServicesAnalyticsSupportItem(
+						MenuItemOptionEnum.ContactInsights);
+//      And the user clicks on the Contact Insights submenu option in the Contact Insights side menu option
+		sideMenuSteps.whenTheUserClicksOnTheContactInsightsSegmentsSubmenuOptionInTheContactInsightsSideMenuOption(
+				"Contact Insights", "Contact Insights");
+//     Then the CONTACTS title is displayed
+		contactInsightsSteps.thenTheContactsTitleIsDisplayed("CONTACTS");
+//	    When the user clicks on the Add New button on the Contact Insights page
+		contactInsightsSteps.whenTheUserClicksOnTheAddNewButtonOnTheContactInsightsPage();
+//	    Then the Create contact dialog is displayed
+		createContactDialogSteps.thenTheCreateContactOrEditContactDialogIsDisplayed(createContact);
+//	    When the user enters a First Name in the suitable input field for the contact № 1 in the Create Contact dialog
+		createContactDialogSteps
+		.whenTheUserEntersAFirstNameLastNameEmailInTheSuitableInputFieldForTheContactInTheCreateContactDialog(
+				firstName, 1);
+//	    And the user enters a Last Name in the suitable input field for the contact № 1 in the Create Contact dialog
+		createContactDialogSteps
+		.whenTheUserEntersAFirstNameLastNameEmailInTheSuitableInputFieldForTheContactInTheCreateContactDialog(
+				lastName, 1);
+//	    And the user enters a mobile number with a code for Greece in the mobile number input field for the contact № 1 in the Create Contact dialog
+		createContactDialogSteps
+		.whenTheUserEntersAMobileNumberWithACodeForGermanyGreeceJordanCountryInTheMobileNumberInputFieldForTheContactInTheCreateContactDialog(
+				CountryOptionEnum.Greece, 1);
+//	    Then the user sees Please enable at least one channel error message at the Channel Use field
+		
+//	    And the Save Button is disabled in the Create Contact dialog
+		createContactDialogSteps.thenTheSaveButtonIsDisabledInTheCreateContactDialog();
+	}
+	
+	@Test(description = "@ALW-12623 @TR-12623 @Regression\r\n"
+			+ "	  @BugALW-23622\r\n"
+			+ "	  Scenario: The user can't create a new contact with invalid email")
+	public void theUserCannotCreateANewContactWithInvalidEmail() throws Exception {
+	  
+//      When the user № 1 is on the Getting started with WayMore page
+		loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1);
+//      Then the Side Menu is displayed
+		sideMenuSteps.thenTheSideMenuIsDisplayed();
+//      When the user clicks on the Contact Insights item
+		sideMenuSteps
+				.whenTheUserClicksOnMyCampaignsLeadGenerationSettingsCommunicationAutomationsUserPluginsEventsMyTemplatesContactInsightsChatBotValidationServicesAnalyticsSupportItem(
+						MenuItemOptionEnum.ContactInsights);
+//      And the user clicks on the Contact Insights submenu option in the Contact Insights side menu option
+		sideMenuSteps.whenTheUserClicksOnTheContactInsightsSegmentsSubmenuOptionInTheContactInsightsSideMenuOption(
+				"Contact Insights", "Contact Insights");
+//     Then the CONTACTS title is displayed
+		contactInsightsSteps.thenTheContactsTitleIsDisplayed("CONTACTS");
+//	    When the user clicks on the Add New button on the Contact Insights page
+		contactInsightsSteps.whenTheUserClicksOnTheAddNewButtonOnTheContactInsightsPage();
+//	    Then the Create contact dialog is displayed
+		createContactDialogSteps.thenTheCreateContactOrEditContactDialogIsDisplayed(createContact);
+//	    When the user enters a First Name in the suitable input field for the contact № 1 in the Create Contact dialog
+		createContactDialogSteps
+		.whenTheUserEntersAFirstNameLastNameEmailInTheSuitableInputFieldForTheContactInTheCreateContactDialog(
+				firstName, 1);
+//	    And the user enters a Last Name in the suitable input field for the contact № 1 in the Create Contact dialog
+		createContactDialogSteps
+		.whenTheUserEntersAFirstNameLastNameEmailInTheSuitableInputFieldForTheContactInTheCreateContactDialog(
+				lastName, 1);
+//	    And the user enters an invalid Email in the suitable input field in the Create Contact dialog
+		createContactDialogSteps.whenTheUserEntersInvalidFirstNameLastNameEmailInTheSuitableInputFieldInTheCreateContactDialog(email);
+//	    And the user checks SMS checkbox in the Create Contact dialog
+		createContactDialogSteps.whenTheUserChecksUnchecksSMSViberCheckboxInCreateContactDialog(CheckboxActionTypeEnum.Checks.getValue(), SMS);
+//	    Then the checkbox SMS is checked in the Create Contact dialog
+		createContactDialogSteps.thenTheCheckboxSMSViberVoiceIsCheckedUncheckedInTheCreateContactDialog(SMS, SwitchTypeEnum.Checked.getValue());
+//	    And the checkbox SMS option is Enabled in the Create Contact dialog
+		createContactDialogSteps.thenTheCheckboxSMSViberVoiceOptionIsEnabledDisabledInTheCreateContactDialog(SMS,
+				ActionModeTypeEnum.Enabled.getValue());
+//	    And the Save Button is disabled in the Create Contact dialog
+		createContactDialogSteps.thenTheSaveButtonIsDisabledInTheCreateContactDialog();
+	}
+	
+	
+	@Test(description = " @ALW-13640 @TR-13640 @Regression\r\n"
+			+ "	  @BugALW-35787 @BugALW-33796\r\n"
+			+ "	  Scenario: The user cannot see duplicate groups in the group dropdown in the Create contact dialog")
+	public void theUserCannotSeeDuplicateGroupsInTheGroupDropdownInTheCreateContactDialog() throws Exception {
+	 
+//	    Given [API] the user № 1 sets authentication token
+//	    And [API] the user № 1 removes the existing group № 2 from the list of groups
+//	    And [API] the user № 1 removes the existing contact № 2 from the list of contacts
+//	    When the user № 1 is on the Getting started with WayMore page
+//	    Then the Side Menu is displayed
+//	    When the user clicks on the My Campaigns item
+//	    Then the My Campaigns title is correct
+//	    When the user clicks on the New Campaign button
+//	    Then the Standard Campaign dialog is displayed
+//	    And the Standard Campaign dialog title is correct
+//	    When the user clicks on the Create Standard Campaigns button
+//	    And the user clicks on the Add Your Campaign Audience button
+//	    Then the Campaigns Audience dialog is displayed
+//	    And the Select Audience dialog title is correct
+//	    When the user clicks on the Upload new contacts contact item
+//	    Then the uploader info is displayed
+//	    When the user uploads a new contact from contact.txt file
+//	    Then the user can see a message that the contact.txt file has been uploaded
+//	    When the user clicks on the Continue Button
+//	    Then the user can see notification that the file has been saved
+//	    When the user matches columns from value № 1 with custom labels
+//	    And the user clicks on the Continue Button
+//	    Then the item summary displays 1 valid contact entries
+//	    When the user clicks on the Continue Button
+//	    And the user clicks on the keep as new radio button
+//	    Then the keep as new entries radio button is selected
+//	    When the user types a new group value № 2 in the Select Audience Segment dialog
+//	    And the user clicks on the Finish Button in the Select Audience dialog
+//	    Then the user can see notification that the Group has been created
+//	    And the channel information for the selected audience is displayed
+//	    And the channel info shows 1 contacts have been selected
+//	    When the user clicks on the Contact Insights item
+//	    And the user clicks on the Contact Insights submenu option in the Contact Insights side menu option
+//	    Then the CONTACTS title is displayed
+//	    When the user clicks on the Add New button on the Contact Insights page
+//	    Then the Create contact dialog is displayed
+		createContactDialogSteps.thenTheCreateContactOrEditContactDialogIsDisplayed(createContact);
+//	    When the user clicks on the Assign contact to Groups dropdown in the Create Contact dialog
+//	    Then the group № 2 is not duplicated in the dropdown list of groups in the Create Contact dialog
+	}
 
 }

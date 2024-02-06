@@ -1,5 +1,6 @@
 package pages.contactInsights;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -541,6 +542,34 @@ public class ContactInsightsPo extends BasePo {
 	            return "";
 	        }
 	    }
+	 public List<String> getGroupTextListByContactName(String contactName) throws Exception {
+	        Waiters.waitForElementToBeDisplayed(contactFirstName);
+	        List<WebElement> contactNameElements = ElementUtils.getElementListWithWaitByLocator(contactFirstName);
+	        List<String> contactNameList = new ArrayList<>();
+	        for (WebElement element : contactNameElements) {
+	            contactNameList.add(element.getText());
+	        }
+	        
+	        int index = -1;
+	        for (int i = 0; i < contactNameList.size(); i++) {
+	            if (contactNameList.get(i).equals(contactName)) {
+	                index = i;
+	                break;
+	            }
+	        }
+
+	        if (index == -1) {
+	            return new ArrayList<>(List.of("")); // Return a list with an empty string if no match is found
+	        } else {
+	            List<WebElement> groupTextElements = ElementUtils.getElementListWithWaitByLocator(contactGroupByRowNumber(index));
+	            List<String> groupTextList = new ArrayList<>();
+	            for (WebElement element : groupTextElements) {
+	                groupTextList.add(element.getText());
+	            }
+	            return groupTextList;
+	        }
+	    }
+
 	public List<String> getContactChannelTextListByContactName(String contactName) throws Exception {
 		List<String> contactNameList = ElementUtils.getTextListByLocator(contactFirstName);
 		int index = contactNameList.indexOf(contactName);

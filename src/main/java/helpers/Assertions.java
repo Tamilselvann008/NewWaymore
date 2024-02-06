@@ -45,6 +45,11 @@ public class Assertions {
     public static void expectToInclude(String result, String expectedResult, String errorMessage) {
         Assert.assertTrue(result.contains(expectedResult), errorMessage);
     }
+    
+    public static void expectToInclude(Object result, String expectedResult, String errorMessage) {
+        Assert.assertTrue(((String) result).contains(expectedResult), errorMessage);
+    }
+    
     public static void expectToInclude(List<String>  result, String expectedResult, String errorMessage) {
         Assert.assertTrue(result.contains(expectedResult), errorMessage);
     }

@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="features.contactInsights.SearchContactsByUsingSearchContactsInput">
+      <class name="features.contactInsights.AddNewContactFeature">
         <methods>
-          <include name="theCheckboxInTheHeaderIsCheckedWhenTheUserSearchAndSelectAllContacts"/>
+          <include name="theUserCannotCreateANewContactWithInvalidEmail"/>
           <include name="launchWebsite"/>
         </methods>
-      </class> <!-- features.contactInsights.SearchContactsByUsingSearchContactsInput -->
+      </class> <!-- features.contactInsights.AddNewContactFeature -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

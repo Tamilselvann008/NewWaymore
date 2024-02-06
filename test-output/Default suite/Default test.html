@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Feb 02 20:13:34 IST 2024</td>
+<td>Started on:</td><td>Mon Feb 05 18:49:44 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>81 seconds (81075 ms)</td>
+<tr><td>Total time:</td><td>46 seconds (46499 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,32 +75,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='features.contactInsights.SearchContactsByUsingSearchContactsInput.theCheckboxInTheHeaderIsCheckedWhenTheUserSearchAndSelectAllContacts()'><b>theCheckboxInTheHeaderIsCheckedWhenTheUserSearchAndSelectAllContacts</b><br>Test class: features.contactInsights.SearchContactsByUsingSearchContactsInput<br>Test method: @ALW-15102 @TR-15102 @Regression
-	  Scenario: The checkbox in the header is checked when the user search and select all contacts</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;checkbox&quot; class=&quot;mat-checkbox-input cdk-visually-hidden&quot; id=&quot;mat-checkbox-2-input&quot; tabindex=&quot;0&quot; aria-checked=&quot;false&quot;&gt; is not clickable at point (328, 301). Other element would receive the click: &lt;div _ngcontent-vda-c390=&quot;&quot; class=&quot;wm-table__cell contacts__check-cell&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=121.0.6167.86)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-GEA9L1T&apos;, ip: &apos;192.168.3.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.86, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\Users\SOFTSU~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50466}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f98d33ec53f44cd712dec3c5b22bbcc9
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at helpers.Action.clickByLocator(Action.java:80)
-	at pages.contactInsights.ContactInsightsPo.clickOnCheckboxInHeader(ContactInsightsPo.java:233)
-	at steps.contactInsights.ContactInsightsSteps.whenTheUserChecksCheckboxInTheHeaderOfTheTableOnTheContactInsightsPage(ContactInsightsSteps.java:109)
-	at features.contactInsights.SearchContactsByUsingSearchContactsInput.theCheckboxInTheHeaderIsCheckedWhenTheUserSearchAndSelectAllContacts(SearchContactsByUsingSearchContactsInput.java:536)
+<td title='features.contactInsights.AddNewContactFeature.theUserCannotCreateANewContactWithInvalidEmail()'><b>theUserCannotCreateANewContactWithInvalidEmail</b><br>Test class: features.contactInsights.AddNewContactFeature<br>Test method: @ALW-12623 @TR-12623 @Regression
+	  @BugALW-23622
+	  Scenario: The user can't create a new contact with invalid email</td>
+<td><div><pre>java.lang.AssertionError: The Save Button is enabled expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertFalse(Assert.java:67)
+	at helpers.Assertions.expectToBeDisabled(Assertions.java:42)
+	at steps.contactInsights.CreateContactDialogSteps.thenTheSaveButtonIsDisabledInTheCreateContactDialog(CreateContactDialogSteps.java:181)
+	at features.contactInsights.AddNewContactFeature.theUserCannotCreateANewContactWithInvalidEmail(AddNewContactFeature.java:485)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -129,31 +113,14 @@ Session ID: f98d33ec53f44cd712dec3c5b22bbcc9
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace224113092", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace224113092'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;checkbox&quot; class=&quot;mat-checkbox-input cdk-visually-hidden&quot; id=&quot;mat-checkbox-2-input&quot; tabindex=&quot;0&quot; aria-checked=&quot;false&quot;&gt; is not clickable at point (328, 301). Other element would receive the click: &lt;div _ngcontent-vda-c390=&quot;&quot; class=&quot;wm-table__cell contacts__check-cell&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=121.0.6167.86)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-GEA9L1T&apos;, ip: &apos;192.168.3.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.86, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\Users\SOFTSU~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50466}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f98d33ec53f44cd712dec3c5b22bbcc9
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at helpers.Action.clickByLocator(Action.java:80)
-	at pages.contactInsights.ContactInsightsPo.clickOnCheckboxInHeader(ContactInsightsPo.java:233)
-	at steps.contactInsights.ContactInsightsSteps.whenTheUserChecksCheckboxInTheHeaderOfTheTableOnTheContactInsightsPage(ContactInsightsSteps.java:109)
-	at features.contactInsights.SearchContactsByUsingSearchContactsInput.theCheckboxInTheHeaderIsCheckedWhenTheUserSearchAndSelectAllContacts(SearchContactsByUsingSearchContactsInput.java:536)
+</pre></div><a href='#' onClick='toggleBox("stack-trace270157340", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace270157340'><pre>java.lang.AssertionError: The Save Button is enabled expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertFalse(Assert.java:67)
+	at helpers.Assertions.expectToBeDisabled(Assertions.java:42)
+	at steps.contactInsights.CreateContactDialogSteps.thenTheSaveButtonIsDisabledInTheCreateContactDialog(CreateContactDialogSteps.java:181)
+	at features.contactInsights.AddNewContactFeature.theUserCannotCreateANewContactWithInvalidEmail(AddNewContactFeature.java:485)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -183,8 +150,8 @@ Session ID: f98d33ec53f44cd712dec3c5b22bbcc9
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>79</td>
-<td>features.contactInsights.SearchContactsByUsingSearchContactsInput@75d3a5e0</td></tr>
+<td>44</td>
+<td>features.contactInsights.AddNewContactFeature@235ecd9f</td></tr>
 </table><p>
 </body>
 </html>

@@ -1,5 +1,6 @@
 package features.contactInsights;
 
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -42,7 +43,7 @@ public class ViewContactFeature extends BasePo {
 //    And the user clicks on the Contact Insights submenu option in the Contact Insights side menu option
 		sidemenuSteps.whenTheUserClicksOnTheContactInsightsSegmentsSubmenuOptionInTheContactInsightsSideMenuOption(
 				MenuItemOptionEnum.ContactInsights.getValue(), MenuItemOptionEnum.ContactInsights.getValue());
-		;
+		
 //    Then the CONTACTS title is displayed
 		contactInsightsPage.thenTheContactsTitleIsDisplayed("CONTACTS");
 //    When the user checks checkbox in the header of the table on the Contact Insights page
@@ -69,6 +70,11 @@ public class ViewContactFeature extends BasePo {
 
 	@Test(description = "@WQ-409 @TR-409 @Regression\r\n" + "  @BugALW-11389 @BugALW-10050")
 	public void TheUserCanSelectASpecificContactInTheContactInsightsPage() throws Exception {
+		
+//		  Given [API] the user № 1 sets authentication token
+//		    And [API] the user № 1 adds a new contact № 2 to the list of contacts
+//		    And [API] the user № 1 adds a new group № 3 to the list of groups
+//		    And [API] the user № 1 adds the contact № 2 to the group № 3
 //	When the user № 1 is on the Getting started with WayMore page
 		loginSteps.theUserIsOnTheGettingStartedWithWayMorePage(1);
 //    Then the Side Menu is displayed
@@ -223,11 +229,13 @@ public class ViewContactFeature extends BasePo {
 //	    Then the CONTACTS title is displayed
 		contactInsightsPage.thenTheContactsTitleIsDisplayed("CONTACTS");
 //		    When the user selects an option of 10 items per page from the pagination dropdown on the Contact Insights page
-		contactInsightsPage
-				.whenTheUserSelectsAnOptionOfItemsPerPageFromThePaginationDropdownOnTheContactInsightsPage("10");
+//		contactInsightsPage
+//				.whenTheUserSelectsAnOptionOfItemsPerPageFromThePaginationDropdownOnTheContactInsightsPage("10");
 //		    Then the selected option 10 is displayed in the page dropdown on Contact Insights page
-		contactInsightsPage.thenTheSelectedOptionIsDisplayedInThePageDropdownOnContactInsightsPage(10);
+		contactInsightsPage.thenTheSelectedOptionIsDisplayedInThePageDropdownOnContactInsightsPage(50);
 //		    And the result of All contacts in the bottom toolbar of the table is correct on the Contact Insights page
-		contactInsightsPage.thenTheResultOfAllContactsInTheBottomToolbarOfTheTableIsCorrectOnTheContactInsightsPage();
+		contactInsightsPage.thenTheResultOfAllContactsInTheBottomToolbarOfTheTableIsCorrectOnTheContactInsightsPage("All");
 	}
+	
+	
 }

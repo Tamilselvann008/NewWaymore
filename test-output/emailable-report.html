@@ -9,34 +9,17 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">81,075</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">46,499</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">features.contactInsights.SearchContactsByUsingSearchContactsInput</td><td><a href="#m0">theCheckboxInTheHeaderIsCheckedWhenTheUserSearchAndSelectAllContacts</a></td><td rowspan="1">1706885016186</td><td rowspan="1">79000</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">features.contactInsights.AddNewContactFeature</td><td><a href="#m0">theUserCannotCreateANewContactWithInvalidEmail</a></td><td rowspan="1">1707139186007</td><td rowspan="1">44607</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">features.contactInsights.SearchContactsByUsingSearchContactsInput#theCheckboxInTheHeaderIsCheckedWhenTheUserSearchAndSelectAllContacts</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;checkbox&quot; class=&quot;mat-checkbox-input cdk-visually-hidden&quot; id=&quot;mat-checkbox-2-input&quot; tabindex=&quot;0&quot; aria-checked=&quot;false&quot;&gt; is not clickable at point (328, 301). Other element would receive the click: &lt;div _ngcontent-vda-c390=&quot;&quot; class=&quot;wm-table__cell contacts__check-cell&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=121.0.6167.86)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-GEA9L1T&apos;, ip: &apos;192.168.3.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.86, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\Users\SOFTSU~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50466}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f98d33ec53f44cd712dec3c5b22bbcc9
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at helpers.Action.clickByLocator(Action.java:80)
-	at pages.contactInsights.ContactInsightsPo.clickOnCheckboxInHeader(ContactInsightsPo.java:233)
-	at steps.contactInsights.ContactInsightsSteps.whenTheUserChecksCheckboxInTheHeaderOfTheTableOnTheContactInsightsPage(ContactInsightsSteps.java:109)
-	at features.contactInsights.SearchContactsByUsingSearchContactsInput.theCheckboxInTheHeaderIsCheckedWhenTheUserSearchAndSelectAllContacts(SearchContactsByUsingSearchContactsInput.java:536)
+<h2>Default test</h2><h3 id="m0">features.contactInsights.AddNewContactFeature#theUserCannotCreateANewContactWithInvalidEmail</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The Save Button is enabled expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertFalse(Assert.java:67)
+	at helpers.Assertions.expectToBeDisabled(Assertions.java:42)
+	at steps.contactInsights.CreateContactDialogSteps.thenTheSaveButtonIsDisabledInTheCreateContactDialog(CreateContactDialogSteps.java:181)
+	at features.contactInsights.AddNewContactFeature.theUserCannotCreateANewContactWithInvalidEmail(AddNewContactFeature.java:485)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

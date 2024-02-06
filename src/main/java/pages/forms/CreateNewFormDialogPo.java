@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import basePackage.BasePo;
-import enums.uienums.HtmlEnums.AttributeEnum;
 import helpers.Action;
 import helpers.ElementUtils;
+import helpers.LocalStorage;
 import helpers.Waiters;
 
 public class CreateNewFormDialogPo extends BasePo {
@@ -149,12 +149,12 @@ public class CreateNewFormDialogPo extends BasePo {
         return ElementUtils.getTextByLocator(numberValidationMessage, 0);
     }
 
-    public void selectOptionFromDropdownByNumber(int index) {
+    public void selectOptionFromDropdownByNumber(int index) throws Exception {
         Waiters.waitForElementToBeDisplayed(defaultGroupDropdown);
         Action.clickByLocator(defaultGroupDropdown, index);
         WebElement optionElement = ElementUtils.getElementByLocator(defaultGroupDropdownOption, index);
         // Assuming 'localStorage' is managed internally within your framework
-        localStorage.setItem("defaultGroup", ElementUtils.getTextByLocator(defaultGroupDropdownOption, index));
+        LocalStorage.setItem("defaultGroup", ElementUtils.getTextByLocator(defaultGroupDropdownOption, index));
         Action.clickByLocator(optionElement);
         Action.clickByLocator(defaultGroupDropdown, index);
     }
